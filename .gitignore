@@ -1,0 +1,7 @@
+# Local research corpus and downloaded third-party source images.
+data/*.jsonl
+assets/images/
+
+# Keep directory placeholders available when required.
+!data/.gitkeep
+!assets/images/.gitkeep

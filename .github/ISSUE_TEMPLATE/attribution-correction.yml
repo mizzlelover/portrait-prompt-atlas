@@ -1,0 +1,31 @@
+name: Attribution correction or removal request
+description: Correct a source credit, identify an original creator, or request removal.
+title: "[Attribution] "
+labels:
+  - attribution
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Record ID or X source URL
+      description: Provide the prompt record ID, original X post URL, or both.
+    validations:
+      required: true
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request type
+      options:
+        - Correct original creator credit
+        - Add missing original creator credit
+        - Remove prompt text or result image
+        - Correct source link or publisher
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and requested change
+      description: Link the original post or provide other evidence. Do not paste private personal information.
+    validations:
+      required: true
