@@ -13,6 +13,19 @@ This project is deliberately narrower than a general prompt list. A useful portr
 
 The public corpus preserves the original X-source link, the source publisher where available, the attribution status, one source result image, and a correction path on every record. A publisher handle is labelled as a publisher, never silently promoted to “prompt author.”
 
+## Portrait-specialist categories
+
+| Category | Records | Typical use |
+| --- | ---: | --- |
+| Beauty and editorial | 394 | Natural beauty, magazine portraits, fashion-oriented retouching |
+| Portrait scene upgrade | 143 | Travel, lifestyle, studio and cinematic scene changes |
+| Identity-preserved stylization | 104 | Illustration, anime, collage and art-direction transfers |
+| Memory and relationship | 30 | Family, couples, birthdays, children and pets |
+| Restoration | 29 | Old-photo, clarity, color and repair-oriented workflows |
+| Professional portrait | 28 | Headshots, corporate identity and professional studio output |
+
+The category, image link, attribution state, risk flags, and rule-based evaluation are all queryable in `data/prompts.jsonl` and `data/evaluations.jsonl`.
+
 ## What makes a record publishable
 
 | Status | Public display | Full prompt |
