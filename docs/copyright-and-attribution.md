@@ -18,9 +18,9 @@ Each record keeps these fields:
 | --- | --- | --- |
 | Original creator self-claimed | Explicit first-person authorship claim in the post/thread | Credit the creator and link the source post. |
 | Repost with creator credited | Repost language plus an original creator handle or link | Credit the original creator prominently; list the repost separately. |
-| Publisher unverified | Publisher known but authorship not demonstrated | Show index metadata only; do not publish the full prompt or image. |
-| Repost creator unknown | Repost/credit language but the original creator cannot be identified | Keep only as a private review lead. |
-| Source not verifiable | Deleted, anonymous, inaccessible, or ambiguous source | Do not publish. |
+| Publisher unverified | Publisher known but authorship not demonstrated | Publish with the source publisher, original X link, an explicit unverified label, and the correction route. |
+| Repost creator unknown | Repost/credit language but the original creator cannot be identified | Publish only as a provenance-unknown research record; do not assert an author. |
+| Source not verifiable | Deleted, anonymous, inaccessible, or ambiguous source | Publish only with the source URL and explicit provenance-unknown label; do not assert an author. |
 
 ## Corrections and removal
 
@@ -31,4 +31,3 @@ If you created a prompt, own a source image, or believe a credit is inaccurate, 
 3. remove the record and its local image from future releases when requested by the creator or rights holder.
 
 The project maintains a minimal public change note for the action taken, without republishing the disputed prompt or image.
-

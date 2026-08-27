@@ -11,7 +11,7 @@ This project is deliberately narrower than a general prompt list. A useful portr
 - Every record has a publisher / authorship status and a rule controlling whether its full prompt may be published.
 - Current rights gate: no prompt is treated as publicly reusable merely because the X publisher is known.
 
-The local research dataset is intentionally not committed until its authorship status has been verified record by record. The public repository will expose only records that meet the publication rule in [Copyright and attribution](docs/copyright-and-attribution.md).
+The public corpus preserves the original X-source link, the source publisher where available, the attribution status, one source result image, and a correction path on every record. A publisher handle is labelled as a publisher, never silently promoted to “prompt author.”
 
 ## What makes a record publishable
 
@@ -19,8 +19,8 @@ The local research dataset is intentionally not committed until its authorship s
 | --- | --- | --- |
 | `original_creator_self_claimed` | Original creator, original X post, evidence | Allowed with attribution |
 | `repost_creator_credited` | Original creator first, reposter second, evidence | Allowed with attribution |
-| `publisher_unverified` | Source index only | Withheld |
-| `repost_creator_unknown` / `source_not_verifiable` | Do not expose the record | Withheld |
+| `publisher_unverified` | Source publisher, original X link, explicit unverified label | Public with attribution and correction path |
+| `repost_creator_unknown` / `source_not_verifiable` | Original X link and explicit provenance-unknown label | Public as a research record; never assert an author |
 
 Creators can request correction or removal at any time. See [correction and removal](docs/copyright-and-attribution.md#corrections-and-removal).
 
@@ -39,13 +39,12 @@ This prevents a visually impressive but identity-breaking style transfer from be
 
 ## Data layout
 
-- `data/prompts.jsonl` is the local, structured research master; it includes source, rights gate, image pointer and machine triage.
+- `data/prompts.jsonl` is the structured research master; it includes source, rights status, image pointer and machine triage.
 - `data/image-manifest.jsonl` maps every prompt record to one downloaded result image.
 - `assets/images/` holds one result image per record for internal review.
 
-These data and assets are retained locally for provenance review and are not part of the initial public commit.
+The result images are retained together with their record-level source links so that a visitor can judge the prompt as a visual workflow rather than as isolated prose.
 
 ## Acknowledgements
 
 The research source pool was discovered through [Goku-OpenLab/gpt-image-2-prompts-datasets](https://huggingface.co/datasets/Goku-OpenLab/gpt-image-2-prompts-datasets), licensed CC BY 4.0. That dataset-level license does not establish who authored each X prompt; this project therefore preserves individual X-source attribution and applies the stricter record-level publication gate above.
-
