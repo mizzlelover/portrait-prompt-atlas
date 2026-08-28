@@ -20,6 +20,8 @@ function toRecord(record) {
     prompt: record.prompt_text,
     prompt_sha256: digest(record.prompt_text),
     category: record.curation?.primary_category || analysis.task_family,
+    sub_category: record.curation?.secondary_category || 'uncategorized',
+    framing: record.curation?.framing || 'unspecified',
     tags: record.curation?.tags || [],
     identity_control: analysis.identity_lock || 'none',
     naturalness_control: analysis.naturalness_control || 'unspecified',
@@ -43,11 +45,13 @@ function renderReference(index) {
     ''
   ];
   for (const category of library.categories) {
-    const count = index.filter((record) => record.category === category.value).length;
+    const records = index.filter((record) => record.category === category.value);
+    const count = records.length;
     lines.push(`### ${label(category.title, 'zh')} / ${label(category.title, 'en')}`);
     lines.push(`- Value: \`${category.value}\``);
     lines.push(`- Records: ${count}`);
     lines.push(`- Keywords: ${category.keywords.join(', ')}`);
+    for (const [subCategory, subRecords] of Object.entries(Object.groupBy(records, (record) => record.sub_category))) lines.push(`  - ${subCategory}: ${subRecords.length}`);
     lines.push('');
   }
   lines.push('## Selection rules', '');
@@ -64,5 +68,5 @@ if (index.some((record) => !record.prompt || !record.source_url)) throw new Erro
 mkdirSync(outputDir, { recursive: true });
 writeFileSync(join(outputDir, 'portrait-records.json'), `${JSON.stringify({schema_version: library.schema_version, generated_from: 'data/prompts.jsonl', records: index})}\n`);
 writeFileSync(join(outputDir, 'portrait-library.md'), renderReference(index));
-writeFileSync(join(root, 'site', 'catalog.json'), JSON.stringify(index.map((record) => ({id: record.id, prompt: record.prompt, category: record.category, identity: record.identity_control, publisher: record.publisher, creator: record.credited_creator, authorship: record.authorship_status, source: record.source_url, image: record.image}))));
+writeFileSync(join(root, 'site', 'catalog.json'), JSON.stringify(index.map((record) => ({id: record.id, prompt: record.prompt, category: record.category, sub_category: record.sub_category, framing: record.framing, identity: record.identity_control, publisher: record.publisher, creator: record.credited_creator, authorship: record.authorship_status, source: record.source_url, image: record.image}))));
 console.log(`Generated ${index.length} portrait records for the website and agent Skill.`);

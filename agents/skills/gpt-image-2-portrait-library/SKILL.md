@@ -1,6 +1,6 @@
 ---
 name: gpt-image-2-portrait-library
-description: Choose, inspect, attribute, and safely adapt original-language GPT Image 2 portrait-editing prompts from a 728-record provenance-first library. Use for portrait restoration, natural retouching, identity-preserved transformations, professional headshots, and meaningful family or memorial photos.
+description: Choose, inspect, attribute, and safely adapt original-language GPT Image 2 portrait-editing prompts from a 631-record provenance-first library. Use its two-level task and scenario taxonomy for restoration, natural retouching, professional identity photos, lifestyle portraits, and identity-preserved transformations.
 ---
 
 # GPT Image 2 Portrait Library
@@ -9,18 +9,19 @@ Use this Skill to turn a real portrait-editing request into a source-aware recom
 
 ## Source of truth
 
-- Read `references/portrait-library.md` first for the six portrait categories and selection rules.
-- Use `references/portrait-records.json` as the installed, complete source of truth. It includes all 728 original-language prompts and their hashes, source URLs, publisher/creator fields, identity controls, and risk flags.
+- Read `references/portrait-library.md` first for the two-level portrait taxonomy and selection rules.
+- Use `references/portrait-records.json` as the installed, complete source of truth. It includes all 631 curated original-language prompts and their hashes, source URLs, publisher/creator fields, identity controls, framing, and risk flags.
 - Use `node bin/portrait-prompt-atlas.mjs search --query "..."` to narrow candidates. Use `show <record-id>` to inspect a full record. Do not rely on memory for case IDs or attribution.
 
 ## Modes
 
 ### 1. Find a collected prompt
 
-1. Identify the user task: `restoration_and_preservation`, `natural_retouch_and_beauty`, `professional_headshot_and_brand`, `lifestyle_and_travel_portrait`, `editorial_fashion_portrait`, `identity_locked_style_transfer`, `memory_family_and_relationship`, or `creative_portrait_scene`.
-2. Prefer `identity_lock: explicit` when the request involves an existing person, a sentimental image, a family photo, or a client portrait.
-3. Filter records by the task family, identity control, and any needed terms. Read the complete candidate prompt before presenting it.
-4. Return one strongest match, or two to three clearly different matches if the request is ambiguous.
+1. Identify both the primary task family and the secondary scenario. For example, use `professional_headshot_and_brand` + `business_headshot_and_profile` for a corporate avatar, but `professional_headshot_and_brand` + `personal_branding_half_and_full_portrait` for a half/full-body personal-brand image.
+2. Never select natural retouching for an illustration, sketch, anime, painting, or other non-photographic rendering; use `identity_locked_style_transfer` and its relevant secondary scenario instead.
+3. Prefer `identity_lock: explicit` when the request involves an existing person, a sentimental image, a family photo, or a client portrait.
+4. Filter records by the task family, identity control, framing, and any needed terms. Read the complete candidate prompt before presenting it.
+5. Return one strongest match, or two to three clearly different matches if the request is ambiguous.
 
 ### 2. Adapt a collected prompt
 
@@ -53,6 +54,8 @@ Use this compact format:
 
 Fit: [one concise sentence]
 Category: [category]
+Secondary scenario: [sub_category]
+Framing: [framing]
 Identity control: [value]
 Source status: [required provenance wording] ([X source](...))
 

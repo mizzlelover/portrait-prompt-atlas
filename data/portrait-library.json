@@ -16,6 +16,20 @@
     {"value": "memory_family_and_relationship", "title": {"zh": "纪念、家庭与关系影像", "en": "Memory, family & relationship"}, "keywords": ["family", "couple", "wedding", "家庭", "亲人", "情侣", "婚礼", "纪念"]},
     {"value": "creative_portrait_scene", "title": {"zh": "创意肖像与场景表达", "en": "Creative portrait & scene"}, "keywords": ["cinematic", "surreal", "creative", "电影感", "超现实", "创意"]}
   ],
+  "taxonomy": {
+    "zh": "一级按用户任务分组，二级按具体交付物或拍摄范围分组；framing 是用于进一步筛选的独立字段。",
+    "en": "Level one groups the user task; level two names the concrete deliverable or portrait scope; framing is an additional filter.",
+    "secondary_categories": {
+      "restoration_and_preservation": ["historic_and_damaged_photo", "clarity_color_and_quality_recovery", "memory_photo_preservation"],
+      "natural_retouch_and_beauty": ["selfie_face_and_closeup_polish", "half_and_full_body_polish", "group_and_relationship_retouch"],
+      "professional_headshot_and_brand": ["business_headshot_and_profile", "document_and_id_photo", "personal_branding_half_and_full_portrait"],
+      "lifestyle_and_travel_portrait": ["travel_and_outdoor_portrait", "daily_and_social_portrait", "event_and_relationship_portrait"],
+      "editorial_fashion_portrait": ["beauty_and_studio_closeup", "fashion_half_and_full_body_portrait", "campaign_and_magazine_portrait"],
+      "identity_locked_style_transfer": ["illustration_and_anime_transform", "cinematic_and_fantasy_transform", "identity_locked_style_upgrade"],
+      "creative_portrait_scene": ["creative_composite_and_poster", "cinematic_and_fantasy_scene", "creative_portrait_scene"],
+      "memory_family_and_relationship": ["memory_photo_preservation", "event_and_relationship_portrait", "group_and_relationship_retouch"]
+    }
+  },
   "selection_rules": [
     {"id": "identity-first", "zh": "涉及真实人物、客户照片或纪念照片时，优先选择明确锁定身份的记录。", "en": "For real people, client photos, or sentimental images, prefer records with explicit identity control."},
     {"id": "original-language", "zh": "收录提示词按来源原语言输出；不得翻译、润色或假装是新创作。", "en": "Collected prompts are returned in their source language; do not translate, polish, or present them as newly authored."},

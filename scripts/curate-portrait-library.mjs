@@ -43,11 +43,54 @@ function category(text) {
   if (rules.restoration.test(text)) return 'restoration_and_preservation';
   if (rules.memory.test(text)) return 'memory_family_and_relationship';
   if (rules.professional.test(text)) return 'professional_headshot_and_brand';
-  if (rules.natural.test(text) && !rules.style.test(text)) return 'natural_retouch_and_beauty';
-  if (rules.lifestyle.test(text) && !rules.style.test(text)) return 'lifestyle_and_travel_portrait';
   if (rules.style.test(text)) return 'identity_locked_style_transfer';
+  if (rules.natural.test(text)) return 'natural_retouch_and_beauty';
+  if (rules.lifestyle.test(text)) return 'lifestyle_and_travel_portrait';
   if (rules.editorial.test(text)) return 'editorial_fashion_portrait';
   return 'creative_portrait_scene';
+}
+function subCategory(text, primary) {
+  const framing = portraitFraming(text);
+  if (primary === 'restoration_and_preservation') {
+    if (/\b(?:old|historic|vintage|archival)\b|老照片|泛黄|划痕|褪色/i.test(text)) return 'historic_and_damaged_photo';
+    if (/\b(?:family|memorial|anniversary|wedding)\b|家庭|亲人|纪念|婚礼/i.test(text)) return 'memory_photo_preservation';
+    return 'clarity_color_and_quality_recovery';
+  }
+  if (primary === 'natural_retouch_and_beauty') {
+    if (/\b(?:family|couple|group|wedding)\b|家庭|合照|情侣|婚礼/i.test(text)) return 'group_and_relationship_retouch';
+    if (framing === 'half_body' || framing === 'full_body') return 'half_and_full_body_polish';
+    return 'selfie_face_and_closeup_polish';
+  }
+  if (primary === 'professional_headshot_and_brand') {
+    if (/\b(?:passport|id photo|visa|document)\b|证件|护照|签证/i.test(text)) return 'document_and_id_photo';
+    if (framing === 'half_body' || framing === 'full_body') return 'personal_branding_half_and_full_portrait';
+    return 'business_headshot_and_profile';
+  }
+  if (primary === 'lifestyle_and_travel_portrait') {
+    if (/\b(?:travel|beach|hotel|vacation|landmark)\b|旅行|海边|酒店|景点/i.test(text)) return 'travel_and_outdoor_portrait';
+    if (/\b(?:wedding|date|couple|family|party)\b|婚礼|约会|情侣|家庭|聚会/i.test(text)) return 'event_and_relationship_portrait';
+    return 'daily_and_social_portrait';
+  }
+  if (primary === 'editorial_fashion_portrait') {
+    if (framing === 'half_body' || framing === 'full_body') return 'fashion_half_and_full_body_portrait';
+    if (/\b(?:campaign|magazine|runway|vogue)\b|杂志|秀场/i.test(text)) return 'campaign_and_magazine_portrait';
+    return 'beauty_and_studio_closeup';
+  }
+  if (primary === 'identity_locked_style_transfer') {
+    if (/\b(?:anime|manga|illustration|cartoon|comic|watercolor|oil painting|sketch|pixar)\b|插画|动漫|漫画|水彩|油画|素描|卡通/i.test(text)) return 'illustration_and_anime_transform';
+    if (/\b(?:cinematic|fantasy|surreal)\b|电影感|超现实/i.test(text)) return 'cinematic_and_fantasy_transform';
+    return 'identity_locked_style_upgrade';
+  }
+  if (/\b(?:poster|collage|double exposure|composite)\b|海报|拼贴|双重曝光/i.test(text)) return 'creative_composite_and_poster';
+  if (/\b(?:cinematic|fantasy|surreal)\b|电影感|超现实/i.test(text)) return 'cinematic_and_fantasy_scene';
+  return 'creative_portrait_scene';
+}
+function portraitFraming(text) {
+  if (/\b(?:group|family|couple|people)\b|合照|家庭|情侣|多人/i.test(text)) return 'group';
+  if (/\b(?:full[ -]body|full length|head[ -]to[ -]toe)\b|全身|全身像/i.test(text)) return 'full_body';
+  if (/\b(?:half[ -]body|three[ -]quarter|three quarter)\b|半身|三分之二身/i.test(text)) return 'half_body';
+  if (/\b(?:headshot|selfie|close[ -]up|closeup|face only|head and shoulders)\b|头像|自拍|特写|近景/i.test(text)) return 'headshot_closeup';
+  return 'unspecified';
 }
 function tags(text, primary) {
   const tags = [primary];
@@ -87,8 +130,8 @@ const duplicateClusters = [...clusters.values()].filter((cluster) => cluster.len
   return {canonical_id: canonical.id, duplicate_ids: members.filter((id) => id !== canonical.id), all_ids: members, threshold: {trigram_dice: 0.94, length_ratio: 0.85}, strongest_similarity: Math.max(...links.map((link) => link.score))};
 });
 const duplicates = new Set(duplicateClusters.flatMap((cluster) => cluster.duplicate_ids));
-const curated = prepared.filter((item) => !duplicates.has(item.record.id)).map(({record, primary}) => ({...record, curation: {version: 'portrait-curation-v2', primary_category: primary, tags: tags(record.prompt_text, primary), duplicate_status: 'canonical'}}));
+const curated = prepared.filter((item) => !duplicates.has(item.record.id)).map(({record, primary}) => ({...record, curation: {version: 'portrait-curation-v3', primary_category: primary, secondary_category: subCategory(record.prompt_text, primary), framing: portraitFraming(record.prompt_text), tags: tags(record.prompt_text, primary), duplicate_status: 'canonical'}}));
 const categories = Object.fromEntries(Object.entries(Object.groupBy(curated, (record) => record.curation.primary_category)).map(([name, records]) => [name, records.length]));
 writeFileSync(activeFile, `${curated.map((record) => JSON.stringify(record)).join('\n')}\n`);
-writeFileSync(auditFile, `${JSON.stringify({version: 'portrait-curation-v2', source_records: raw.length, included_records: eligible.length, published_records: curated.length, excluded, duplicate_clusters: duplicateClusters, category_counts: categories})}\n`);
+writeFileSync(auditFile, `${JSON.stringify({version: 'portrait-curation-v3', source_records: raw.length, included_records: eligible.length, published_records: curated.length, excluded, duplicate_clusters: duplicateClusters, category_counts: categories, secondary_category_counts: Object.fromEntries(Object.entries(Object.groupBy(curated, (record) => record.curation.secondary_category)).map(([name, records]) => [name, records.length]))})}\n`);
 console.log(JSON.stringify({source: raw.length, excluded: excluded.length, duplicate_clusters: duplicateClusters.length, removed_duplicates: duplicates.size, published: curated.length, categories}, null, 2));
