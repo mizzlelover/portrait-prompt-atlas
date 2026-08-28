@@ -6,22 +6,22 @@ Generated from `data/prompts.jsonl` and `data/portrait-library.json`. This refer
 
 ### 修复与影像保全 / Restoration & preservation
 - Value: `restoration_and_preservation`
-- Records: 72
+- Records: 69
 - Keywords: restore, old photo, scratch, repair, 老照片, 修复, 褪色, 划痕
 
 ### 自然精修与美化 / Natural retouch & beauty
 - Value: `natural_retouch_and_beauty`
-- Records: 130
+- Records: 124
 - Keywords: retouch, skin texture, makeup, 自然美化, 肤质, 妆容, 毛孔
 
 ### 职业头像与形象 / Professional headshot & brand
 - Value: `professional_headshot_and_brand`
-- Records: 22
+- Records: 18
 - Keywords: headshot, corporate, business, 职业, 商务, 证件, 企业形象
 
 ### 生活方式与旅行人像 / Lifestyle & travel portrait
 - Value: `lifestyle_and_travel_portrait`
-- Records: 34
+- Records: 33
 - Keywords: travel, street, beach, cafe, 旅行, 街拍, 海边, 咖啡
 
 ### 时尚与编辑肖像 / Editorial & fashion portrait
@@ -31,17 +31,17 @@ Generated from `data/prompts.jsonl` and `data/portrait-library.json`. This refer
 
 ### 身份锁定风格转换 / Identity-locked style transfer
 - Value: `identity_locked_style_transfer`
-- Records: 196
+- Records: 189
 - Keywords: illustration, anime, cartoon, 插画, 动漫, 漫画, 风格化
 
 ### 纪念、家庭与关系影像 / Memory, family & relationship
 - Value: `memory_family_and_relationship`
-- Records: 110
+- Records: 103
 - Keywords: family, couple, wedding, 家庭, 亲人, 情侣, 婚礼, 纪念
 
 ### 创意肖像与场景表达 / Creative portrait & scene
 - Value: `creative_portrait_scene`
-- Records: 69
+- Records: 68
 - Keywords: cinematic, surreal, creative, 电影感, 超现实, 创意
 
 ## Selection rules

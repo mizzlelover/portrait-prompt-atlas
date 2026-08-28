@@ -11,6 +11,7 @@ const raw = readFileSync(rawFile, 'utf8').trim().split('\n').map((line) => JSON.
 
 const inputSignal = /(uploaded|upload|attached\s+(image|photo|portrait|face|model)|pictured\s+in\s+the\s+attached|reference\s*(image|photo|portrait|face)|my\s+(face|photo|portrait|image)|same\s+(person|face)|preserve[^.\n]{0,80}(identity|face|facial)|identity[^.\n]{0,60}(preserv|reference|lock)|original\s+(photo|image)|input\s+(photo|image)|基于.*(照片|人像|脸)|上传.*(照片|人像|脸)|参考.*(照片|人像|脸)|保持.*(身份|人像|脸|五官)|保留.*(身份|人像|脸|五官|相貌))/i;
 const humanSignal = /(portrait|face|facial|selfie|headshot|person|people|woman|women|man|men|girl|boy|human|family|couple|child|children|baby|identity|人物|人像|肖像|脸|五官|本人|自拍|家庭|合照|情侣|儿童|亲人)/i;
+const notPortraitOutput = /(avoid\s+(?:any\s+)?(?:people|persons?|faces?|humans?)|no\s+(?:people|persons?|humans?|faces?)(?:\s|,|$)|\b(?:infographic|wordmark)\b)/i;
 const rules = {
   restoration: /(restore|restoration|repair|scratch|crease|faded|colori[sz]e|denoise|deblur|low.resolution|damaged|old.photo|修复|老照片|划痕|褪色|泛黄|去噪|模糊|低清)/i,
   memory: /(family|couple|wedding|parent|grand|child|baby|memorial|anniversary|pet|家庭|亲人|父母|爷爷|奶奶|情侣|婚礼|孩子|纪念|宠物)/i,
@@ -38,7 +39,7 @@ function similarity(left, right) {
   return {score: (2 * common) / (left.grams.size + right.grams.size), length_ratio: shortRatio};
 }
 function category(text) {
-  if (!inputSignal.test(text) || !humanSignal.test(text)) return null;
+  if (!inputSignal.test(text) || !humanSignal.test(text) || notPortraitOutput.test(text)) return null;
   if (rules.restoration.test(text)) return 'restoration_and_preservation';
   if (rules.memory.test(text)) return 'memory_family_and_relationship';
   if (rules.professional.test(text)) return 'professional_headshot_and_brand';
