@@ -3,8 +3,8 @@
   "name": "Portrait Prompt Atlas",
   "repository": "https://github.com/mizzlelover/portrait-prompt-atlas",
   "purpose": {
-    "zh": "面向真人照片修复、自然美化与身份保持的人像提示词图鉴。",
-    "en": "A provenance-first prompt atlas for real-person portrait restoration, natural retouching, and identity-preserved editing."
+    "zh": "专注人像处理的 GPT Image 2 提示词专题站，按处理方向与具体场景整理，帮助用户快速找到合适的案例。",
+    "en": "A focused GPT Image 2 portrait-editing prompt atlas, organized by outcome and scenario so users can find the right case faster."
   },
   "categories": [
     {"value": "restoration_and_preservation", "title": {"zh": "修复与影像保全", "en": "Restoration & preservation"}, "keywords": ["restore", "old photo", "scratch", "repair", "老照片", "修复", "褪色", "划痕"]},

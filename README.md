@@ -1,6 +1,6 @@
 # Portrait Prompt Atlas
 
-> GPT Image 2 人像处理提示词图鉴：来源优先、保留原文、服务真实的人像修复与自然美化。
+> GPT Image 2 人像处理提示词图鉴：集中收录、按场景整理，让需要的人快速找到合适的提示词。
 
 [中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait.mizzlelover.xyz) · [Agent Skill](docs/agent-skill.md) · [语料清理与分类](docs/corpus-curation.md) · [对标说明](docs/benchmark.md) · [版权与署名规则](docs/copyright-and-attribution.md)
 
@@ -93,9 +93,9 @@ GitHub Actions 会检查生成文件、提示词原文一致性、X 来源链接
 
 ## English
 
-Portrait Prompt Atlas is a provenance-first research atlas for GPT Image 2 portrait editing, restoration, retouching, and identity-preserved transformations. It retains prompts in their source language and links each record back to its X source, with a clear distinction between publisher and verified prompt author.
+Portrait Prompt Atlas is a focused, searchable atlas for GPT Image 2 portrait editing, restoration, retouching, and identity-preserved transformations. It organizes original prompts by outcome and scenario so people looking for portrait-editing workflows can find the right case quickly. Prompts remain in their source language and link back to the X source, with a clear distinction between publisher and verified prompt author.
 
-Browse the [live catalog](https://portrait-prompt-atlas.vercel.app) or install the included `gpt-image-2-portrait-library` skill for Claude Code and Codex:
+Browse the [live catalog](https://portrait.mizzlelover.xyz) or install the included `gpt-image-2-portrait-library` skill for Claude Code and Codex:
 
 ```bash
 npx skills add mizzlelover/portrait-prompt-atlas --skill gpt-image-2-portrait-library --agent claude-code codex --global --yes --copy
