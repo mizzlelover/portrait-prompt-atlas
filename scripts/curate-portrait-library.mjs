@@ -13,13 +13,13 @@ const inputSignal = /(uploaded|upload|attached\s+(image|photo|portrait|face|mode
 const humanSignal = /(portrait|face|facial|selfie|headshot|person|people|woman|women|man|men|girl|boy|human|family|couple|child|children|baby|identity|人物|人像|肖像|脸|五官|本人|自拍|家庭|合照|情侣|儿童|亲人)/i;
 const notPortraitOutput = /(avoid\s+(?:any\s+)?(?:people|persons?|faces?|humans?)|no\s+(?:people|persons?|humans?|faces?)(?:\s|,|$)|\b(?:infographic|wordmark)\b)/i;
 const rules = {
-  restoration: /(restore|restoration|repair|scratch|crease|faded|colori[sz]e|denoise|deblur|low.resolution|damaged|old.photo|修复|老照片|划痕|褪色|泛黄|去噪|模糊|低清)/i,
-  memory: /(family|couple|wedding|parent|grand|child|baby|memorial|anniversary|pet|家庭|亲人|父母|爷爷|奶奶|情侣|婚礼|孩子|纪念|宠物)/i,
-  professional: /(headshot|corporate|business|linkedin|professional portrait|id photo|passport|职业|商务|证件|企业形象)/i,
-  natural: /(retouch|beauty|makeup|skin care|skin texture|pores|complexion|美化|美颜|妆容|肤质|毛孔|皮肤)/i,
-  lifestyle: /(travel|beach|street|cafe|hotel|vacation|city|lifestyle|旅行|海边|街拍|咖啡|酒店|生活方式)/i,
-  editorial: /(fashion|editorial|vogue|magazine|runway|couture|时尚|杂志|高级感|秀场)/i,
-  style: /(anime|manga|illustration|cartoon|comic|watercolor|oil painting|sketch|3d|pixar|插画|动漫|漫画|水彩|油画|素描|卡通)/i
+  restoration: /\b(?:restore|restoration|repair|scratch|crease|faded|colori[sz]e|denoise|deblur|low[ -]resolution|damaged|old[ -]photo)\b|修复|老照片|划痕|褪色|泛黄|去噪|模糊|低清/i,
+  memory: /\b(?:family|couple|wedding|parent|grandparent|child|baby|memorial|anniversary|pet)\b|家庭|亲人|父母|爷爷|奶奶|情侣|婚礼|孩子|纪念|宠物/i,
+  professional: /\b(?:headshot|corporate|business|linkedin|professional portrait|id photo|passport)\b|职业|商务|证件|企业形象/i,
+  natural: /\b(?:retouch|beauty|makeup|skin care|skin texture|pores|complexion)\b|美化|美颜|妆容|肤质|毛孔|皮肤/i,
+  lifestyle: /\b(?:travel|beach|street|cafe|hotel|vacation|city|lifestyle)\b|旅行|海边|街拍|咖啡|酒店|生活方式/i,
+  editorial: /\b(?:fashion|editorial|vogue|magazine|runway|couture)\b|时尚|杂志|高级感|秀场/i,
+  style: /\b(?:anime|manga|illustration|cartoon|comic|watercolor|oil painting|sketch|3d|pixar)\b|插画|动漫|漫画|水彩|油画|素描|卡通/i
 };
 
 function normalized(text) {
