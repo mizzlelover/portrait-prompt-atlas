@@ -2,7 +2,7 @@
 
 > GPT Image 2 人像处理提示词图鉴：集中收录、按场景整理，让需要的人快速找到合适的提示词。
 
-[中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait.mizzlelover.xyz) · [X：@dboy_yi2025](https://x.com/dboy_yi2025) · [Agent Skill](docs/agent-skill.md) · [语料清理与分类](docs/corpus-curation.md) · [对标说明](docs/benchmark.md) · [版权与署名规则](docs/copyright-and-attribution.md)
+[中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait.mizzlelover.xyz) · [X：@dboy_yi2025](https://x.com/dboy_yi2025) · [精选效果图](docs/showcase.md) · [Agent Skill](docs/agent-skill.md) · [语料清理与分类](docs/corpus-curation.md) · [对标说明](docs/benchmark.md) · [版权与署名规则](docs/copyright-and-attribution.md)
 
 <p align="center">
   <img src="https://img.shields.io/badge/GPT%20Image%202-Portrait%20Editing-86bca7?style=flat-square" alt="GPT Image 2 Portrait Editing">
@@ -10,6 +10,21 @@
   <img src="https://img.shields.io/badge/provenance-source--linked-f3ad79?style=flat-square" alt="source linked">
   <img src="https://img.shields.io/badge/license-MIT-536b87?style=flat-square" alt="MIT">
 </p>
+
+## 仓库内效果预览
+
+提示词不只以 JSON 或长文本出现。下面直接展示四条精选记录的结果图；点击图片可进入对应详情页，查看原文摘要、分类、身份保持状态和 X 来源。完整的八条精选案例见[效果图画廊](docs/showcase.md)。
+
+<table>
+<tr>
+<td width="25%"><a href="docs/cases/GI2_01583.md"><img src="assets/images/GI2_01583.jpg" alt="老照片与破损修复" width="240"></a><br><strong>老照片与破损修复</strong><br><sub>GI2_01583 · @iamrealsnow</sub></td>
+<td width="25%"><a href="docs/cases/GI2_04109.md"><img src="assets/images/GI2_04109.jpg" alt="自拍、脸部与近景精修" width="240"></a><br><strong>自拍、脸部与近景精修</strong><br><sub>GI2_04109 · @iamahmedfaraz66</sub></td>
+<td width="25%"><a href="docs/cases/GI2_21341.md"><img src="assets/images/GI2_21341.jpg" alt="插画、素描与动漫转换" width="240"></a><br><strong>插画、素描与动漫转换</strong><br><sub>GI2_21341 · @de_mon010</sub></td>
+<td width="25%"><a href="docs/cases/GI2_21354.md"><img src="assets/images/GI2_21354.jpg" alt="棚拍美妆与近景肖像" width="240"></a><br><strong>棚拍美妆与近景肖像</strong><br><sub>GI2_21354 · @AiwithLariab</sub></td>
+</tr>
+</table>
+
+> 图片来自仓库内 `assets/images/`，每张图都与一条原始提示词记录配对；来源发布者与作者核验状态不会被省略。
 
 ## 中文
 
