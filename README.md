@@ -2,7 +2,7 @@
 
 > GPT Image 2 人像处理提示词图鉴：来源优先、保留原文、服务真实的人像修复与自然美化。
 
-[中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait-prompt-atlas.vercel.app) · [版权与署名规则](docs/copyright-and-attribution.md)
+[中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait-prompt-atlas.vercel.app) · [Agent Skill](docs/agent-skill.md) · [对标说明](docs/benchmark.md) · [版权与署名规则](docs/copyright-and-attribution.md)
 
 <p align="center">
   <img src="https://img.shields.io/badge/GPT%20Image%202-Portrait%20Editing-86bca7?style=flat-square" alt="GPT Image 2 Portrait Editing">
@@ -40,7 +40,7 @@
 
 ### 让 Claude Code 与 Codex 使用图鉴
 
-仓库内置 `gpt-image-2-portrait-library` Skill。它会从同一份目录中为具体人像需求挑选提示词，并在输出中保留原始语言与来源边界。
+仓库内置 `gpt-image-2-portrait-library` Skill。它不是单纯的安装说明：包内带有 728 条原语言记录、来源与身份保持字段、命令行检索、可复现的生成器和完整性校验。网站目录与 Agent Skill 由同一份研究主库生成，因此不会出现网站和 Agent 使用不同提示词版本的情况。
 
 ```bash
 npx skills add mizzlelover/portrait-prompt-atlas --skill gpt-image-2-portrait-library --agent claude-code codex --global --yes --copy
@@ -58,6 +58,17 @@ Claude Code 也可使用插件市场：
 /plugin marketplace add mizzlelover/portrait-prompt-atlas
 /plugin install gpt-image-2-portrait-library@portrait-prompt-atlas
 ```
+
+Skill 支持三种工作模式：从收录库中找原始提示词、在原文之外明确给出修改补丁、或在无合适来源时标记为全新创作。无论何种模式，均不翻译已有提示词，也不把未核验发布者写成原创作者。详见 [Agent Skill 使用说明](docs/agent-skill.md)。
+
+维护者更新研究主库后运行：
+
+```bash
+npm run generate:portrait-skill
+npm test
+```
+
+GitHub Actions 会检查生成文件、提示词原文一致性、X 来源链接及 Skill 打包完整性。
 
 ### 署名与使用边界
 

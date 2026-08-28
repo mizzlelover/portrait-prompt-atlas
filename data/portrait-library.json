@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "name": "Portrait Prompt Atlas",
+  "repository": "https://github.com/mizzlelover/portrait-prompt-atlas",
+  "purpose": {
+    "zh": "面向真人照片修复、自然美化与身份保持的人像提示词图鉴。",
+    "en": "A provenance-first prompt atlas for real-person portrait restoration, natural retouching, and identity-preserved editing."
+  },
+  "categories": [
+    {"value": "beauty_and_editorial", "title": {"zh": "自然美化与编辑肖像", "en": "Beauty & editorial"}, "keywords": ["beauty", "editorial", "skin texture", "自拍", "写真", "妆容", "质感"]},
+    {"value": "portrait_scene_upgrade", "title": {"zh": "人像场景升级", "en": "Portrait scene upgrade"}, "keywords": ["travel", "lifestyle", "cinematic", "旅行", "场景", "氛围", "电影感"]},
+    {"value": "identity_preserved_stylization", "title": {"zh": "身份保持风格化", "en": "Identity-preserved stylization"}, "keywords": ["illustration", "anime", "collage", "风格化", "插画", "动漫", "拼贴"]},
+    {"value": "memory_and_relationship", "title": {"zh": "纪念与关系影像", "en": "Memory & relationship"}, "keywords": ["family", "couple", "child", "pet", "家庭", "纪念", "合照", "亲人"]},
+    {"value": "restoration", "title": {"zh": "照片修复", "en": "Restoration"}, "keywords": ["restore", "old photo", "scratch", "repair", "老照片", "修复", "褪色", "划痕"]},
+    {"value": "professional_portrait", "title": {"zh": "职业肖像", "en": "Professional portrait"}, "keywords": ["headshot", "corporate", "studio", "职业", "证件", "商务", "头像"]}
+  ],
+  "selection_rules": [
+    {"id": "identity-first", "zh": "涉及真实人物、客户照片或纪念照片时，优先选择明确锁定身份的记录。", "en": "For real people, client photos, or sentimental images, prefer records with explicit identity control."},
+    {"id": "original-language", "zh": "收录提示词按来源原语言输出；不得翻译、润色或假装是新创作。", "en": "Collected prompts are returned in their source language; do not translate, polish, or present them as newly authored."},
+    {"id": "provenance-first", "zh": "发布者与原创作者必须分开表达；未核验时不得升级作者主张。", "en": "Keep publisher and original creator distinct; never strengthen an unverified author claim."},
+    {"id": "realism", "zh": "自然美化优先保留年龄、肤质、面部特征与合理不对称，避免塑料感。", "en": "Natural retouching should preserve age, texture, defining features, and plausible asymmetry."}
+  ]
+}

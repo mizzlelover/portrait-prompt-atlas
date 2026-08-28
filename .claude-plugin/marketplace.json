@@ -1,11 +1,17 @@
 {
   "name": "portrait-prompt-atlas",
   "owner": {"name": "mizzlelover"},
+  "metadata": {
+    "description": "Provenance-first GPT Image 2 portrait restoration and retouching library.",
+    "version": "1.0.0"
+  },
   "plugins": [
     {
       "name": "gpt-image-2-portrait-library",
-      "source": "./agents/skills/gpt-image-2-portrait-library",
-      "description": "A provenance-first GPT Image 2 portrait editing prompt library."
+      "source": "./",
+      "description": "Choose, inspect, attribute, and adapt GPT Image 2 portrait prompts.",
+      "strict": false,
+      "skills": ["./agents/skills/gpt-image-2-portrait-library"]
     }
   ]
 }

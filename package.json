@@ -1,0 +1,13 @@
+{
+  "name": "portrait-prompt-atlas",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate:portrait-skill": "node scripts/generate-portrait-skill.mjs",
+    "verify": "node scripts/verify-portrait-library.mjs",
+    "test": "npm run verify",
+    "install:skill": "node scripts/install-portrait-skill.mjs all",
+    "pack:skill": "npm pack ./agents/skills/gpt-image-2-portrait-library --dry-run"
+  }
+}

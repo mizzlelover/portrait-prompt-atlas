@@ -1,0 +1,13 @@
+{
+  "name": "gpt-image-2-portrait-library",
+  "version": "1.0.0",
+  "description": "Provenance-first GPT Image 2 portrait restoration and retouching library for agents.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {"type": "git", "url": "git+https://github.com/mizzlelover/portrait-prompt-atlas.git", "directory": "agents/skills/gpt-image-2-portrait-library"},
+  "homepage": "https://github.com/mizzlelover/portrait-prompt-atlas",
+  "keywords": ["agent-skill", "claude-code", "codex", "gpt-image-2", "portrait", "photo-restoration", "retouching"],
+  "bin": {"gpt-image-2-portrait-library": "bin/portrait-prompt-atlas.mjs"},
+  "files": ["SKILL.md", "bin", "references"],
+  "publishConfig": {"access": "public"}
+}
