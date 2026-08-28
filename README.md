@@ -2,7 +2,7 @@
 
 > GPT Image 2 人像处理提示词图鉴：集中收录、按场景整理，让需要的人快速找到合适的提示词。
 
-[中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait.mizzlelover.xyz) · [Agent Skill](docs/agent-skill.md) · [语料清理与分类](docs/corpus-curation.md) · [对标说明](docs/benchmark.md) · [版权与署名规则](docs/copyright-and-attribution.md)
+[中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait.mizzlelover.xyz) · [X：@dboy_yi2025](https://x.com/dboy_yi2025) · [Agent Skill](docs/agent-skill.md) · [语料清理与分类](docs/corpus-curation.md) · [对标说明](docs/benchmark.md) · [版权与署名规则](docs/copyright-and-attribution.md)
 
 <p align="center">
   <img src="https://img.shields.io/badge/GPT%20Image%202-Portrait%20Editing-86bca7?style=flat-square" alt="GPT Image 2 Portrait Editing">
