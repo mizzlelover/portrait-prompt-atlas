@@ -58,7 +58,7 @@ function detail(id) {
   const record = state.items.find((item) => item.id === id); const dialog = $('#detail');
   const person = record.creator ? `${t('originalCreator')}: @${record.creator}` : `${t('sourcePublisher')}: @${record.publisher || 'unknown'}`;
   $('#detailContent').innerHTML = `<div class="detail-body"><img src="${img(record)}" alt="${esc(subcat(record.sub_category))}"><h2>${esc(subcat(record.sub_category))}</h2><div class="detail-tags"><span>${t('task')}: ${esc(cat(record.category))}</span><span>${t('scenario')}: ${esc(subcat(record.sub_category))}</span><span>${t('identity')}: ${esc(record.identity)}</span></div><p class="detail-source">${esc(person)}<br>${t('provenance')}: ${esc(record.authorship)} · <a href="${record.source}" target="_blank" rel="noreferrer">${t('openSource')}</a></p><div class="prompt-label"><span>${t('prompt')}</span><button type="button" id="copyPrompt">${t('copyPrompt')}</button></div><pre class="prompt">${esc(record.prompt)}</pre></div>`;
-  dialog.showModal(); $('#copyPrompt').onclick = async () => { await navigator.clipboard.writeText(record.prompt); $('#copyPrompt').textContent = t('copied'); };
+  dialog.showModal(); document.body.classList.add('modal-open'); $('#copyPrompt').onclick = async () => { await navigator.clipboard.writeText(record.prompt); $('#copyPrompt').textContent = t('copied'); };
 }
 function reset() { state.category = 'all'; state.secondary = 'all'; state.identity = 'all'; state.query = ''; state.visible = 28; render(); }
 function language() {
@@ -75,6 +75,7 @@ $('#secondary').onchange = (event) => { state.secondary = event.target.value; st
 $('#identity').onchange = (event) => { state.identity = event.target.value; state.visible = 28; render(); };
 $('#sort').onchange = (event) => { state.sort = event.target.value; render(); };
 $('.close').onclick = () => $('#detail').close(); $('#resetFilters').onclick = reset;
+$('#detail').addEventListener('close', () => document.body.classList.remove('modal-open'));
 $('#copyInstall').onclick = async (event) => { await navigator.clipboard.writeText('npx skills add mizzlelover/portrait-prompt-atlas --skill gpt-image-2-portrait-library --agent claude-code codex --global --yes --copy'); event.target.textContent = t('copied'); setTimeout(() => { event.target.textContent = t('copy'); }, 1400); };
 const initial = new URLSearchParams(location.search);
 state.category = initial.get('category') || 'all'; state.secondary = initial.get('secondary') || 'all'; state.identity = initial.get('identity') || 'all'; state.query = initial.get('q') || '';
