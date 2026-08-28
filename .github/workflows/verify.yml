@@ -14,6 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - run: npm run curate:portrait-library
       - run: npm run generate:portrait-skill
       - run: git diff --exit-code
       - run: npm test

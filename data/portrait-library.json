@@ -7,12 +7,14 @@
     "en": "A provenance-first prompt atlas for real-person portrait restoration, natural retouching, and identity-preserved editing."
   },
   "categories": [
-    {"value": "beauty_and_editorial", "title": {"zh": "自然美化与编辑肖像", "en": "Beauty & editorial"}, "keywords": ["beauty", "editorial", "skin texture", "自拍", "写真", "妆容", "质感"]},
-    {"value": "portrait_scene_upgrade", "title": {"zh": "人像场景升级", "en": "Portrait scene upgrade"}, "keywords": ["travel", "lifestyle", "cinematic", "旅行", "场景", "氛围", "电影感"]},
-    {"value": "identity_preserved_stylization", "title": {"zh": "身份保持风格化", "en": "Identity-preserved stylization"}, "keywords": ["illustration", "anime", "collage", "风格化", "插画", "动漫", "拼贴"]},
-    {"value": "memory_and_relationship", "title": {"zh": "纪念与关系影像", "en": "Memory & relationship"}, "keywords": ["family", "couple", "child", "pet", "家庭", "纪念", "合照", "亲人"]},
-    {"value": "restoration", "title": {"zh": "照片修复", "en": "Restoration"}, "keywords": ["restore", "old photo", "scratch", "repair", "老照片", "修复", "褪色", "划痕"]},
-    {"value": "professional_portrait", "title": {"zh": "职业肖像", "en": "Professional portrait"}, "keywords": ["headshot", "corporate", "studio", "职业", "证件", "商务", "头像"]}
+    {"value": "restoration_and_preservation", "title": {"zh": "修复与影像保全", "en": "Restoration & preservation"}, "keywords": ["restore", "old photo", "scratch", "repair", "老照片", "修复", "褪色", "划痕"]},
+    {"value": "natural_retouch_and_beauty", "title": {"zh": "自然精修与美化", "en": "Natural retouch & beauty"}, "keywords": ["retouch", "skin texture", "makeup", "自然美化", "肤质", "妆容", "毛孔"]},
+    {"value": "professional_headshot_and_brand", "title": {"zh": "职业头像与形象", "en": "Professional headshot & brand"}, "keywords": ["headshot", "corporate", "business", "职业", "商务", "证件", "企业形象"]},
+    {"value": "lifestyle_and_travel_portrait", "title": {"zh": "生活方式与旅行人像", "en": "Lifestyle & travel portrait"}, "keywords": ["travel", "street", "beach", "cafe", "旅行", "街拍", "海边", "咖啡"]},
+    {"value": "editorial_fashion_portrait", "title": {"zh": "时尚与编辑肖像", "en": "Editorial & fashion portrait"}, "keywords": ["fashion", "editorial", "vogue", "magazine", "时尚", "杂志", "秀场"]},
+    {"value": "identity_locked_style_transfer", "title": {"zh": "身份锁定风格转换", "en": "Identity-locked style transfer"}, "keywords": ["illustration", "anime", "cartoon", "插画", "动漫", "漫画", "风格化"]},
+    {"value": "memory_family_and_relationship", "title": {"zh": "纪念、家庭与关系影像", "en": "Memory, family & relationship"}, "keywords": ["family", "couple", "wedding", "家庭", "亲人", "情侣", "婚礼", "纪念"]},
+    {"value": "creative_portrait_scene", "title": {"zh": "创意肖像与场景表达", "en": "Creative portrait & scene"}, "keywords": ["cinematic", "surreal", "creative", "电影感", "超现实", "创意"]}
   ],
   "selection_rules": [
     {"id": "identity-first", "zh": "涉及真实人物、客户照片或纪念照片时，优先选择明确锁定身份的记录。", "en": "For real people, client photos, or sentimental images, prefer records with explicit identity control."},

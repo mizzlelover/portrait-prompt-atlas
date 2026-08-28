@@ -4,35 +4,45 @@ Generated from `data/prompts.jsonl` and `data/portrait-library.json`. This refer
 
 ## Categories
 
-### 自然美化与编辑肖像 / Beauty & editorial
-- Value: `beauty_and_editorial`
-- Records: 394
-- Keywords: beauty, editorial, skin texture, 自拍, 写真, 妆容, 质感
-
-### 人像场景升级 / Portrait scene upgrade
-- Value: `portrait_scene_upgrade`
-- Records: 143
-- Keywords: travel, lifestyle, cinematic, 旅行, 场景, 氛围, 电影感
-
-### 身份保持风格化 / Identity-preserved stylization
-- Value: `identity_preserved_stylization`
-- Records: 104
-- Keywords: illustration, anime, collage, 风格化, 插画, 动漫, 拼贴
-
-### 纪念与关系影像 / Memory & relationship
-- Value: `memory_and_relationship`
-- Records: 30
-- Keywords: family, couple, child, pet, 家庭, 纪念, 合照, 亲人
-
-### 照片修复 / Restoration
-- Value: `restoration`
-- Records: 29
+### 修复与影像保全 / Restoration & preservation
+- Value: `restoration_and_preservation`
+- Records: 72
 - Keywords: restore, old photo, scratch, repair, 老照片, 修复, 褪色, 划痕
 
-### 职业肖像 / Professional portrait
-- Value: `professional_portrait`
-- Records: 28
-- Keywords: headshot, corporate, studio, 职业, 证件, 商务, 头像
+### 自然精修与美化 / Natural retouch & beauty
+- Value: `natural_retouch_and_beauty`
+- Records: 130
+- Keywords: retouch, skin texture, makeup, 自然美化, 肤质, 妆容, 毛孔
+
+### 职业头像与形象 / Professional headshot & brand
+- Value: `professional_headshot_and_brand`
+- Records: 22
+- Keywords: headshot, corporate, business, 职业, 商务, 证件, 企业形象
+
+### 生活方式与旅行人像 / Lifestyle & travel portrait
+- Value: `lifestyle_and_travel_portrait`
+- Records: 34
+- Keywords: travel, street, beach, cafe, 旅行, 街拍, 海边, 咖啡
+
+### 时尚与编辑肖像 / Editorial & fashion portrait
+- Value: `editorial_fashion_portrait`
+- Records: 27
+- Keywords: fashion, editorial, vogue, magazine, 时尚, 杂志, 秀场
+
+### 身份锁定风格转换 / Identity-locked style transfer
+- Value: `identity_locked_style_transfer`
+- Records: 196
+- Keywords: illustration, anime, cartoon, 插画, 动漫, 漫画, 风格化
+
+### 纪念、家庭与关系影像 / Memory, family & relationship
+- Value: `memory_family_and_relationship`
+- Records: 110
+- Keywords: family, couple, wedding, 家庭, 亲人, 情侣, 婚礼, 纪念
+
+### 创意肖像与场景表达 / Creative portrait & scene
+- Value: `creative_portrait_scene`
+- Records: 69
+- Keywords: cinematic, surreal, creative, 电影感, 超现实, 创意
 
 ## Selection rules
 
@@ -44,7 +54,7 @@ Generated from `data/prompts.jsonl` and `data/portrait-library.json`. This refer
 ## Command-line lookup
 
 ```bash
-node bin/portrait-prompt-atlas.mjs search --query "老照片" --category restoration
+node bin/portrait-prompt-atlas.mjs search --query "老照片" --category restoration_and_preservation
 node bin/portrait-prompt-atlas.mjs show GI2_00000
 ```
 

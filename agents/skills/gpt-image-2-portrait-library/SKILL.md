@@ -5,7 +5,7 @@ description: Choose, inspect, attribute, and safely adapt original-language GPT 
 
 # GPT Image 2 Portrait Library
 
-Use this Skill to turn a real portrait-editing request into a source-aware recommendation. It is designed for client work, preservation work, and public research: the prompt, source link, publisher, authorship status, evaluation fields, and website catalog are generated from one corpus.
+Use this Skill to turn a real portrait-editing request into a source-aware recommendation. It is designed for client work, preservation work, and public research: the prompt, source link, publisher, authorship status, curation category, and website catalog are generated from one corpus.
 
 ## Source of truth
 
@@ -17,7 +17,7 @@ Use this Skill to turn a real portrait-editing request into a source-aware recom
 
 ### 1. Find a collected prompt
 
-1. Identify the user task: `beauty_and_editorial`, `portrait_scene_upgrade`, `identity_preserved_stylization`, `memory_and_relationship`, `restoration`, or `professional_portrait`.
+1. Identify the user task: `restoration_and_preservation`, `natural_retouch_and_beauty`, `professional_headshot_and_brand`, `lifestyle_and_travel_portrait`, `editorial_fashion_portrait`, `identity_locked_style_transfer`, `memory_family_and_relationship`, or `creative_portrait_scene`.
 2. Prefer `identity_lock: explicit` when the request involves an existing person, a sentimental image, a family photo, or a client portrait.
 3. Filter records by the task family, identity control, and any needed terms. Read the complete candidate prompt before presenting it.
 4. Return one strongest match, or two to three clearly different matches if the request is ambiguous.

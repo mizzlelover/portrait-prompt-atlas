@@ -19,7 +19,8 @@ function toRecord(record) {
     id: record.id,
     prompt: record.prompt_text,
     prompt_sha256: digest(record.prompt_text),
-    category: analysis.task_family,
+    category: record.curation?.primary_category || analysis.task_family,
+    tags: record.curation?.tags || [],
     identity_control: analysis.identity_lock || 'none',
     naturalness_control: analysis.naturalness_control || 'unspecified',
     risk_flags: analysis.risk_flags || [],
@@ -51,7 +52,7 @@ function renderReference(index) {
   }
   lines.push('## Selection rules', '');
   for (const rule of library.selection_rules) lines.push(`- ${rule.zh} / ${rule.en}`);
-  lines.push('', '## Command-line lookup', '', '```bash', 'node bin/portrait-prompt-atlas.mjs search --query "老照片" --category restoration', 'node bin/portrait-prompt-atlas.mjs show GI2_00000', '```', '');
+  lines.push('', '## Command-line lookup', '', '```bash', 'node bin/portrait-prompt-atlas.mjs search --query "老照片" --category restoration_and_preservation', 'node bin/portrait-prompt-atlas.mjs show GI2_00000', '```', '');
   return `${lines.join('\n')}\n`;
 }
 

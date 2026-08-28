@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "curate:portrait-library": "node scripts/curate-portrait-library.mjs",
     "generate:portrait-skill": "node scripts/generate-portrait-skill.mjs",
     "verify": "node scripts/verify-portrait-library.mjs",
     "test": "npm run verify",
