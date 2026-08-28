@@ -1,10 +1,86 @@
 # Portrait Prompt Atlas
 
-> A provenance-first research atlas for GPT Image 2 portrait editing, restoration, retouching, and identity-preserved transformations.
+> GPT Image 2 人像处理提示词图鉴：来源优先、保留原文、服务真实的人像修复与自然美化。
 
-This project is deliberately narrower than a general prompt list. A useful portrait-editing prompt must be judged not just by visual style, but by whether it preserves the person, respects the source creator, and is safe to adapt for a real client.
+[中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait-prompt-atlas.vercel.app) · [版权与署名规则](docs/copyright-and-attribution.md)
 
-## Current research corpus
+<p align="center">
+  <img src="https://img.shields.io/badge/GPT%20Image%202-Portrait%20Editing-86bca7?style=flat-square" alt="GPT Image 2 Portrait Editing">
+  <img src="https://img.shields.io/badge/records-728-5f9ebe?style=flat-square" alt="728 records">
+  <img src="https://img.shields.io/badge/provenance-source--linked-f3ad79?style=flat-square" alt="source linked">
+  <img src="https://img.shields.io/badge/license-MIT-536b87?style=flat-square" alt="MIT">
+</p>
+
+## 中文
+
+这不是一个把提示词堆在一起的仓库，而是一套面向真人照片的可追溯图鉴：帮助你从真实需求出发，找到修复、自然美化、身份保持、职业头像和纪念照片处理的参考方案。
+
+每条提示词都按来源原样保存：中文仍是中文，英文仍是英文；本仓库不把它们翻译成另一种语言，也不把发布账号未经核验地当成原创作者。
+
+### 在线浏览
+
+访问 [Portrait Prompt Atlas 在线图鉴](https://portrait-prompt-atlas.vercel.app)，可按场景和身份保持强度筛选，查看结果图、原始提示词与 X 来源链接，并一键复制。
+
+### 当前收录
+
+- 728 条去重后的 X 来源记录，日期范围为 2026-05-27 至 2026-08-12。
+- 每条记录均有一张对应结果图、X 原帖链接、来源发布者和作者核验状态。
+- 6 个围绕真实人像需求建立的方向：自然美化与编辑肖像、人像场景升级、身份保持风格化、纪念与关系影像、照片修复、职业肖像。
+
+### 分类总览
+
+| 方向 | 记录数 | 典型用途 |
+| --- | ---: | --- |
+| 自然美化与编辑肖像 | 394 | 自然美化、杂志感肖像、时尚修饰 |
+| 人像场景升级 | 143 | 旅行、生活方式、影棚和电影感场景 |
+| 身份保持风格化 | 104 | 插画、动漫、拼贴与艺术指导转换 |
+| 纪念与关系影像 | 30 | 家庭、伴侣、生日、儿童与宠物 |
+| 照片修复 | 29 | 老照片、清晰度、上色和破损修复 |
+| 职业肖像 | 28 | 职业头像、企业形象与影棚输出 |
+
+### 让 Claude Code 与 Codex 使用图鉴
+
+仓库内置 `gpt-image-2-portrait-library` Skill。它会从同一份目录中为具体人像需求挑选提示词，并在输出中保留原始语言与来源边界。
+
+```bash
+npx skills add mizzlelover/portrait-prompt-atlas --skill gpt-image-2-portrait-library --agent claude-code codex --global --yes --copy
+```
+
+安装后可直接提出：
+
+```text
+使用 gpt-image-2-portrait-library，为一张旅行人像找一个自然、保留身份的处理方案。
+```
+
+Claude Code 也可使用插件市场：
+
+```text
+/plugin marketplace add mizzlelover/portrait-prompt-atlas
+/plugin install gpt-image-2-portrait-library@portrait-prompt-atlas
+```
+
+### 署名与使用边界
+
+| 状态 | 页面展示 | 提示词展示 |
+| --- | --- | --- |
+| `original_creator_self_claimed` | 已核验原创作者、原始 X 帖文、证据 | 附署名公开 |
+| `repost_creator_credited` | 原创作者优先、转载者其次、证据 | 附署名公开 |
+| `publisher_unverified` | 来源发布者、原始 X 链接、未核验标识 | 附来源与更正渠道公开 |
+| `repost_creator_unknown` / `source_not_verifiable` | X 链接与来源未知标识 | 作为研究记录公开，不主张作者身份 |
+
+创作者可随时提出更正或移除请求，详见[署名与更正流程](docs/copyright-and-attribution.md#corrections-and-removal)。
+
+## English
+
+Portrait Prompt Atlas is a provenance-first research atlas for GPT Image 2 portrait editing, restoration, retouching, and identity-preserved transformations. It retains prompts in their source language and links each record back to its X source, with a clear distinction between publisher and verified prompt author.
+
+Browse the [live catalog](https://portrait-prompt-atlas.vercel.app) or install the included `gpt-image-2-portrait-library` skill for Claude Code and Codex:
+
+```bash
+npx skills add mizzlelover/portrait-prompt-atlas --skill gpt-image-2-portrait-library --agent claude-code codex --global --yes --copy
+```
+
+## Research corpus
 
 - 728 deduplicated X-source prompt records dated 2026-05-27 to 2026-08-12.
 - One matched result image has been downloaded for every record.

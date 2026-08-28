@@ -1,0 +1,11 @@
+{
+  "name": "portrait-prompt-atlas",
+  "owner": {"name": "mizzlelover"},
+  "plugins": [
+    {
+      "name": "gpt-image-2-portrait-library",
+      "source": "./agents/skills/gpt-image-2-portrait-library",
+      "description": "A provenance-first GPT Image 2 portrait editing prompt library."
+    }
+  ]
+}
