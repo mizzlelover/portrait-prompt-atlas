@@ -1,6 +1,8 @@
 # 对标说明 / Benchmark
 
-本项目参考 `freestylefly/awesome-gpt-image-2` 的开源产品结构，而不复制其提示词、文案、视觉设计或商业功能。
+特别感谢 [苍何（freestylefly）](https://github.com/freestylefly) 创建的 [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2)。其以开源图鉴、线上演示站和 Agent 使用方式组织 GPT Image 2 提示词库，直接启发本项目将已收集的人像处理资料整理为专精库与演示站。
+
+本项目参考其开源产品结构，而不复制其提示词、文案、视觉设计或商业功能；本站的人像记录由本项目独立收集、筛选和维护。
 
 | 能力 | 对标项目做法 | Portrait Prompt Atlas 实现 |
 | --- | --- | --- |

@@ -2,11 +2,11 @@
 
 > GPT Image 2 人像处理提示词图鉴：来源优先、保留原文、服务真实的人像修复与自然美化。
 
-[中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait-prompt-atlas.vercel.app) · [Agent Skill](docs/agent-skill.md) · [语料清理与分类](docs/corpus-curation.md) · [对标说明](docs/benchmark.md) · [版权与署名规则](docs/copyright-and-attribution.md)
+[中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait.mizzlelover.xyz) · [Agent Skill](docs/agent-skill.md) · [语料清理与分类](docs/corpus-curation.md) · [对标说明](docs/benchmark.md) · [版权与署名规则](docs/copyright-and-attribution.md)
 
 <p align="center">
   <img src="https://img.shields.io/badge/GPT%20Image%202-Portrait%20Editing-86bca7?style=flat-square" alt="GPT Image 2 Portrait Editing">
-  <img src="https://img.shields.io/badge/curated%20records-660-5f9ebe?style=flat-square" alt="660 curated records">
+  <img src="https://img.shields.io/badge/curated%20records-631-5f9ebe?style=flat-square" alt="631 curated records">
   <img src="https://img.shields.io/badge/provenance-source--linked-f3ad79?style=flat-square" alt="source linked">
   <img src="https://img.shields.io/badge/license-MIT-536b87?style=flat-square" alt="MIT">
 </p>
@@ -19,14 +19,20 @@
 
 ### 在线浏览
 
-访问 [Portrait Prompt Atlas 在线图鉴](https://portrait-prompt-atlas.vercel.app)，可按场景和身份保持强度筛选，查看结果图、原始提示词与 X 来源链接，并一键复制。
+访问 [Portrait Prompt Atlas 在线图鉴](https://portrait.mizzlelover.xyz)，可按处理方向、具体场景和身份保持强度筛选，查看结果图、原始提示词与 X 来源链接，并一键复制。
 
 ### 当前收录
 
-- 728 条原始 X 来源记录经范围筛选与近重复归并后，公开图鉴保留 660 条，日期范围为 2026-05-27 至 2026-08-12。
+- 728 条原始 X 来源记录经范围筛选与近重复归并后，公开图鉴保留 631 条，日期范围为 2026-05-27 至 2026-08-12。
 - 每条记录均有一张对应结果图、X 原帖链接、来源发布者和作者核验状态。
 - 剔除 13 条不属于“真人参考图人像处理”的案例，并归并 48 个近重复簇中的 55 条重复记录；原始池与归并审计均可复核。
-- 8 个围绕真实人像需求建立的方向，详见[语料清理与分类](docs/corpus-curation.md)。
+- 8 个处理方向与 21 个具体场景，详见[语料清理与分类](docs/corpus-curation.md)。
+
+### 致谢
+
+特别感谢 [苍何](https://github.com/freestylefly) 创建的 [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2)。它以开源图鉴、演示站和 Agent 使用方式呈现 GPT Image 2 提示词库，启发了本项目把已收集的人像处理资料整理为一个更专注于修复、自然精修与身份保持的开源库和演示站。
+
+本项目独立收集、筛选和维护人像方向记录；不复制对方的提示词、文案、视觉设计或商业功能。具体边界见[对标说明](docs/benchmark.md)。
 
 ### 分类总览
 
@@ -152,5 +158,7 @@ This prevents a visually impressive but identity-breaking style transfer from be
 The result images are retained together with their record-level source links so that a visitor can judge the prompt as a visual workflow rather than as isolated prose.
 
 ## Acknowledgements
+
+Special thanks to [Canghe / freestylefly](https://github.com/freestylefly) and [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2). Its open-source presentation of a GPT Image 2 library, live catalog, and agent workflow inspired the structure of this portrait-specialist library and its demo site. This project independently collects and curates its portrait records; it does not copy the reference project's prompts, copywriting, visual design, or commercial features.
 
 The research source pool was discovered through [Goku-OpenLab/gpt-image-2-prompts-datasets](https://huggingface.co/datasets/Goku-OpenLab/gpt-image-2-prompts-datasets), licensed CC BY 4.0. That dataset-level license does not establish who authored each X prompt; this project therefore preserves individual X-source attribution and applies the stricter record-level publication gate above.
