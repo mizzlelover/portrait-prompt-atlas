@@ -1,8 +1,8 @@
 # Agent Skill / Agent 技能
 
-`gpt-image-2-portrait-library` is a complete, installable companion to the website. The package includes a source-aware selection protocol, generated category reference, all 660 curated original-language prompt records, a command-line search utility, and an installer for Codex, Claude Code, and shared agent folders.
+`gpt-image-2-portrait-library` is a complete, installable companion to the website. The package includes a source-aware selection protocol, generated category reference, all 519 curated original-language prompt records, a command-line search utility, and an installer for Codex, Claude Code, and shared agent folders.
 
-`gpt-image-2-portrait-library` 是网站的可安装配套能力：包内包含来源感知的选择规则、生成的分类参考、660 条清理后的原语言提示词记录、命令行检索工具，以及 Codex、Claude Code 和共享 Agent 目录的安装器。
+`gpt-image-2-portrait-library` 是网站的可安装配套能力：包内包含来源感知的选择规则、生成的分类参考、519 条清理后的原语言提示词记录、命令行检索工具，以及 Codex、Claude Code 和共享 Agent 目录的安装器。
 
 ## Install / 安装
 
@@ -28,4 +28,4 @@ gpt-image-2-portrait-library show GI2_00000
 gpt-image-2-portrait-library stats
 ```
 
-Skill 内的 `references/portrait-records.json` 与网站目录由同一生成器输出；`npm test` 会验证 660 条公开提示词与 728 条原始研究池逐字一致。
+Skill 内的 `references/portrait-records.json` 与网站目录由同一生成器输出；`npm test` 会验证 519 条公开提示词与 728 条原始研究池逐字一致。

@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/GPT%20Image%202-Portrait%20Editing-86bca7?style=flat-square" alt="GPT Image 2 Portrait Editing">
-  <img src="https://img.shields.io/badge/curated%20records-631-5f9ebe?style=flat-square" alt="631 curated records">
+  <img src="https://img.shields.io/badge/curated%20records-519-5f9ebe?style=flat-square" alt="519 curated records">
   <img src="https://img.shields.io/badge/provenance-source--linked-f3ad79?style=flat-square" alt="source linked">
   <img src="https://img.shields.io/badge/license-MIT-536b87?style=flat-square" alt="MIT">
 </p>
@@ -23,10 +23,10 @@
 
 ### 当前收录
 
-- 728 条原始 X 来源记录经范围筛选与近重复归并后，公开图鉴保留 631 条，日期范围为 2026-05-27 至 2026-08-12。
+- 728 条原始 X 来源记录经范围筛选与近重复归并后，公开图鉴保留 519 条，日期范围为 2026-05-27 至 2026-08-12。
 - 每条记录均有一张对应结果图、X 原帖链接、来源发布者和作者核验状态。
-- 剔除 13 条不属于“真人参考图人像处理”的案例，并归并 48 个近重复簇中的 55 条重复记录；原始池与归并审计均可复核。
-- 8 个处理方向与 21 个具体场景，详见[语料清理与分类](docs/corpus-curation.md)。
+- 剔除 146 条不属于“真人参考图人像处理”的案例，并归并 56 个重复簇中的 63 条重复记录；原始池、自动判断、视觉巡检与归并审计均可复核。
+- 8 个处理方向与 17 个当前有记录的具体场景，详见[语料清理与分类](docs/corpus-curation.md)。
 
 ### 致谢
 
@@ -38,18 +38,18 @@
 
 | 方向 | 记录数 | 典型用途 |
 | --- | ---: | --- |
-| 修复与影像保全 | 72 | 老照片、清晰度、上色和破损修复 |
-| 自然精修与美化 | 130 | 肤质、妆容、自然美化与轻修饰 |
-| 职业头像与形象 | 22 | 职业头像、企业形象与商务照片 |
-| 生活方式与旅行人像 | 34 | 旅行、街拍、日常与环境肖像 |
-| 时尚与编辑肖像 | 27 | 时尚写真、杂志感与高定表达 |
-| 身份锁定风格转换 | 196 | 插画、动漫、拼贴与艺术化转换 |
-| 纪念、家庭与关系影像 | 110 | 家庭、伴侣、儿童、宠物与纪念照片 |
-| 创意肖像与场景表达 | 69 | 电影感、概念创意与人像场景重构 |
+| 修复与影像保全 | 4 | 老照片、清晰度、上色和破损修复 |
+| 自然精修与美化 | 10 | 肤质、妆容、自然美化与轻修饰 |
+| 职业头像与形象 | 5 | 职业头像、企业形象与商务照片 |
+| 生活方式与旅行人像 | 15 | 旅行、街拍、日常与环境肖像 |
+| 时尚与编辑肖像 | 153 | 时尚写真、杂志感与高定表达 |
+| 身份锁定风格转换 | 173 | 插画、动漫、点云与艺术化转换 |
+| 纪念、家庭与关系影像 | 4 | 家庭、伴侣、儿童与纪念照片 |
+| 创意肖像与场景表达 | 155 | 电影感、人物海报、概念创意与场景重构 |
 
 ### 让 Claude Code 与 Codex 使用图鉴
 
-仓库内置 `gpt-image-2-portrait-library` Skill。它不是单纯的安装说明：包内带有 728 条原语言记录、来源与身份保持字段、命令行检索、可复现的生成器和完整性校验。网站目录与 Agent Skill 由同一份研究主库生成，因此不会出现网站和 Agent 使用不同提示词版本的情况。
+仓库内置 `gpt-image-2-portrait-library` Skill。它不是单纯的安装说明：包内带有 519 条清理后的原语言记录、来源与身份保持字段、命令行检索、可复现的生成器和完整性校验。网站目录与 Agent Skill 由同一份研究主库生成，因此不会出现网站和 Agent 使用不同提示词版本的情况。
 
 ```bash
 npx skills add mizzlelover/portrait-prompt-atlas --skill gpt-image-2-portrait-library --agent claude-code codex --global --yes --copy
@@ -103,7 +103,7 @@ npx skills add mizzlelover/portrait-prompt-atlas --skill gpt-image-2-portrait-li
 
 ## Research corpus
 
-- 728 raw X-source records dated 2026-05-27 to 2026-08-12; 660 curated records are published after scope filtering and near-duplicate clustering.
+- 728 raw X-source records dated 2026-05-27 to 2026-08-12; 519 curated records are published after scope filtering, visual review, and duplicate clustering.
 - One matched result image has been downloaded for every record.
 - Every record has a publisher / authorship status and a rule controlling whether its full prompt may be published.
 - Current rights gate: no prompt is treated as publicly reusable merely because the X publisher is known.
@@ -114,14 +114,14 @@ The public corpus preserves the original X-source link, the source publisher whe
 
 | Category | Records | Typical use |
 | --- | ---: | --- |
-| Restoration & preservation | 72 | Old-photo, clarity, color and repair-oriented workflows |
-| Natural retouch & beauty | 130 | Natural skin, beauty and light retouching |
-| Professional headshot & brand | 22 | Headshots, corporate identity and business output |
-| Lifestyle & travel portrait | 34 | Travel, lifestyle and environmental portraits |
-| Editorial & fashion portrait | 27 | Fashion, magazine and editorial work |
-| Identity-locked style transfer | 196 | Illustration, anime, collage and art-direction transfers |
-| Memory, family & relationship | 110 | Family, couples, children, pets and memorial work |
-| Creative portrait & scene | 69 | Cinematic, concept and scene reconstruction |
+| Restoration & preservation | 4 | Old-photo, clarity, color and repair-oriented workflows |
+| Natural retouch & beauty | 10 | Natural skin, beauty and light retouching |
+| Professional headshot & brand | 5 | Headshots, corporate identity and business output |
+| Lifestyle & travel portrait | 15 | Travel, lifestyle and environmental portraits |
+| Editorial & fashion portrait | 153 | Fashion, magazine and editorial work |
+| Identity-locked style transfer | 173 | Illustration, anime, point-cloud and art-direction transfers |
+| Memory, family & relationship | 4 | Family, couples, children and memorial work |
+| Creative portrait & scene | 155 | Cinematic, portrait-poster, concept and scene reconstruction |
 
 The category, image link, attribution state, risk flags, and rule-based evaluation are all queryable in `data/prompts.jsonl` and `data/evaluations.jsonl`.
 

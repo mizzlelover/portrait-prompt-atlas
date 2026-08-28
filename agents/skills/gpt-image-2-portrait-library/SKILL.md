@@ -1,6 +1,6 @@
 ---
 name: gpt-image-2-portrait-library
-description: Choose, inspect, attribute, and safely adapt original-language GPT Image 2 portrait-editing prompts from a 631-record provenance-first library. Use its two-level task and scenario taxonomy for restoration, natural retouching, professional identity photos, lifestyle portraits, and identity-preserved transformations.
+description: Choose, inspect, attribute, and safely adapt original-language GPT Image 2 portrait-editing prompts from a 519-record provenance-first library. Use its two-level task and scenario taxonomy for restoration, natural retouching, professional identity photos, lifestyle portraits, and identity-preserved transformations.
 ---
 
 # GPT Image 2 Portrait Library
@@ -10,7 +10,7 @@ Use this Skill to turn a real portrait-editing request into a source-aware recom
 ## Source of truth
 
 - Read `references/portrait-library.md` first for the two-level portrait taxonomy and selection rules.
-- Use `references/portrait-records.json` as the installed, complete source of truth. It includes all 631 curated original-language prompts and their hashes, source URLs, publisher/creator fields, identity controls, framing, and risk flags.
+- Use `references/portrait-records.json` as the installed, complete source of truth. It includes all 519 curated original-language prompts and their hashes, source URLs, publisher/creator fields, identity controls, framing, and risk flags.
 - Use `node bin/portrait-prompt-atlas.mjs search --query "..."` to narrow candidates. Use `show <record-id>` to inspect a full record. Do not rely on memory for case IDs or attribution.
 
 ## Modes

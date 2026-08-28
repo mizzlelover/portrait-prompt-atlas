@@ -6,65 +6,62 @@ Generated from `data/prompts.jsonl` and `data/portrait-library.json`. This refer
 
 ### 修复与影像保全 / Restoration & preservation
 - Value: `restoration_and_preservation`
-- Records: 59
+- Records: 4
 - Keywords: restore, old photo, scratch, repair, 老照片, 修复, 褪色, 划痕
-  - clarity_color_and_quality_recovery: 45
-  - historic_and_damaged_photo: 14
+  - clarity_color_and_quality_recovery: 2
+  - historic_and_damaged_photo: 2
 
 ### 自然精修与美化 / Natural retouch & beauty
 - Value: `natural_retouch_and_beauty`
-- Records: 143
+- Records: 10
 - Keywords: retouch, skin texture, makeup, 自然美化, 肤质, 妆容, 毛孔
-  - selfie_face_and_closeup_polish: 120
-  - half_and_full_body_polish: 23
+  - half_and_full_body_polish: 2
+  - selfie_face_and_closeup_polish: 8
 
 ### 职业头像与形象 / Professional headshot & brand
 - Value: `professional_headshot_and_brand`
-- Records: 13
+- Records: 5
 - Keywords: headshot, corporate, business, 职业, 商务, 证件, 企业形象
-  - business_headshot_and_profile: 10
-  - document_and_id_photo: 2
-  - personal_branding_half_and_full_portrait: 1
+  - business_headshot_and_profile: 5
 
 ### 生活方式与旅行人像 / Lifestyle & travel portrait
 - Value: `lifestyle_and_travel_portrait`
-- Records: 29
+- Records: 15
 - Keywords: travel, street, beach, cafe, 旅行, 街拍, 海边, 咖啡
-  - daily_and_social_portrait: 21
-  - travel_and_outdoor_portrait: 7
-  - event_and_relationship_portrait: 1
+  - daily_and_social_portrait: 11
+  - travel_and_outdoor_portrait: 2
+  - event_and_relationship_portrait: 2
 
 ### 时尚与编辑肖像 / Editorial & fashion portrait
 - Value: `editorial_fashion_portrait`
-- Records: 40
+- Records: 153
 - Keywords: fashion, editorial, vogue, magazine, 时尚, 杂志, 秀场
-  - beauty_and_studio_closeup: 12
-  - fashion_half_and_full_body_portrait: 8
-  - campaign_and_magazine_portrait: 20
+  - beauty_and_studio_closeup: 58
+  - campaign_and_magazine_portrait: 62
+  - fashion_half_and_full_body_portrait: 33
 
 ### 身份锁定风格转换 / Identity-locked style transfer
 - Value: `identity_locked_style_transfer`
-- Records: 222
+- Records: 173
 - Keywords: illustration, anime, cartoon, 插画, 动漫, 漫画, 风格化
-  - illustration_and_anime_transform: 202
-  - identity_locked_style_upgrade: 6
-  - cinematic_and_fantasy_transform: 14
+  - illustration_and_anime_transform: 162
+  - digital_and_graphic_transform: 10
+  - cinematic_and_fantasy_transform: 1
 
 ### 纪念、家庭与关系影像 / Memory, family & relationship
 - Value: `memory_family_and_relationship`
-- Records: 45
+- Records: 4
 - Keywords: family, couple, wedding, 家庭, 亲人, 情侣, 婚礼, 纪念
-  - cinematic_and_fantasy_scene: 9
-  - creative_composite_and_poster: 19
-  - creative_portrait_scene: 17
+  - creative_portrait_scene: 2
+  - creative_composite_and_poster: 2
 
 ### 创意肖像与场景表达 / Creative portrait & scene
 - Value: `creative_portrait_scene`
-- Records: 80
+- Records: 155
 - Keywords: cinematic, surreal, creative, 电影感, 超现实, 创意
-  - creative_composite_and_poster: 17
-  - cinematic_and_fantasy_scene: 29
-  - creative_portrait_scene: 34
+  - creative_portrait_scene: 26
+  - cinematic_and_fantasy_scene: 37
+  - creative_composite_and_poster: 92
 
 ## Selection rules
 

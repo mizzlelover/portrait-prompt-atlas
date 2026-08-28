@@ -25,7 +25,7 @@
       "professional_headshot_and_brand": ["business_headshot_and_profile", "document_and_id_photo", "personal_branding_half_and_full_portrait"],
       "lifestyle_and_travel_portrait": ["travel_and_outdoor_portrait", "daily_and_social_portrait", "event_and_relationship_portrait"],
       "editorial_fashion_portrait": ["beauty_and_studio_closeup", "fashion_half_and_full_body_portrait", "campaign_and_magazine_portrait"],
-      "identity_locked_style_transfer": ["illustration_and_anime_transform", "cinematic_and_fantasy_transform", "identity_locked_style_upgrade"],
+      "identity_locked_style_transfer": ["illustration_and_anime_transform", "digital_and_graphic_transform", "cinematic_and_fantasy_transform", "identity_locked_style_upgrade"],
       "creative_portrait_scene": ["creative_composite_and_poster", "cinematic_and_fantasy_scene", "creative_portrait_scene"],
       "memory_family_and_relationship": ["memory_photo_preservation", "event_and_relationship_portrait", "group_and_relationship_retouch"]
     }
