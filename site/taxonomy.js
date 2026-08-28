@@ -24,18 +24,36 @@ const taxonomyLabels = {
 const taxonomyRoot = document.querySelector('#taxonomy');
 const categoryTitle = (category) => labels[category]?.[state.lang === 'zh' ? 0 : 1] || category;
 const secondaryTitle = (category) => taxonomyLabels[category]?.[state.lang === 'zh' ? 0 : 1] || category.replaceAll('_', ' ');
+state.secondary = 'all';
+
+const filterBySecondary = filtered;
+filtered = () => filterBySecondary().filter((record) => state.secondary === 'all' || record.sub_category === state.secondary);
+
 function renderTaxonomy(records) {
   const grouped = Object.groupBy(records, (record) => record.category);
-  taxonomyRoot.innerHTML = `<p>${state.lang === 'zh' ? '两级分类：先按任务，再按具体交付物或人物范围。' : 'Two levels: choose the task first, then the concrete deliverable or portrait scope.'}</p>${Object.entries(grouped).map(([primary, items]) => {
+  taxonomyRoot.innerHTML = `<p>${state.lang === 'zh' ? '两级分类：先按处理目标，再按具体交付物或人物范围。自然精修只保留真实摄影质感；素描、插画、动漫等归入风格化转换。' : 'Two levels: choose the editing outcome first, then the concrete deliverable or portrait scope. Natural retouch stays photographic; sketch, illustration and anime belong to style transformation.'}</p>${Object.entries(grouped).map(([primary, items]) => {
     const children = Object.entries(Object.groupBy(items, (item) => item.sub_category));
-    return `<details><summary>${categoryTitle(primary)} <b>${items.length}</b></summary><div>${children.map(([secondary, childItems]) => `<button type="button" data-secondary="${secondary}">${secondaryTitle(secondary)} <b>${childItems.length}</b></button>`).join('')}</div></details>`;
+    return `<details><summary>${categoryTitle(primary)} <b>${items.length}</b></summary><div>${children.map(([secondary, childItems]) => `<button class="taxonomy-filter ${state.secondary === secondary ? 'is-selected' : ''}" type="button" aria-pressed="${state.secondary === secondary}" data-secondary="${secondary}">${secondaryTitle(secondary)} <b>${childItems.length}</b></button>`).join('')}</div></details>`;
   }).join('')}`;
   taxonomyRoot.querySelectorAll('[data-secondary]').forEach((button) => button.addEventListener('click', () => {
-    const target = button.dataset.secondary;
-    document.querySelectorAll('.card').forEach((card) => card.hidden = !state.items.find((item) => item.id === card.dataset.id)?.sub_category.includes(target));
+    state.secondary = button.dataset.secondary;
+    state.visible = 24;
+    render();
+    document.querySelector('#resetFilters').hidden = false;
+    renderTaxonomy(records);
   }));
 }
 fetch('catalog.json').then((response) => response.json()).then((records) => {
   renderTaxonomy(records);
   new MutationObserver(() => renderTaxonomy(records)).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  const resetFilters = document.querySelector('#resetFilters');
+  resetFilters.onclick = () => {
+    state.category = 'all';
+    state.identity = 'all';
+    state.secondary = 'all';
+    state.query = '';
+    state.visible = 24;
+    render();
+    renderTaxonomy(records);
+  };
 });
