@@ -13,11 +13,11 @@ const en = { ...zh, navLibrary: 'Library', navAgent: 'For agents', eyebrow: 'GPT
 zh.navWechat = '微信公众号';
 zh.wechatEyebrow = '公众号宣传';
 zh.wechatTitle = '在微信里找到<br><em>谁是专家。</em>';
-zh.wechatCopy = '扫描图片中的二维码，或在微信里搜索“谁是\u00a0专家”，查看维护者的更多内容。';
+zh.wechatCopy = '扫描图片中的二维码，或在微信里搜索“<span class="wechat-account">谁是专家</span>”，查看维护者的更多内容。';
 en.navWechat = 'WeChat';
 en.wechatEyebrow = 'PUBLIC ACCOUNT';
 en.wechatTitle = 'Find me on<br><em>WeChat.</em>';
-en.wechatCopy = 'Scan the QR code in the artwork, or search for “谁是\u00a0专家” in WeChat to find more from the maintainer.';
+en.wechatCopy = 'Scan the QR code in the artwork, or search for “<span class="wechat-account">谁是专家</span>” in WeChat to find more from the maintainer.';
 const $ = (selector) => document.querySelector(selector);
 const t = (key) => (state.lang === 'zh' ? zh : en)[key] || key;
 const localized = (source, key) => source[key]?.[state.lang === 'zh' ? 0 : 1] || key;
