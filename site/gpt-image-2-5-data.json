@@ -1,0 +1,619 @@
+{
+  "schemaVersion": "1.0",
+  "title": "GPT-Image-2.5 六小时 Chrome 实测摘录",
+  "capturedAt": "2026-09-09T07:19:57+08:00",
+  "windowStart": "2026-09-09T01:19:57+08:00",
+  "windowEnd": "2026-09-09T07:19:57+08:00",
+  "timezone": "Asia/Shanghai",
+  "surface": "Google Chrome · X · Latest",
+  "queries": [
+    "GPT Image 2.5",
+    "GPT Image 2.5 prompt",
+    "GPT Image 2.5 comparison",
+    "GPT Image 2.5 GPT Image 2"
+  ],
+  "counts": {
+    "recordsCaptured": 30,
+    "uniquePrompts": 10,
+    "comparisonSignals": 6,
+    "mediaLinks": 41
+  },
+  "dedupe": {
+    "method": "提示词文本统一为小写、压缩空白并做精确去重，再进行人工语义复核；同一条帖文内的不同编辑指令保留为独立条目。",
+    "uniquePromptIds": [
+      "p25-01",
+      "p25-02",
+      "p25-03",
+      "p25-04",
+      "p25-05",
+      "p25-06",
+      "p25-07",
+      "p25-08",
+      "p25-09",
+      "p25-10"
+    ]
+  },
+  "notes": [
+    "本批结果按 X Latest 时间线抓取；页面显示的年龄均落在抓取时点前六小时内。",
+    "推文正文、互动量与 X 的展示顺序会变化；本文件是 2026-09-09 07:19（Asia/Shanghai）的快照。",
+    "只有在 Chrome 中完整可见的提示词才进入可复制库；Show more 未展开或正文截断的内容保留为研究记录，不自行补写。",
+    "效果图以原帖图片或视频入口保存，未对 X CDN 媒体做二次托管；这样既能保持来源可追溯，也不会把发布者身份和图片来源拆开。",
+    "‘近两倍更快’、‘ up to 50% faster’等速度表述若来自实测帖或转引帖，均按发布者自述展示，不当作独立基准测试。"
+  ],
+  "officialBaseline": {
+    "source": "https://openai.com/index/introducing-chatgpt-images-2-5/",
+    "publishedAt": "2026-09-08",
+    "claims": [
+      "更清晰的细节、更自然的光照与纹理",
+      "更好地保留参考图中的主体特征",
+      "更精准的局部编辑与多轮编辑一致性",
+      "相较 Images 2.0，图像生成延迟最高可降低 50%",
+      "API 提供 GPT-Image-2.5 Flare 与 Sunburst；Flare 偏速度与通用生产，Sunburst 偏精细控制"
+    ]
+  },
+  "comparison": [
+    {
+      "dimension": "参考图与主体一致性",
+      "baseline": "GPT-Image-2：旧版用户反馈常需要反复抽卡，系列主体容易漂移。",
+      "upgrade": "GPT-Image-2.5：Glenn、Synthetic_soul 等实测反馈称参考主体、风格与细节保持更稳。",
+      "evidence": "hands-on posts",
+      "sourceTweetIds": ["2097461713863881083", "2097461076866560320"]
+    },
+    {
+      "dimension": "局部编辑控制",
+      "baseline": "GPT-Image-2：修改一个元素时，背景、产品或构图可能一起漂移。",
+      "upgrade": "GPT-Image-2.5：CG 的 7 条编辑指令与 Synthetic_soul 的草图实验都把重点放在‘只改这一处，其他不动’。",
+      "evidence": "explicit prompts + hands-on",
+      "sourceTweetIds": ["2097456916335383025", "2097461076866560320"]
+    },
+    {
+      "dimension": "纹理、光照与细节",
+      "baseline": "GPT-Image-2：复杂场景和材质细节是评论中经常被拿来比较的部分。",
+      "upgrade": "GPT-Image-2.5：Tim Jayas 报告森林场景纹理更丰富、细节更锐；官方也把自然光照与 richer textures 列为重点。",
+      "evidence": "comparison post + official brief",
+      "sourceTweetIds": ["2097442532980634096"]
+    },
+    {
+      "dimension": "生成速度",
+      "baseline": "GPT-Image-2：实测对比中被作为速度参照。",
+      "upgrade": "GPT-Image-2.5：OpenAI 宣称相较 Images 2.0 延迟最高降低 50%；Tim Jayas 自述同一森林提示词‘almost 2x faster’。",
+      "evidence": "official claim + self-reported comparison",
+      "sourceTweetIds": ["2097442532980634096"]
+    },
+    {
+      "dimension": "文字、产品与版式",
+      "baseline": "GPT-Image-2：复杂文字、产品细节与构图稳定性需要更多人工校正。",
+      "upgrade": "GPT-Image-2.5：OpenAI 强调更复杂的布局理解；Nigel Watson 特别测试了钟表文字与时间，CG 则给出产品标签、画幅扩展和商业摄影 prompt。",
+      "evidence": "hands-on posts + official brief",
+      "sourceTweetIds": ["2097461685220966490", "2097456916335383025"]
+    },
+    {
+      "dimension": "模型选择",
+      "baseline": "GPT-Image-2：通常以同一模型档位讨论质量。",
+      "upgrade": "GPT-Image-2.5：Flare 偏快与通用生产，Sunburst 偏细节与编辑控制；这是产品定位，不是本批独立评分。",
+      "evidence": "official API announcement",
+      "sourceTweetIds": ["2097399255975813387", "2097394962782384318"]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "p25-01",
+      "title": "草图构图编辑",
+      "category": "局部编辑",
+      "text": "change the composition to this",
+      "sourceTweetId": "2097461076866560320",
+      "sourceUrl": "https://x.com/Synthetic_Copy/status/2097461076866560320",
+      "publisher": "Synthetic_soul",
+      "handle": "@Synthetic_Copy",
+      "effectLinks": [
+        "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/1",
+        "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/2",
+        "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/3"
+      ],
+      "dedupeKey": "change the composition to this",
+      "captureNote": "发布者说明 prompt 只有这一句，并配合草图输入使用。"
+    },
+    {
+      "id": "p25-02",
+      "title": "局部修补",
+      "category": "局部编辑",
+      "text": "Keep everything in this photo the same, but replace the broken cup with a clean one. Keep the size, angle, lighting, and shadows exactly the same.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/1"
+      ],
+      "dedupeKey": "keep everything in this photo the same, but replace the broken cup with a clean one. keep the size, angle, lighting, and shadows exactly the same.",
+      "captureNote": "原帖标题说明这是 12 条实际会使用的编辑 prompt；Chrome 中完整可见前 7 条。"
+    },
+    {
+      "id": "p25-03",
+      "title": "批量换色",
+      "category": "商业素材",
+      "text": "Create 5 versions of this product. Keep everything the same except change the product color to black, white, red, blue, and yellow.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/2"
+      ],
+      "dedupeKey": "create 5 versions of this product. keep everything the same except change the product color to black, white, red, blue, and yellow.",
+      "captureNote": "原文保留；可用于验证同一产品在多种颜色版本中的一致性。"
+    },
+    {
+      "id": "p25-04",
+      "title": "白天转雨夜",
+      "category": "场景重构",
+      "text": "Turn this daytime street photo into a rainy night scene. Keep the buildings, cars, and people in the same positions. Only change the weather and lighting.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/3"
+      ],
+      "dedupeKey": "turn this daytime street photo into a rainy night scene. keep the buildings, cars, and people in the same positions. only change the weather and lighting.",
+      "captureNote": "原文明确把不变项写出来，是 2.5 局部编辑叙事的代表样本。"
+    },
+    {
+      "id": "p25-05",
+      "title": "扩展画幅",
+      "category": "构图与版式",
+      "text": "Convert this image to a 16:9 landscape image. Do not crop the subject. Extend the background naturally on both sides.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/4"
+      ],
+      "dedupeKey": "convert this image to a 16:9 landscape image. do not crop the subject. extend the background naturally on both sides.",
+      "captureNote": "原文完整可见；重点是保持主体而不是简单裁切。"
+    },
+    {
+      "id": "p25-06",
+      "title": "产品摄影",
+      "category": "商业素材",
+      "text": "Keep the product exactly as shown in the image. Place it on a clean marble tabletop in a premium studio setup with soft light and realistic shadows.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/5"
+      ],
+      "dedupeKey": "keep the product exactly as shown in the image. place it on a clean marble tabletop in a premium studio setup with soft light and realistic shadows.",
+      "captureNote": "原文完整可见；适合放入产品图与品牌资产的实测工作流。"
+    },
+    {
+      "id": "p25-07",
+      "title": "清理现场",
+      "category": "局部编辑",
+      "text": "Remove the boxes and cables from the floor. Fill the missing areas naturally. Keep the furniture, walls, lighting, and camera angle the same.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/6"
+      ],
+      "dedupeKey": "remove the boxes and cables from the floor. fill the missing areas naturally. keep the furniture, walls, lighting, and camera angle the same.",
+      "captureNote": "原文完整可见；通过不变项约束补全区域。"
+    },
+    {
+      "id": "p25-08",
+      "title": "更换包装文字",
+      "category": "文字与包装",
+      "text": "Only replace the label on the bottle with a simple white label that says ‘Original Blend’. Keep the bottle, cap, reflections, and perspective exactly the same.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/7"
+      ],
+      "dedupeKey": "only replace the label on the bottle with a simple white label that says ‘original blend’. keep the bottle, cap, reflections, and perspective exactly the same.",
+      "captureNote": "原文完整可见；涉及瓶身文字与产品透视保持。"
+    },
+    {
+      "id": "p25-09",
+      "title": "肖像转乐高",
+      "category": "身份保持",
+      "text": "Turn this person's portrait into a Lego model",
+      "sourceTweetId": "2097442456128078060",
+      "sourceUrl": "https://x.com/steveDOTplus/status/2097442456128078060",
+      "publisher": "Steve • Plus",
+      "handle": "@steveDOTplus",
+      "effectLinks": [
+        "https://x.com/steveDOTplus/status/2097442456128078060/photo/1",
+        "https://x.com/steveDOTplus/status/2097442456128078060/photo/2",
+        "https://x.com/steveDOTplus/status/2097442456128078060/photo/3"
+      ],
+      "dedupeKey": "turn this person's portrait into a lego model",
+      "captureNote": "原帖把它标为 Prompt 1；以 Chrome 可见英文原文保存。"
+    },
+    {
+      "id": "p25-10",
+      "title": "明确材质为乐高",
+      "category": "身份保持",
+      "text": "No, I meant made of Lego.",
+      "sourceTweetId": "2097442456128078060",
+      "sourceUrl": "https://x.com/steveDOTplus/status/2097442456128078060",
+      "publisher": "Steve • Plus",
+      "handle": "@steveDOTplus",
+      "effectLinks": [
+        "https://x.com/steveDOTplus/status/2097442456128078060/photo/2",
+        "https://x.com/steveDOTplus/status/2097442456128078060/photo/3"
+      ],
+      "dedupeKey": "no, i meant made of lego.",
+      "captureNote": "原帖把它标为 Prompt 2；这是多轮编辑中对材质意图的补充。"
+    }
+  ],
+  "records": [
+    {
+      "id": "2097399255975813387",
+      "url": "https://x.com/OpenAIDevs/status/2097399255975813387",
+      "publisher": {"displayName": "OpenAI Developers", "handle": "@OpenAIDevs", "profileUrl": "https://x.com/OpenAIDevs", "role": "官方发布"},
+      "capturedAge": "4h",
+      "postText": "Meet GPT-Image-2.5 Flare and Sunburst. Introducing new image models in the API, with sharper detail, stronger style adherence, and more control over edits.",
+      "evidenceLevel": "official",
+      "media": [{"type": "video", "label": "原帖视频 · 约 1:01", "url": "https://x.com/OpenAIDevs/status/2097399255975813387"}],
+      "tags": ["Flare", "Sunburst", "API", "官方"]
+    },
+    {
+      "id": "2097394956457623964",
+      "url": "https://x.com/OpenAI/status/2097394956457623964",
+      "publisher": {"displayName": "OpenAI", "handle": "@OpenAI", "profileUrl": "https://x.com/OpenAI", "role": "官方发布"},
+      "capturedAge": "4h",
+      "postText": "ChatGPT Images 2.5—faster, sharper, smarter, with better tools for creating whatever you can dream of. Faster image generation; improved fidelity; consistent details across multiple edits; comment-based edits.",
+      "evidenceLevel": "official",
+      "media": [{"type": "video", "label": "原帖视频 · 约 0:57", "url": "https://x.com/OpenAI/status/2097394956457623964"}],
+      "tags": ["更快", "更锐", "多轮一致性", "官方"]
+    },
+    {
+      "id": "2097394962782384318",
+      "url": "https://x.com/OpenAI/status/2097394962782384318",
+      "publisher": {"displayName": "OpenAI", "handle": "@OpenAI", "profileUrl": "https://x.com/OpenAI", "role": "官方发布"},
+      "capturedAge": "4h",
+      "postText": "ChatGPT Images 2.5 launched for all ChatGPT, ChatGPT Work, and Codex users. API has GPT-Image-2.5 Flare and Sunburst.",
+      "evidenceLevel": "official",
+      "media": [],
+      "tags": ["可用性", "API", "官方"]
+    },
+    {
+      "id": "2097461901265658340",
+      "url": "https://x.com/higgsfield/status/2097461901265658340",
+      "publisher": {"displayName": "Higgsfield AI", "handle": "@higgsfield", "profileUrl": "https://x.com/higgsfield", "role": "产品平台"},
+      "capturedAge": "2h",
+      "postText": "GPT Image 2.5 delivers remarkable consistency in stop-motion animation. Now available on Higgsfield!",
+      "evidenceLevel": "promotion",
+      "media": [{"type": "video", "label": "原帖视频 · 约 0:06", "url": "https://x.com/higgsfield/status/2097461901265658340"}],
+      "tags": ["一致性", "定格动画", "平台集成"]
+    },
+    {
+      "id": "2097461713863881083",
+      "url": "https://x.com/GlennHasABeard/status/2097461713863881083",
+      "publisher": {"displayName": "Glenn Williams", "handle": "@GlennHasABeard", "profileUrl": "https://x.com/GlennHasABeard", "role": "实测发布者"},
+      "capturedAge": "2m",
+      "postText": "GPT Image 2.5 / My Caturday font using my cats as reference. 2.5 already seems much better with references. Sunburst is left, Flare is right.",
+      "evidenceLevel": "comparison",
+      "media": [
+        {"type": "image", "label": "原帖图像 1 · Sunburst", "url": "https://x.com/GlennHasABeard/status/2097461713863881083/photo/1"},
+        {"type": "image", "label": "原帖图像 2 · Flare", "url": "https://x.com/GlennHasABeard/status/2097461713863881083/photo/2"}
+      ],
+      "tags": ["参考图", "Sunburst vs Flare", "主体保持"]
+    },
+    {
+      "id": "2097461685220966490",
+      "url": "https://x.com/NigelWatsonTFTC/status/2097461685220966490",
+      "publisher": {"displayName": "Nigel Watson", "handle": "@NigelWatsonTFTC", "profileUrl": "https://x.com/NigelWatsonTFTC", "role": "实测发布者"},
+      "capturedAge": "2m",
+      "postText": "OpenAI Just released GPT IMAGE 2.5... It’s so good and fast and seems to solve that black texture that gpt2 kept pushing... It's also very precise with the clock... it was 11:56 indeed!",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {"type": "image", "label": "原帖图像 1", "url": "https://x.com/NigelWatsonTFTC/status/2097461685220966490/photo/1"},
+        {"type": "image", "label": "原帖图像 2", "url": "https://x.com/NigelWatsonTFTC/status/2097461685220966490/photo/2"},
+        {"type": "image", "label": "原帖图像 3", "url": "https://x.com/NigelWatsonTFTC/status/2097461685220966490/photo/3"},
+        {"type": "image", "label": "原帖图像 4", "url": "https://x.com/NigelWatsonTFTC/status/2097461685220966490/photo/4"}
+      ],
+      "tags": ["速度", "钟表文字", "纹理"]
+    },
+    {
+      "id": "2097461076866560320",
+      "url": "https://x.com/Synthetic_Copy/status/2097461076866560320",
+      "publisher": {"displayName": "Synthetic_soul", "handle": "@Synthetic_Copy", "profileUrl": "https://x.com/Synthetic_Copy", "role": "实测发布者"},
+      "capturedAge": "9m",
+      "postText": "gpt image 2.5 is pretty good for editing. it preserves the style and the details well, and guiding it with a sketch is fun. prompt was only ‘change the composition to this’",
+      "evidenceLevel": "hands-on",
+      "promptIds": ["p25-01"],
+      "media": [
+        {"type": "image", "label": "原帖图像 1", "url": "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/1"},
+        {"type": "image", "label": "原帖图像 2", "url": "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/2"},
+        {"type": "image", "label": "原帖图像 3", "url": "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/3"}
+      ],
+      "tags": ["局部编辑", "Sketch", "风格保持"]
+    },
+    {
+      "id": "2097456916335383025",
+      "url": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": {"displayName": "CG", "handle": "@cgtwts", "profileUrl": "https://x.com/cgtwts", "role": "prompt 发布者"},
+      "capturedAge": "24m",
+      "postText": "the coolest thing about GPT-Image 2.5 isn’t just that it makes better images. it’s that you can tell it what to change without messing up everything else. here are 12 prompts i’d actually use:",
+      "evidenceLevel": "explicit-prompt",
+      "promptIds": ["p25-02", "p25-03", "p25-04", "p25-05", "p25-06", "p25-07", "p25-08"],
+      "media": [
+        {"type": "image", "label": "原帖图像 1", "url": "https://x.com/cgtwts/status/2097456916335383025/photo/1"},
+        {"type": "image", "label": "原帖图像 2", "url": "https://x.com/cgtwts/status/2097456916335383025/photo/2"},
+        {"type": "image", "label": "原帖图像 3", "url": "https://x.com/cgtwts/status/2097456916335383025/photo/3"}
+      ],
+      "tags": ["7 条完整 prompt", "局部编辑", "商业素材"],
+      "captureNote": "原帖声称共有 12 条；本次 Chrome 页面抓取到并完整展开前 7 条，未对其余 5 条进行猜测。"
+    },
+    {
+      "id": "2097461302163816747",
+      "url": "https://x.com/FABYMETAL4/status/2097461302163816747",
+      "publisher": {"displayName": "FabyΔ", "handle": "@FABYMETAL4", "profileUrl": "https://x.com/FABYMETAL4", "role": "实测发布者"},
+      "capturedAge": "4m",
+      "postText": "GPT Image 2.5 character replacement test",
+      "evidenceLevel": "hands-on",
+      "media": [{"type": "image", "label": "原帖图像 1", "url": "https://x.com/FABYMETAL4/status/2097461302163816747/photo/1"}],
+      "tags": ["角色替换", "参考图"]
+    },
+    {
+      "id": "2097462055196414034",
+      "url": "https://x.com/LightSkkh/status/2097462055196414034",
+      "publisher": {"displayName": "Light Sekkuchi", "handle": "@LightSkkh", "profileUrl": "https://x.com/LightSkkh", "role": "实测发布者"},
+      "capturedAge": "52s",
+      "postText": "Asked GPT Image 2.5 for a rental ad and a burger ad, using only a short brief; two outputs were attached.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {"type": "image", "label": "租赁广告 · 原帖图像 1", "url": "https://x.com/LightSkkh/status/2097462055196414034/photo/1"},
+        {"type": "image", "label": "汉堡广告 · 原帖图像 2", "url": "https://x.com/LightSkkh/status/2097462055196414034/photo/2"}
+      ],
+      "tags": ["广告", "商业素材", "短 brief"]
+    },
+    {
+      "id": "2097462175186980949",
+      "url": "https://x.com/HexxRL/status/2097462175186980949",
+      "publisher": {"displayName": "Hexx ./", "handle": "@HexxRL", "profileUrl": "https://x.com/HexxRL", "role": "实测发布者"},
+      "capturedAge": "23s",
+      "postText": "OWN THE STEP by GPT-6 Astra, GPT-Image 2.5 and @vidmuse_ai Freeform. tested out the new GPT-Image 2.5 for reference designs. Full prompt in thread.",
+      "evidenceLevel": "hands-on",
+      "promptStatus": "not-disclosed",
+      "media": [{"type": "video", "label": "原帖视频 · 约 0:15", "url": "https://x.com/HexxRL/status/2097462175186980949"}],
+      "tags": ["参考设计", "视频工作流"],
+      "captureNote": "正文提示完整 prompt 在 thread 中；本次抓取页未展开 thread，故不补写。"
+    },
+    {
+      "id": "2097456549988016310",
+      "url": "https://x.com/shriabhinav09/status/2097456549988016310",
+      "publisher": {"displayName": "Abhinav Shrivastava", "handle": "@shriabhinav09", "profileUrl": "https://x.com/shriabhinav09", "role": "实测发布者"},
+      "capturedAge": "25m",
+      "postText": "GPT Image 2.5 is crazy guys",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {"type": "image", "label": "原帖图像 1", "url": "https://x.com/shriabhinav09/status/2097456549988016310/photo/1"},
+        {"type": "image", "label": "原帖图像 2", "url": "https://x.com/shriabhinav09/status/2097456549988016310/photo/2"},
+        {"type": "image", "label": "原帖图像 3", "url": "https://x.com/shriabhinav09/status/2097456549988016310/photo/3"},
+        {"type": "image", "label": "原帖图像 4", "url": "https://x.com/shriabhinav09/status/2097456549988016310/photo/4"}
+      ],
+      "tags": ["实测", "效果图"]
+    },
+    {
+      "id": "2097456425190711694",
+      "url": "https://x.com/IHayato/status/2097456425190711694",
+      "publisher": {"displayName": "🍺 イケハヤ", "handle": "@IHayato", "profileUrl": "https://x.com/IHayato", "role": "实测发布者"},
+      "capturedAge": "26m",
+      "postText": "GPT Image 2.5 is insanely good. Even with low quality, it spits out material that's totally usable! This is gonna slash costs big time...",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {"type": "image", "label": "原帖图像 1", "url": "https://x.com/IHayato/status/2097456425190711694/photo/1"},
+        {"type": "image", "label": "原帖图像 2", "url": "https://x.com/IHayato/status/2097456425190711694/photo/2"}
+      ],
+      "tags": ["可用性", "成本", "实测"]
+    },
+    {
+      "id": "2097456390814208386",
+      "url": "https://x.com/earlyfield8612/status/2097456390814208386",
+      "publisher": {"displayName": "Yas", "handle": "@earlyfield8612", "profileUrl": "https://x.com/earlyfield8612", "role": "实测发布者"},
+      "capturedAge": "26m",
+      "postText": "I tried using gpt-image-2.5 to generate an LP, even with no special prompt settings, it produced a fairly good result.",
+      "evidenceLevel": "hands-on",
+      "media": [{"type": "image", "label": "Landing page · 原帖图像 1", "url": "https://x.com/earlyfield8612/status/2097456390814208386/photo/1"}],
+      "tags": ["LP", "版式", "短 prompt"]
+    },
+    {
+      "id": "2097442456128078060",
+      "url": "https://x.com/steveDOTplus/status/2097442456128078060",
+      "publisher": {"displayName": "Steve • Plus", "handle": "@steveDOTplus", "profileUrl": "https://x.com/steveDOTplus", "role": "prompt 实测发布者"},
+      "capturedAge": "1h",
+      "postText": "GPT-Image-2.5 test, subject Jakub Pachocki; Prompt 2: No, I meant made of Lego. Prompt 1: Turn this person's portrait into a Lego model",
+      "evidenceLevel": "explicit-prompt",
+      "promptIds": ["p25-09", "p25-10"],
+      "media": [
+        {"type": "image", "label": "原帖图像 1", "url": "https://x.com/steveDOTplus/status/2097442456128078060/photo/1"},
+        {"type": "image", "label": "原帖图像 2", "url": "https://x.com/steveDOTplus/status/2097442456128078060/photo/2"},
+        {"type": "image", "label": "原帖图像 3", "url": "https://x.com/steveDOTplus/status/2097442456128078060/photo/3"}
+      ],
+      "tags": ["多轮编辑", "材质", "肖像"]
+    },
+    {
+      "id": "2097442532980634096",
+      "url": "https://x.com/TimJayas/status/2097442532980634096",
+      "publisher": {"displayName": "Tim Jayas", "handle": "@TimJayas", "profileUrl": "https://x.com/TimJayas", "role": "对比实测发布者"},
+      "capturedAge": "1h",
+      "postText": "GPT-Image 2.5 vs GPT-Image 2 on complex forest prompt. same prompt to both; 2.5 clearly improved richer textures/sharper details, almost 2x faster against Image 2.",
+      "evidenceLevel": "comparison",
+      "promptStatus": "not-disclosed",
+      "media": [{"type": "image", "label": "对比原帖图像 1", "url": "https://x.com/TimJayas/status/2097442532980634096/photo/1"}],
+      "tags": ["直接对比", "纹理", "速度"],
+      "captureNote": "同帖同时比较 GPT-Image-2 与 2.5；完整森林 prompt 未在抓取页面展开。"
+    },
+    {
+      "id": "2097442017085366600",
+      "url": "https://x.com/yaohongan2025/status/2097442017085366600",
+      "publisher": {"displayName": "虹安AI进化论", "handle": "@yaohongan2025", "profileUrl": "https://x.com/yaohongan2025", "role": "对比观点发布者"},
+      "capturedAge": "1h",
+      "postText": "Compared with Images 2.0 / GPT Image 2: image quality is steadier, details sharper, light and texture more natural, references preserve the subject better, and targeted edits are stronger.",
+      "evidenceLevel": "comparison",
+      "media": [],
+      "tags": ["直接对比", "主体保持", "局部编辑"]
+    },
+    {
+      "id": "2097443412597207391",
+      "url": "https://x.com/rishabhxAi/status/2097443412597207391",
+      "publisher": {"displayName": "rishabh", "handle": "@rishabhxAi", "profileUrl": "https://x.com/rishabhxAi", "role": "对比实测发布者"},
+      "capturedAge": "1h",
+      "postText": "same brutal prompt across 4 models: Mumbai watch guy stress test (hands + Hindi text + 3 clocks + mirror + 7 gears). Nano Banana Pro strictest instruction follower; GPT Image 2.5 cleaner hands + louder crack than Image...",
+      "evidenceLevel": "comparison",
+      "promptStatus": "partial",
+      "media": [{"type": "image", "label": "对比原帖图像 1", "url": "https://x.com/rishabhxAi/status/2097443412597207391/photo/1"}],
+      "tags": ["复杂指令", "手部", "多文字", "对比"],
+      "captureNote": "正文在 Chrome 中以 Show more 截断；保留可见结论，不把未展开部分当作完整 prompt。"
+    },
+    {
+      "id": "2097458513702515165",
+      "url": "https://x.com/JohnnyWang8802/status/2097458513702515165",
+      "publisher": {"displayName": "Johnny Wang", "handle": "@JohnnyWang8802", "profileUrl": "https://x.com/JohnnyWang8802", "role": "prompt 发布者"},
+      "capturedAge": "17m",
+      "postText": "GPT Image 2.5 Prompt: A film still, 2.39:1. A flooded plain at civil twilight, water 20 cm deep and mirror-still to the horizon, a farmhouse and three poplars standing in it. Ordinary, terrestrial, quiet. The reflection does not match: in the water lies not this sky but a …",
+      "evidenceLevel": "explicit-prompt",
+      "promptStatus": "partial",
+      "media": [{"type": "image", "label": "原帖图像 1", "url": "https://x.com/JohnnyWang8802/status/2097458513702515165/photo/1"}],
+      "tags": ["电影感", "复杂场景", "prompt 截断"],
+      "captureNote": "提示词在 X 搜索页出现 Show more，抓取内容只到可见省略号；不进入可复制 prompt 库。"
+    },
+    {
+      "id": "2097461106545721842",
+      "url": "https://x.com/AITensibility/status/2097461106545721842",
+      "publisher": {"displayName": "AI Tensibility", "handle": "@AITensibility", "profileUrl": "https://x.com/AITensibility", "role": "资讯转述者"},
+      "capturedAge": "7m",
+      "postText": "OpenAI launched ChatGPT Images 2.5, image creation up to 50% faster, more accurate corrections, new Sketch and model API.",
+      "evidenceLevel": "quoted",
+      "media": [],
+      "tags": ["官方信息转述", "速度", "Sketch"],
+      "quotedSource": "https://x.com/arena/status/2097400515546255754",
+      "captureNote": "‘up to 50% faster’在此处作为转述信息展示；速度依据以 OpenAI 官方页面为准。"
+    },
+    {
+      "id": "2097400515546255754",
+      "url": "https://x.com/arena/status/2097400515546255754",
+      "publisher": {"displayName": "Arena.ai", "handle": "@arena", "profileUrl": "https://x.com/arena", "role": "评测平台转述"},
+      "capturedAge": "4h",
+      "postText": "GPT-Image-2.5-Sunburst is #1 and Flare is #2 across the Text-to-Image Arena, Image Edit Arena, and Multi-Image Edit Arena. Both are described as significant improvements over GPT-Image-2 (medium).",
+      "evidenceLevel": "quoted",
+      "media": [
+        {"type": "image", "label": "Arena 原帖图像 1", "url": "https://x.com/arena/status/2097400515546255754/photo/1"},
+        {"type": "image", "label": "Arena 原帖图像 2", "url": "https://x.com/arena/status/2097400515546255754/photo/2"},
+        {"type": "image", "label": "Arena 原帖图像 3", "url": "https://x.com/arena/status/2097400515546255754/photo/3"}
+      ],
+      "tags": ["Arena", "排名", "对比"],
+      "captureNote": "按 X 页面作为转引评测结论保留；未将其转写为本批独立基准分数。"
+    },
+    {
+      "id": "2097461408934047779",
+      "url": "https://x.com/zero_mofudog/status/2097461408934047779",
+      "publisher": {"displayName": "ユートロン", "handle": "@zero_mofudog", "profileUrl": "https://x.com/zero_mofudog", "role": "实测评论者"},
+      "capturedAge": "3m",
+      "postText": "Were all these generated one by one with GPT Image 2.5? Almost perfect consistency. You can make stop-motion animations!",
+      "evidenceLevel": "hands-on",
+      "media": [],
+      "tags": ["一致性", "定格动画"],
+      "quotedSource": "https://x.com/charlierguo"
+    },
+    {
+      "id": "2097461447634886822",
+      "url": "https://x.com/AIMIRAI46487/status/2097461447634886822",
+      "publisher": {"displayName": "AI速報", "handle": "@AIMIRAI46487", "profileUrl": "https://x.com/AIMIRAI46487", "role": "资讯转述者"},
+      "capturedAge": "3m",
+      "postText": "ChatGPT Images 2.5 appears via API as GPT-Image-2.5 Flare / Sunburst; the post recommends Sunburst for editing precision and Flare for faster generation.",
+      "evidenceLevel": "quoted",
+      "media": [{"type": "video", "label": "原帖视频 · 约 1:01", "url": "https://x.com/AIMIRAI46487/status/2097461447634886822"}],
+      "tags": ["Flare", "Sunburst", "编辑"],
+      "captureNote": "模型选择是该发布者的解读，官方定位仍以 OpenAI 公告为准。"
+    },
+    {
+      "id": "2097461291619356890",
+      "url": "https://x.com/el_el_san/status/2097461291619356890",
+      "publisher": {"displayName": "える", "handle": "@el_el_san", "profileUrl": "https://x.com/el_el_san", "role": "实测发布者"},
+      "capturedAge": "6m",
+      "postText": "Maybe GPT Image 2.5…!",
+      "evidenceLevel": "hands-on",
+      "media": [{"type": "image", "label": "原帖图像 1", "url": "https://x.com/el_el_san/status/2097461291619356890/photo/1"}],
+      "tags": ["实测", "效果图"]
+    },
+    {
+      "id": "2097457995089093062",
+      "url": "https://x.com/airyware/status/2097457995089093062",
+      "publisher": {"displayName": "Airyware", "handle": "@airyware", "profileUrl": "https://x.com/airyware", "role": "实测发布者"},
+      "capturedAge": "19m",
+      "postText": "GPT-Image-2.5 Sunburst can also create cute QR code art",
+      "evidenceLevel": "hands-on",
+      "media": [{"type": "image", "label": "QR code art · 原帖图像 1", "url": "https://x.com/airyware/status/2097457995089093062/photo/1"}],
+      "tags": ["文字与图形", "Sunburst", "二维码"]
+    },
+    {
+      "id": "2097457244602548459",
+      "url": "https://x.com/carcluc/status/2097457244602548459",
+      "publisher": {"displayName": "そま", "handle": "@carcluc", "profileUrl": "https://x.com/carcluc", "role": "实测评论者"},
+      "capturedAge": "22m",
+      "postText": "GPT-image-2.5 is great, fast, and good for mascots.",
+      "evidenceLevel": "hands-on",
+      "media": [],
+      "tags": ["速度", "吉祥物", "实测"]
+    },
+    {
+      "id": "2097460486610522225",
+      "url": "https://x.com/iamleannmuller/status/2097460486610522225",
+      "publisher": {"displayName": "Leann Muller", "handle": "@iamleannmuller", "profileUrl": "https://x.com/iamleannmuller", "role": "经验总结发布者"},
+      "capturedAge": "9m",
+      "postText": "99% of people use GPT Image 2.5 wrong… Flare—faster; Sunburst—more detailed; big one: edit specific parts with a prompt without losing …",
+      "evidenceLevel": "hands-on",
+      "promptStatus": "partial",
+      "media": [],
+      "tags": ["模型选择", "局部编辑"],
+      "captureNote": "X 页面正文截断；只保留可见的模型选择与编辑观点。"
+    },
+    {
+      "id": "2097460221526593597",
+      "url": "https://x.com/gkxspace/status/2097460221526593597",
+      "publisher": {"displayName": "余温", "handle": "@gkxspace", "profileUrl": "https://x.com/gkxspace", "role": "实测评论者"},
+      "capturedAge": "10m",
+      "postText": "Images 2.5 finally supports commercial workflows and multi-asset consistency, according to this user's take on the launch.",
+      "evidenceLevel": "hands-on",
+      "media": [],
+      "tags": ["商业工作流", "多资产一致性"],
+      "captureNote": "正文在 X 页面显示 Show more；本记录是可见部分的摘要性摘录。"
+    },
+    {
+      "id": "2097445127484477896",
+      "url": "https://x.com/reelyart/status/2097445127484477896",
+      "publisher": {"displayName": "Reely Art", "handle": "@reelyart", "profileUrl": "https://x.com/reelyart", "role": "教程发布者"},
+      "capturedAge": "1h",
+      "postText": "Explore GPT Image 2.5 in more detail. Sunburst vs Flare, real outputs, prompt examples, use cases, and a practical prompt guide.",
+      "evidenceLevel": "promotion",
+      "media": [
+        {"type": "image", "label": "教程图像 1", "url": "https://x.com/reelyart/status/2097445127484477896/photo/1"},
+        {"type": "image", "label": "教程图像 2", "url": "https://x.com/reelyart/status/2097445127484477896/photo/2"},
+        {"type": "image", "label": "教程图像 3", "url": "https://x.com/reelyart/status/2097445127484477896/photo/3"}
+      ],
+      "tags": ["Flare vs Sunburst", "prompt guide", "教程"],
+      "linkedSource": "https://reely.art/models"
+    },
+    {
+      "id": "2097443589408096339",
+      "url": "https://x.com/stretchcloud/status/2097443589408096339",
+      "publisher": {"displayName": "Prasenjit Sarkar", "handle": "@stretchcloud", "profileUrl": "https://x.com/stretchcloud", "role": "开源整理者"},
+      "capturedAge": "1h",
+      "postText": "Prompt as Spec — 2,383 GPT-Image-2.5 prompts. A linked GitHub repository for an expanded prompt archive.",
+      "evidenceLevel": "promotion",
+      "media": [],
+      "tags": ["GitHub", "prompt archive", "扩展阅读"],
+      "linkedSource": "https://github.com/stretchcloud/awesome-gpt-image-prompt-2.5",
+      "captureNote": "本页只保存推文与外链，不复制该仓库的完整 prompt 集。"
+    }
+  ]
+}
