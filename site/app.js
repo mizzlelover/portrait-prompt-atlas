@@ -25,6 +25,7 @@ const cat = (key) => localized(labels, key);
 const subcat = (key) => localized(secondaryLabels, key);
 const esc = (value = '') => value.replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[character]));
 const img = (record) => `https://raw.githubusercontent.com/mizzlelover/portrait-prompt-atlas/main/${record.image}`;
+const columnCount = () => window.matchMedia('(max-width: 800px)').matches ? 2 : 4;
 
 function filtered() {
   const query = state.query.toLowerCase();
@@ -52,13 +53,58 @@ function updateUrl() {
   if (state.query) params.set('q', state.query);
   history.replaceState(null, '', `${location.pathname}${params.size ? `?${params}` : ''}${location.hash}`);
 }
+function cardMarkup(record) {
+  return `<button class="card-open" type="button" aria-label="Open prompt"><div class="card-image"><img loading="lazy" src="${img(record)}" alt="${esc(subcat(record.sub_category))}"></div><div class="card-body"><div class="card-meta"><span class="badge">${esc(cat(record.category))}</span><span>${record.id}</span></div><p class="card-subcategory">${esc(subcat(record.sub_category))}</p><h3>${esc(record.prompt.replace(/\s+/g, ' ').slice(0, 95))}${record.prompt.length > 95 ? '…' : ''}</h3><p>@${esc(record.creator || record.publisher || 'unknown')}</p></div></button>`;
+}
+function renderMasonry(records) {
+  const grid = $('#grid');
+  grid.replaceChildren();
+  if (!records.length) {
+    grid.innerHTML = `<p class="empty">${t('noResults')}</p>`;
+    return;
+  }
+  const columns = Array.from({ length: columnCount() }, (_, index) => {
+    const column = document.createElement('div');
+    column.className = 'masonry-column';
+    column.dataset.column = String(index);
+    grid.append(column);
+    return column;
+  });
+  const cards = records.map((record) => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.dataset.id = record.id;
+    card.innerHTML = cardMarkup(record);
+    return card;
+  });
+  const distribute = () => {
+    columns.forEach((column) => column.replaceChildren());
+    cards.forEach((card) => {
+      const target = columns.reduce((shortest, column) => column.offsetHeight < shortest.offsetHeight ? column : shortest, columns[0]);
+      target.append(card);
+    });
+  };
+  let layoutFrame = 0;
+  const scheduleLayout = () => {
+    cancelAnimationFrame(layoutFrame);
+    layoutFrame = requestAnimationFrame(distribute);
+  };
+  distribute();
+  cards.flatMap((card) => [...card.querySelectorAll('img')]).forEach((image) => {
+    if (image.complete) return;
+    image.addEventListener('load', scheduleLayout, { once: true });
+    image.addEventListener('error', scheduleLayout, { once: true });
+  });
+  cards.forEach((card) => {
+    card.querySelector('.card-open').onclick = () => detail(card.dataset.id);
+  });
+}
 function render() {
   controls(); $('#search').value = state.query; $('#identity').value = state.identity;
   const records = filtered(); const visibleRecords = records.slice(0, state.visible);
   $('#resultCount').textContent = records.length;
   $('#resetFilters').hidden = state.category === 'all' && state.secondary === 'all' && state.identity === 'all' && !state.query;
-  $('#grid').innerHTML = visibleRecords.length ? visibleRecords.map((record) => `<article class="card" data-id="${record.id}"><button class="card-open" type="button" aria-label="Open prompt"><div class="card-image"><img loading="lazy" src="${img(record)}" alt="${esc(subcat(record.sub_category))}"></div><div class="card-body"><div class="card-meta"><span class="badge">${esc(cat(record.category))}</span><span>${record.id}</span></div><p class="card-subcategory">${esc(subcat(record.sub_category))}</p><h3>${esc(record.prompt.replace(/\s+/g, ' ').slice(0, 95))}${record.prompt.length > 95 ? '…' : ''}</h3><p>@${esc(record.creator || record.publisher || 'unknown')}</p></div></button></article>`).join('') : `<p class="empty">${t('noResults')}</p>`;
-  document.querySelectorAll('.card-open').forEach((button) => { button.onclick = () => detail(button.closest('.card').dataset.id); });
+  renderMasonry(visibleRecords);
   $('#loadSentinel').hidden = state.visible >= records.length;
   updateUrl();
 }
@@ -87,6 +133,13 @@ $('#detail').addEventListener('close', () => document.body.classList.remove('mod
 $('#copyInstall').onclick = async (event) => { await navigator.clipboard.writeText('npx skills add mizzlelover/portrait-prompt-atlas --skill gpt-image-2-portrait-library --agent claude-code codex --global --yes --copy'); event.target.textContent = t('copied'); setTimeout(() => { event.target.textContent = t('copy'); }, 1400); };
 const initial = new URLSearchParams(location.search);
 state.category = initial.get('category') || 'all'; state.secondary = initial.get('secondary') || 'all'; state.identity = initial.get('identity') || 'all'; state.query = initial.get('q') || '';
+let renderedColumnCount = columnCount();
+window.addEventListener('resize', () => {
+  const nextColumnCount = columnCount();
+  if (nextColumnCount === renderedColumnCount) return;
+  renderedColumnCount = nextColumnCount;
+  render();
+});
 const sentinel = new IntersectionObserver(([entry]) => { if (!entry.isIntersecting) return; const count = filtered().length; if (state.visible < count) { state.visible += 28; render(); } }, { rootMargin: '520px 0px' });
 sentinel.observe($('#loadSentinel'));
 fetch('catalog.json').then((response) => response.json()).then((items) => { state.items = items; if (!items.some((item) => item.category === state.category)) state.category = 'all'; if (!items.some((item) => item.sub_category === state.secondary && item.category === state.category)) state.secondary = 'all'; $('#totalCount').textContent = items.length; language(); }).catch(() => { $('#grid').innerHTML = '<p>Catalog could not be loaded.</p>'; });
