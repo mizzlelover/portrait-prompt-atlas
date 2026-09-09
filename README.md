@@ -7,7 +7,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/GPT%20Image%202-Portrait%20Editing-86bca7?style=flat-square" alt="GPT Image 2 Portrait Editing">
   <img src="https://img.shields.io/badge/curated%20records-519-5f9ebe?style=flat-square" alt="519 curated records">
-  <img src="https://img.shields.io/badge/restoration%20research-52-8fb9c7?style=flat-square" alt="52 restoration research candidates">
+  <img src="https://img.shields.io/badge/restoration%20research-6-8fb9c7?style=flat-square" alt="6 full-prompt restoration research candidates">
   <img src="https://img.shields.io/badge/provenance-source--linked-f3ad79?style=flat-square" alt="source linked">
   <img src="https://img.shields.io/badge/license-MIT-536b87?style=flat-square" alt="MIT">
 </p>
@@ -59,10 +59,10 @@
 ### 当前收录
 
 - 728 条原始 X 来源记录经范围筛选与近重复归并后，精选图鉴保留 519 条，日期范围为 2026-05-27 至 2026-08-12。
-- 精选记录均有对应结果图、X 原帖链接、来源发布者和作者核验状态；网站另外展示 52 条老照片修复研究候选，候选记录保留原始来源、作者状态与许可状态，并明确标注是否只有摘录或线索。
+- 精选记录均有对应结果图、X 原帖链接、来源发布者和作者核验状态；网站另外展示 6 条已核验完整提示词的老照片修复研究候选。来源未能提供完整正文、效果图或再发布许可的 46 条线索转入排除审计，不混进公开候选层。
 - 剔除 146 条不属于“真人参考图人像处理”的案例，并归并 56 个重复簇中的 63 条重复记录；原始池、自动判断、视觉巡检与归并审计均可复核。
 - 8 个处理方向与 17 个当前有记录的具体场景，详见[语料清理与分类](docs/corpus-curation.md)。
-- [人像与老照片修复专项采集](docs/restoration-prompt-research.md)的 52 条研究记录已作为网站单独的“研究候选”层公开展示；它们不伪装成 519 条精选原文，也不把来源线索写成原创作者。
+- [人像与老照片修复专项采集](docs/restoration-prompt-research.md)的 6 条完整提示词研究记录已作为网站单独的“研究候选”层公开展示；其余 46 条线索保留在排除审计文件，不把摘录、方法论或付费页面冒充完整提示词。
 
 ### 致谢
 
@@ -74,7 +74,7 @@
 
 | 方向 | 记录数 | 典型用途 |
 | --- | ---: | --- |
-| 修复与影像保全 | 56（4 条精选 + 52 条研究候选） | 老照片、清晰度、上色、破损修复与修复方法线索 |
+| 修复与影像保全 | 10（4 条精选 + 6 条研究候选） | 老照片、清晰度、上色与破损修复 |
 | 自然精修与美化 | 10 | 肤质、妆容、自然美化与轻修饰 |
 | 职业头像与形象 | 5 | 职业头像、企业形象与商务照片 |
 | 生活方式与旅行人像 | 15 | 旅行、街拍、日常与环境肖像 |
@@ -85,7 +85,7 @@
 
 ### 让 Claude Code 与 Codex 使用图鉴
 
-仓库内置 `gpt-image-2-portrait-library` Skill。它不是单纯的安装说明：包内带有 519 条清理后的原语言记录、来源与身份保持字段、命令行检索、可复现的生成器和完整性校验。网站的精选目录与 Agent Skill 使用同一份研究主库；网站另外通过 `site/research-catalog.json` 展示 52 条修复研究候选，因此候选摘录不会被误当成 Skill 的完整提示词。
+仓库内置 `gpt-image-2-portrait-library` Skill。它不是单纯的安装说明：包内带有 519 条清理后的原语言记录、来源与身份保持字段、命令行检索、可复现的生成器和完整性校验。网站的精选目录与 Agent Skill 使用同一份研究主库；网站另外通过 `site/research-catalog.json` 展示 6 条完整提示词修复研究候选。未通过完整正文或许可闸门的线索见 `data/restoration-prompt-research-excluded.jsonl`，不进入网站。
 
 ```bash
 npx skills add mizzlelover/portrait-prompt-atlas --skill gpt-image-2-portrait-library --agent claude-code codex --global --yes --copy
@@ -140,17 +140,17 @@ npx skills add mizzlelover/portrait-prompt-atlas --skill gpt-image-2-portrait-li
 ## Research corpus
 
 - 728 raw X-source records dated 2026-05-27 to 2026-08-12; 519 curated records are published after scope filtering, visual review, and duplicate clustering.
-- The live site also exposes 52 clearly labelled restoration research candidates from GitHub, tutorials, communities, X indexes, paid leads and papers.
-- Each curated record has a matched result image; research candidates retain the source URL, publisher / authorship status, rights status and whether the page yielded an excerpt, structure note or lead only.
-- Research candidates are non-commercial open-source research display; a missing full text or image is shown as missing, never fabricated.
+- The live site also exposes 6 clearly labelled restoration research candidates whose complete prompt text was verified from the source. Another 46 leads remain in the excluded audit file because full text, rights, scope, or attribution could not be verified.
+- Each curated record has a matched result image; research candidates retain the source URL, publisher / authorship status, rights basis, prompt extraction status, and exact result-image status. A source that supplied no result image is shown without a fabricated substitute.
+- Research candidates are published only under the source license or an explicit open-license basis; non-commercial intent alone is not treated as permission to republish unlicensed full text.
 
-The curated public corpus preserves the original X-source link, the source publisher where available, the attribution status, one source result image, and a correction path on every record. The restoration research layer preserves the same provenance fields but may show only a short excerpt or source lead. A publisher handle is labelled as a publisher, never silently promoted to “prompt author.”
+The curated public corpus preserves the original X-source link, the source publisher where available, the attribution status, one source result image, and a correction path on every record. The restoration research layer preserves the same provenance fields and publishes only verified full prompts; excluded leads remain auditable without republishing incomplete text. A publisher handle is labelled as a publisher, never silently promoted to “prompt author.”
 
 ## Portrait-specialist categories
 
 | Category | Records | Typical use |
 | --- | ---: | --- |
-| Restoration & preservation | 56 (4 curated + 52 research) | Old-photo, clarity, color, repair and restoration-research workflows |
+| Restoration & preservation | 10 (4 curated + 6 research) | Old-photo, clarity, color and damage-repair workflows |
 | Natural retouch & beauty | 10 | Natural skin, beauty and light retouching |
 | Professional headshot & brand | 5 | Headshots, corporate identity and business output |
 | Lifestyle & travel portrait | 15 | Travel, lifestyle and environmental portraits |
@@ -188,7 +188,7 @@ This prevents a visually impressive but identity-breaking style transfer from be
 ## Data layout
 
 - `data/raw-prompts.jsonl` is the immutable discovery pool; `data/prompts.jsonl` is the curated public corpus, with range and near-duplicate decisions in `data/curation-audit.json`.
-- `data/restoration-prompt-research.jsonl` is the 52-record restoration research layer; its generated website view is `site/research-catalog.json` and keeps excerpts, source leads, author status and rights status separate from the curated Skill corpus.
+- `data/restoration-prompt-research.jsonl` is the six-record public restoration research layer; every row has a verified full prompt. `data/restoration-prompt-research-excluded.jsonl` retains the 46 excluded leads with source URL and exclusion reason. The generated website view is `site/research-catalog.json` and keeps research records separate from the curated Skill corpus.
 - `data/image-manifest.jsonl` maps every prompt record to one downloaded result image.
 - `assets/images/` holds one result image per record for internal review.
 

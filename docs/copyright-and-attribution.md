@@ -12,6 +12,8 @@ Each record keeps these fields:
 - `attribution_evidence`: the statement, link, or provenance fact supporting the label.
 - `publication_rule`: whether a full prompt can appear in the public repository.
 
+Research candidates have one additional publication gate: `prompt_full` must be the complete source text and `extraction_status` must be `verified_full_prompt`. A source without a clear reuse basis stays in `data/restoration-prompt-research-excluded.jsonl`; a missing result image is recorded as missing, never replaced with a generated or placeholder image.
+
 ## Review outcomes
 
 | Outcome | Required evidence | Repository treatment |

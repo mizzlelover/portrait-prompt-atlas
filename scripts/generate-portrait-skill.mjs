@@ -48,7 +48,8 @@ function researchSubCategory(record) {
 }
 
 function toResearchRecord(record) {
-  const prompt = record.prompt_excerpt || (record.prompt_text_status === 'lead_only' ? '仅保留来源线索，原文未复制。' : '仅保留方法论摘要，非完整提示词。');
+  const prompt = record.prompt_full;
+  if (!prompt || record.prompt_text_status !== 'full' || record.extraction_status !== 'verified_full_prompt') throw new Error(`Research record ${record.id} does not contain a verified full prompt.`);
   return {
     id: record.id,
     kind: 'research',
@@ -61,10 +62,16 @@ function toResearchRecord(record) {
     creator: record.author_or_credit || null,
     authorship: record.authorship_status,
     source: record.source_url,
-    image: null,
+    original_source: record.original_source_url || null,
+    image: record.image_local_path || null,
+    images: record.image_gallery_local_paths || (record.image_local_path ? [record.image_local_path] : []),
+    image_source_urls: record.image_source_urls || [],
+    image_status: record.image_status || 'not_provided_by_source',
     scope: record.scope,
     prompt_text_status: record.prompt_text_status,
+    extraction_status: record.extraction_status,
     rights_status: record.rights_status,
+    license_basis: record.license_basis || null,
     source_title: record.source_title,
     quality_note: record.quality_note || null
   };
@@ -99,6 +106,7 @@ const index = records.map(toRecord);
 if (new Set(index.map((record) => record.id)).size !== index.length) throw new Error('Duplicate record IDs in source corpus.');
 if (index.some((record) => !categoryByValue.has(record.category))) throw new Error('A record has an unknown category.');
 if (index.some((record) => !record.prompt || !record.source_url)) throw new Error('A record is missing a prompt or source URL.');
+if (restorationResearch.some((record) => !record.prompt_full || record.prompt_text_status !== 'full' || record.extraction_status !== 'verified_full_prompt')) throw new Error('A public restoration research record is missing a verified full prompt.');
 
 mkdirSync(outputDir, { recursive: true });
 writeFileSync(join(outputDir, 'portrait-records.json'), `${JSON.stringify({schema_version: library.schema_version, generated_from: 'data/prompts.jsonl', records: index})}\n`);
