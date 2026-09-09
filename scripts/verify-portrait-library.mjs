@@ -9,6 +9,8 @@ const rawRecords = readFileSync(join(root, 'data', 'raw-prompts.jsonl'), 'utf8')
 const audit = JSON.parse(readFileSync(join(root, 'data', 'curation-audit.json'), 'utf8'));
 const index = JSON.parse(readFileSync(join(root, 'agents', 'skills', 'gpt-image-2-portrait-library', 'references', 'portrait-records.json'), 'utf8')).records;
 const catalog = JSON.parse(readFileSync(join(root, 'site', 'catalog.json'), 'utf8'));
+const restorationResearch = readFileSync(join(root, 'data', 'restoration-prompt-research.jsonl'), 'utf8').trim().split('\n').map((line) => JSON.parse(line));
+const researchCatalog = JSON.parse(readFileSync(join(root, 'site', 'research-catalog.json'), 'utf8'));
 const digest = (value) => createHash('sha256').update(value).digest('hex');
 const normalizedPrompt = (value) => value.replace(/^\s*title\s*:[\s\S]*?\bprompt\s*:\s*/i, '').toLowerCase().replace(/^\s*(?:title|prompt)\s*:\s*/gim, '').replace(/\{argument name="[^"]+" default="([^"]*)"\}/g, '$1').replace(/[^\p{L}\p{N}]+/gu, ' ').replace(/\s+/g, ' ').trim();
 const fail = (message) => { throw new Error(message); };
@@ -24,6 +26,9 @@ const excludedFixtures = ['GI2_10566', 'GI2_02060', 'GI2_05132', 'GI2_21154', 'G
 const duplicateFixtures = [['GI2_02490', 'GI2_17521'], ['GI2_01313', 'GI2_01317']];
 
 if (rawRecords.length !== 728 || records.length !== audit.published_records || index.length !== records.length || catalog.length !== records.length) fail('Record counts are not synchronized.');
+if (researchCatalog.length !== restorationResearch.length || new Set(researchCatalog.map((record) => record.id)).size !== researchCatalog.length) fail('Restoration research counts or IDs are not synchronized.');
+if (researchCatalog.some((record) => record.kind !== 'research' || record.category !== 'restoration_and_preservation' || !record.sub_category || !record.source)) fail('Restoration research record metadata is incomplete.');
+if (researchCatalog.some((record) => records.some((curated) => curated.id === record.id))) fail('Restoration research IDs overlap curated IDs.');
 if (new Set(records.map((record) => record.id)).size !== records.length) fail('Source record IDs are not unique.');
 if (new Set(records.map((record) => normalizedPrompt(record.prompt_text))).size !== records.length) fail('Exact normalized prompt duplicates remain.');
 const imageDigests = records.map((record) => digest(readFileSync(join(root, record.image.local_path))));
@@ -48,4 +53,4 @@ for (const [id, category] of Object.entries(routingFixtures)) {
 for (const file of ['SKILL.md', 'references/portrait-library.md', 'references/portrait-records.json', 'bin/portrait-prompt-atlas.mjs', 'package.json']) {
   if (!existsSync(join(root, 'agents', 'skills', 'gpt-image-2-portrait-library', file))) fail(`Skill package missing ${file}.`);
 }
-console.log(`Verified ${records.length} curated records against ${rawRecords.length} raw records, original prompt integrity, source links, and Skill package files.`);
+console.log(`Verified ${records.length} curated records and ${researchCatalog.length} restoration research records against ${rawRecords.length} raw records, original prompt integrity, source links, and Skill package files.`);

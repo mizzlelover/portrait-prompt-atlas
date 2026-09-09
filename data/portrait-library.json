@@ -20,7 +20,7 @@
     "zh": "一级按用户任务分组，二级按具体交付物或拍摄范围分组；framing 是用于进一步筛选的独立字段。",
     "en": "Level one groups the user task; level two names the concrete deliverable or portrait scope; framing is an additional filter.",
     "secondary_categories": {
-      "restoration_and_preservation": ["historic_and_damaged_photo", "clarity_color_and_quality_recovery", "memory_photo_preservation"],
+      "restoration_and_preservation": ["historic_and_damaged_photo", "clarity_color_and_quality_recovery", "memory_photo_preservation", "black_white_colorization", "severe_damage_reconstruction", "low_resolution_rescue", "restoration_workflow_research", "restoration_adjacent_research", "research_lead", "methodology_reference"],
       "natural_retouch_and_beauty": ["selfie_face_and_closeup_polish", "half_and_full_body_polish", "group_and_relationship_retouch"],
       "professional_headshot_and_brand": ["business_headshot_and_profile", "document_and_id_photo", "personal_branding_half_and_full_portrait"],
       "lifestyle_and_travel_portrait": ["travel_and_outdoor_portrait", "daily_and_social_portrait", "event_and_relationship_portrait"],
