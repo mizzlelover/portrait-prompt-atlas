@@ -2,7 +2,7 @@
 
 > GPT Image 2 人像处理提示词图鉴：集中收录、按场景整理，让需要的人快速找到合适的提示词。
 
-[中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait.mizzlelover.xyz) · [X：@dboy_yi2025](https://x.com/dboy_yi2025) · [精选效果图](docs/showcase.md) · [Agent Skill](docs/agent-skill.md) · [语料清理与分类](docs/corpus-curation.md) · [对标说明](docs/benchmark.md) · [版权与署名规则](docs/copyright-and-attribution.md)
+[中文说明](#中文) · [English](#english) · [在线图鉴](https://portrait.mizzlelover.xyz) · [X：@dboy_yi2025](https://x.com/dboy_yi2025) · [精选效果图](docs/showcase.md) · [老照片修复专项采集](docs/restoration-prompt-research.md) · [Agent Skill](docs/agent-skill.md) · [语料清理与分类](docs/corpus-curation.md) · [对标说明](docs/benchmark.md) · [版权与署名规则](docs/copyright-and-attribution.md)
 
 <p align="center">
   <img src="https://img.shields.io/badge/GPT%20Image%202-Portrait%20Editing-86bca7?style=flat-square" alt="GPT Image 2 Portrait Editing">
@@ -50,6 +50,7 @@
 - 每条记录均有一张对应结果图、X 原帖链接、来源发布者和作者核验状态。
 - 剔除 146 条不属于“真人参考图人像处理”的案例，并归并 56 个重复簇中的 63 条重复记录；原始池、自动判断、视觉巡检与归并审计均可复核。
 - 8 个处理方向与 17 个当前有记录的具体场景，详见[语料清理与分类](docs/corpus-curation.md)。
+- 另有一份独立的[人像与老照片修复专项采集](docs/restoration-prompt-research.md)，当前保存 52 条跨 GitHub、教程、社区、X 索引、付费线索和论文的研究记录；它们不会绕过作者、许可证和近重复审核直接进入公开图鉴。
 
 ### 致谢
 
