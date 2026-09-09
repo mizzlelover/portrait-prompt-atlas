@@ -50,6 +50,7 @@ let data = null;
 let currentFilter = 'all';
 const stats = document.querySelector('#stats');
 
+
 function tweetAssets(tweetId){ return (data.assets && data.assets.tweets && data.assets.tweets[tweetId]) || []; }
 function mergedMedia(record){ const assets=tweetAssets(record.id); return (record.media || []).map((item,index)=>Object.assign({},item,assets[index] || {})); }
 function promptMedia(prompt){
@@ -57,21 +58,22 @@ function promptMedia(prompt){
   const indexes=(prompt.effectLinks || []).map(link => { const match=link.match(/\/(?:photo|video)\/(\d+)/); return match ? Number(match[1]) - 1 : -1; }).filter(index => index >= 0);
   return indexes.map(index => assets[index]).filter(Boolean).map((asset,index) => Object.assign({},asset,{label:prompt.title + ' · 效果图 ' + (index + 1),url:prompt.sourceUrl}));
 }
-function mediaHtml(items){
+function mediaHtml(items,eager){
   const cards=(items || []).map(item => {
     const source=item.url || '';
     const preview=item.type === 'video' ? item.thumbnailUrl : item.assetUrl;
     const label=item.label || (item.type === 'video' ? '原帖视频' : '原帖图像');
+    const loading=eager ? 'eager' : 'lazy';
     if(!preview) return '<a class="media-link ' + (item.type === 'video' ? 'video' : '') + '" href="' + esc(source) + '" target="_blank" rel="noreferrer noopener"><i>' + (item.type === 'video' ? '▶' : 'IMG') + '</i><span>' + esc(label) + '</span><b>↗</b></a>';
-    return '<figure class="media-item ' + (item.type === 'video' ? 'video' : '') + '"><div class="media-viewport"><img class="media-visual" src="' + esc(preview) + '" alt="' + esc(label) + '" loading="lazy" decoding="async">' + (item.type === 'video' ? '<span class="media-play" aria-hidden="true">▶</span>' : '') + '</div><figcaption><span><i>' + (item.type === 'video' ? '视频预览' : '直接展示') + '</i>' + esc(label) + '</span><a href="' + esc(source) + '" target="_blank" rel="noreferrer noopener">原帖 ↗</a></figcaption></figure>';
+    return '<figure class="media-item ' + (item.type === 'video' ? 'video' : '') + '"><div class="media-viewport"><img class="media-visual" src="' + esc(preview) + '" alt="' + esc(label) + '" loading="' + loading + '" decoding="async">' + (item.type === 'video' ? '<span class="media-play" aria-hidden="true">▶</span>' : '') + '</div><figcaption><span><i>' + (item.type === 'video' ? '视频预览' : '直接展示') + '</i>' + esc(label) + '</span><a href="' + esc(source) + '" target="_blank" rel="noreferrer noopener">原帖 ↗</a></figcaption></figure>';
   }).join('');
   return cards ? '<div class="media-gallery">' + cards + '</div>' : '';
 }
 function promptHtml(prompt,index){
-  return '<article class="prompt-card"><div class="prompt-meta"><span>R-' + String(index + 1).padStart(2,'0') + '</span><span>' + esc(prompt.category) + '</span></div><h3>' + esc(prompt.title) + '</h3><p class="prompt-source">' + esc(prompt.publisher) + ' · ' + esc(prompt.handle) + '</p>' + mediaHtml(promptMedia(prompt)) + '<pre>' + esc(prompt.text) + '</pre><div class="prompt-actions"><button data-copy="' + esc(prompt.id) + '">复制 prompt</button><a href="' + esc(prompt.sourceUrl) + '" target="_blank" rel="noreferrer noopener">看原帖 ↗</a></div></article>';
+  return '<article class="prompt-card"><div class="prompt-meta"><span>R-' + String(index + 1).padStart(2,'0') + '</span><span>' + esc(prompt.category) + '</span></div><h3>' + esc(prompt.title) + '</h3><p class="prompt-source">' + esc(prompt.publisher) + ' · ' + esc(prompt.handle) + '</p>' + mediaHtml(promptMedia(prompt),true) + '<pre>' + esc(prompt.text) + '</pre><div class="prompt-actions"><button data-copy="' + esc(prompt.id) + '">复制 prompt</button><a href="' + esc(prompt.sourceUrl) + '" target="_blank" rel="noreferrer noopener">看原帖 ↗</a></div></article>';
 }
 function evidenceHtml(record){
-  return '<article class="evidence-card"><header><div><strong>' + esc(record.publisher.displayName) + '</strong><span>' + esc(record.publisher.handle) + ' · ' + esc(record.capturedAge) + '</span></div><a href="' + esc(record.url) + '" target="_blank" rel="noreferrer noopener">X ↗</a></header><span class="badge">' + esc(levelNames[record.evidenceLevel] || '公开记录') + '</span><p>' + esc(record.postText) + '</p><div class="tags">' + (record.tags || []).map(tag => '<span>' + esc(tag) + '</span>').join('') + '</div>' + (record.promptIds?.length ? '<p><b style="color:#bce8d1">已收录 ' + record.promptIds.length + ' 条完整 prompt</b></p>' : '') + (record.captureNote ? '<p style="font-size:10px;color:#b9c2dc">' + esc(record.captureNote) + '</p>' : '') + (record.media?.length ? mediaHtml(mergedMedia(record)) : '') + (record.linkedSource ? '<a style="display:inline-block;margin-top:15px;color:#ffb19e;font-size:12px;font-weight:600;text-decoration:none" href="' + esc(record.linkedSource) + '" target="_blank" rel="noreferrer noopener">打开关联资料 ↗</a>' : '') + '</article>';
+  return '<article class="evidence-card"><header><div><strong>' + esc(record.publisher.displayName) + '</strong><span>' + esc(record.publisher.handle) + ' · ' + esc(record.capturedAge) + '</span></div><a href="' + esc(record.url) + '" target="_blank" rel="noreferrer noopener">X ↗</a></header><span class="badge">' + esc(levelNames[record.evidenceLevel] || '公开记录') + '</span><p>' + esc(record.postText) + '</p><div class="tags">' + (record.tags || []).map(tag => '<span>' + esc(tag) + '</span>').join('') + '</div>' + (record.promptIds?.length ? '<p><b style="color:#bce8d1">已收录 ' + record.promptIds.length + ' 条完整 prompt</b></p>' : '') + (record.captureNote ? '<p style="font-size:10px;color:#b9c2dc">' + esc(record.captureNote) + '</p>' : '') + (record.media?.length ? mediaHtml(mergedMedia(record),false) : '') + (record.linkedSource ? '<a style="display:inline-block;margin-top:15px;color:#ffb19e;font-size:12px;font-weight:600;text-decoration:none" href="' + esc(record.linkedSource) + '" target="_blank" rel="noreferrer noopener">打开关联资料 ↗</a>' : '') + '</article>';
 }
 
 function render(){ if(!data) return;
