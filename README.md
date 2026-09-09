@@ -26,6 +26,17 @@
 
 > 图片来自仓库内 `assets/images/`，每张图都与一条原始提示词记录配对；来源发布者与作者核验状态不会被省略。
 
+
+## GPT-Image-2.5 六小时实测雷达
+
+本次在 Google Chrome 的 X Latest 时间线抓取过去六小时公开记录，并将官方发布、上手实测、同帖对比、完整可见 prompt 与原帖媒体入口保存为一份可追溯快照。
+
+- 在线研究页：[GPT-Image-2.5 六小时实测雷达](https://portrait.mizzlelover.xyz/gpt-image-2-5)
+- 页面源文件：[site/gpt-image-2-5.html](site/gpt-image-2-5.html) · 归档数据：[site/gpt-image-2-5-data.json](site/gpt-image-2-5-data.json) · 增补记录：[site/gpt-image-2-5-addendum.json](site/gpt-image-2-5-addendum.json)
+- 现场统计：63 条窗口内记录、23 条去重 prompt、81 个页面内直显媒体、10 条对比信号。
+- 媒体说明：图片与视频缩略图直接展示在研究页，X 原帖入口与发布者信息同步保留。
+- 署名规则：保留发布者显示名、账号、抓取时年龄和 X 原帖链接；未核验的账号不被写成 prompt 原创作者。
+
 ## 微信公众号宣传物料
 
 这是维护者的公众号宣传图，和案例效果图分开存放，方便线下传播与仓库访客识别项目入口。扫描图中的二维码，或在微信里搜索“谁是专家”。

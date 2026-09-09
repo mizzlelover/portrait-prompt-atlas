@@ -1,0 +1,3082 @@
+{
+  "schemaVersion": "1.0",
+  "title": "GPT-Image-2.5 六小时 Chrome 实测摘录",
+  "capturedAt": "2026-09-09T08:31:51+08:00",
+  "windowStart": "2026-09-09T02:31:51+08:00",
+  "windowEnd": "2026-09-09T08:31:51+08:00",
+  "timezone": "Asia/Shanghai",
+  "surface": "Google Chrome · X Latest · public status media metadata",
+  "queries": [
+    "GPT Image 2.5",
+    "GPT Image 2.5 prompt",
+    "GPT Image 2.5 comparison",
+    "GPT Image 2.5 GPT Image 2",
+    "GPT-Image-2.5",
+    "GPT Image 2.5 sketch",
+    "GPT Image 2.5 Sunburst Flare"
+  ],
+  "counts": {
+    "recordsCaptured": 63,
+    "uniquePrompts": 23,
+    "comparisonSignals": 10,
+    "mediaLinks": 84
+  },
+  "dedupe": {
+    "method": "提示词文本统一为小写、压缩空白并做精确去重，再进行人工语义复核；同一条帖文内的不同编辑指令保留为独立条目。",
+    "uniquePromptIds": [
+      "p25-01",
+      "p25-02",
+      "p25-03",
+      "p25-04",
+      "p25-05",
+      "p25-06",
+      "p25-07",
+      "p25-08",
+      "p25-09",
+      "p25-10"
+    ]
+  },
+  "notes": [
+    "本批结果按 X Latest 时间线抓取；页面显示的年龄均落在抓取时点前六小时内。",
+    "推文正文、互动量与 X 的展示顺序会变化；本文件是 2026-09-09 07:19（Asia/Shanghai）的快照。",
+    "只有在 Chrome 中完整可见的提示词才进入可复制库；Show more 未展开或正文截断的内容保留为研究记录，不自行补写。",
+    "效果图以原帖图片或视频入口保存，未对 X CDN 媒体做二次托管；这样既能保持来源可追溯，也不会把发布者身份和图片来源拆开。",
+    "‘近两倍更快’、‘ up to 50% faster’等速度表述若来自实测帖或转引帖，均按发布者自述展示，不当作独立基准测试。",
+    "本增补来自同一 6 小时窗口内继续滚动的 X Latest 结果；每条记录保留原帖 URL、发布者、账号与正文摘录。",
+    "效果媒体的直出地址另存于 gpt-image-2-5-assets.json，仅用于前端直接展示；原帖地址仍是证据入口。",
+    "没有把“完整 prompt 在 thread 中”、截断或只描述效果的正文补写成可复制 prompt。",
+    "prompt 去重按清洗后的完整正文比对；同一条 prompt 只进入一次可复制区。"
+  ],
+  "officialBaseline": {
+    "source": "https://openai.com/index/introducing-chatgpt-images-2-5/",
+    "publishedAt": "2026-09-08",
+    "claims": [
+      "更清晰的细节、更自然的光照与纹理",
+      "更好地保留参考图中的主体特征",
+      "更精准的局部编辑与多轮编辑一致性",
+      "相较 Images 2.0，图像生成延迟最高可降低 50%",
+      "API 提供 GPT-Image-2.5 Flare 与 Sunburst；Flare 偏速度与通用生产，Sunburst 偏精细控制"
+    ]
+  },
+  "comparison": [
+    {
+      "dimension": "参考图与主体一致性",
+      "baseline": "GPT-Image-2：旧版用户反馈常需要反复抽卡，系列主体容易漂移。",
+      "upgrade": "GPT-Image-2.5：Glenn、Synthetic_soul 等实测反馈称参考主体、风格与细节保持更稳。",
+      "evidence": "hands-on posts",
+      "sourceTweetIds": [
+        "2097461713863881083",
+        "2097461076866560320"
+      ]
+    },
+    {
+      "dimension": "局部编辑控制",
+      "baseline": "GPT-Image-2：修改一个元素时，背景、产品或构图可能一起漂移。",
+      "upgrade": "GPT-Image-2.5：CG 的 7 条编辑指令与 Synthetic_soul 的草图实验都把重点放在‘只改这一处，其他不动’。",
+      "evidence": "explicit prompts + hands-on",
+      "sourceTweetIds": [
+        "2097456916335383025",
+        "2097461076866560320"
+      ]
+    },
+    {
+      "dimension": "纹理、光照与细节",
+      "baseline": "GPT-Image-2：复杂场景和材质细节是评论中经常被拿来比较的部分。",
+      "upgrade": "GPT-Image-2.5：Tim Jayas 报告森林场景纹理更丰富、细节更锐；官方也把自然光照与 richer textures 列为重点。",
+      "evidence": "comparison post + official brief",
+      "sourceTweetIds": [
+        "2097442532980634096"
+      ]
+    },
+    {
+      "dimension": "生成速度",
+      "baseline": "GPT-Image-2：实测对比中被作为速度参照。",
+      "upgrade": "GPT-Image-2.5：OpenAI 宣称相较 Images 2.0 延迟最高降低 50%；Tim Jayas 自述同一森林提示词‘almost 2x faster’。",
+      "evidence": "official claim + self-reported comparison",
+      "sourceTweetIds": [
+        "2097442532980634096"
+      ]
+    },
+    {
+      "dimension": "文字、产品与版式",
+      "baseline": "GPT-Image-2：复杂文字、产品细节与构图稳定性需要更多人工校正。",
+      "upgrade": "GPT-Image-2.5：OpenAI 强调更复杂的布局理解；Nigel Watson 特别测试了钟表文字与时间，CG 则给出产品标签、画幅扩展和商业摄影 prompt。",
+      "evidence": "hands-on posts + official brief",
+      "sourceTweetIds": [
+        "2097461685220966490",
+        "2097456916335383025"
+      ]
+    },
+    {
+      "dimension": "模型选择",
+      "baseline": "GPT-Image-2：通常以同一模型档位讨论质量。",
+      "upgrade": "GPT-Image-2.5：Flare 偏快与通用生产，Sunburst 偏细节与编辑控制；这是产品定位，不是本批独立评分。",
+      "evidence": "official API announcement",
+      "sourceTweetIds": [
+        "2097399255975813387",
+        "2097394962782384318"
+      ]
+    },
+    {
+      "dimension": "连续多轮编辑",
+      "baseline": "GPT-Image-2：从一张结果继续改动时，主体、材质或背景容易逐轮漂移。",
+      "upgrade": "GPT-Image-2.5：AGIラボ用同一机器人连续 9 次编辑，反馈称脸、质感与背景仍能保住；taziku 也把它用于保持形状与坐标的连续镜头。",
+      "evidence": "同帖对比 + 连续工作流实测",
+      "sourceTweetIds": [
+        "2097479691368337900",
+        "2097453934323572938"
+      ]
+    },
+    {
+      "dimension": "透明背景与资产生产",
+      "baseline": "GPT-Image-2：透明底、产品资产和多轮迭代往往需要额外清理或人工修正。",
+      "upgrade": "GPT-Image-2.5：AmotDesign 报告可一发生成透明 PNG；Adobe Firefly 以包装、文字和持续迭代展示 Sunburst / Flare 的生产取向。",
+      "evidence": "上手反馈 + 平台展示",
+      "sourceTweetIds": [
+        "2097480115219546587",
+        "2097475307187892543"
+      ]
+    },
+    {
+      "dimension": "多参考素材读取",
+      "baseline": "GPT-Image-2：同时指定人物、服装、环境或产品参考时，角色分工容易混在一起。",
+      "upgrade": "GPT-Image-2.5：YUNTJP 用吉他图、角色三视图和名字生成画面，并特别记录模型从图中读出“Suhr Modern”等细节。",
+      "evidence": "多参考图实测",
+      "sourceTweetIds": [
+        "2097467832443539748"
+      ]
+    },
+    {
+      "dimension": "自然人像与材质",
+      "baseline": "GPT-Image-2：人物皮肤、发丝和背景容易出现明显的合成感。",
+      "upgrade": "GPT-Image-2.5：K_polar_AI 反馈发丝、皮肤纹理放大后仍自然；Ankit 的长 prompt 则把头发、毛孔、眼睛、光线和生活场景作为完整约束。",
+      "evidence": "人像实测 + 完整 prompt",
+      "sourceTweetIds": [
+        "2097460058762379757",
+        "2097479641053463004"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "p25-01",
+      "title": "草图构图编辑",
+      "category": "局部编辑",
+      "text": "change the composition to this",
+      "sourceTweetId": "2097461076866560320",
+      "sourceUrl": "https://x.com/Synthetic_Copy/status/2097461076866560320",
+      "publisher": "Synthetic_soul",
+      "handle": "@Synthetic_Copy",
+      "effectLinks": [
+        "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/1",
+        "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/2",
+        "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/3"
+      ],
+      "dedupeKey": "change the composition to this",
+      "captureNote": "发布者说明 prompt 只有这一句，并配合草图输入使用。"
+    },
+    {
+      "id": "p25-02",
+      "title": "局部修补",
+      "category": "局部编辑",
+      "text": "Keep everything in this photo the same, but replace the broken cup with a clean one. Keep the size, angle, lighting, and shadows exactly the same.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/1"
+      ],
+      "dedupeKey": "keep everything in this photo the same, but replace the broken cup with a clean one. keep the size, angle, lighting, and shadows exactly the same.",
+      "captureNote": "原帖标题说明这是 12 条实际会使用的编辑 prompt；Chrome 中完整可见前 7 条。"
+    },
+    {
+      "id": "p25-03",
+      "title": "批量换色",
+      "category": "商业素材",
+      "text": "Create 5 versions of this product. Keep everything the same except change the product color to black, white, red, blue, and yellow.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/2"
+      ],
+      "dedupeKey": "create 5 versions of this product. keep everything the same except change the product color to black, white, red, blue, and yellow.",
+      "captureNote": "原文保留；可用于验证同一产品在多种颜色版本中的一致性。"
+    },
+    {
+      "id": "p25-04",
+      "title": "白天转雨夜",
+      "category": "场景重构",
+      "text": "Turn this daytime street photo into a rainy night scene. Keep the buildings, cars, and people in the same positions. Only change the weather and lighting.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/3"
+      ],
+      "dedupeKey": "turn this daytime street photo into a rainy night scene. keep the buildings, cars, and people in the same positions. only change the weather and lighting.",
+      "captureNote": "原文明确把不变项写出来，是 2.5 局部编辑叙事的代表样本。"
+    },
+    {
+      "id": "p25-05",
+      "title": "扩展画幅",
+      "category": "构图与版式",
+      "text": "Convert this image to a 16:9 landscape image. Do not crop the subject. Extend the background naturally on both sides.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/4"
+      ],
+      "dedupeKey": "convert this image to a 16:9 landscape image. do not crop the subject. extend the background naturally on both sides.",
+      "captureNote": "原文完整可见；重点是保持主体而不是简单裁切。"
+    },
+    {
+      "id": "p25-06",
+      "title": "产品摄影",
+      "category": "商业素材",
+      "text": "Keep the product exactly as shown in the image. Place it on a clean marble tabletop in a premium studio setup with soft light and realistic shadows.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/5"
+      ],
+      "dedupeKey": "keep the product exactly as shown in the image. place it on a clean marble tabletop in a premium studio setup with soft light and realistic shadows.",
+      "captureNote": "原文完整可见；适合放入产品图与品牌资产的实测工作流。"
+    },
+    {
+      "id": "p25-07",
+      "title": "清理现场",
+      "category": "局部编辑",
+      "text": "Remove the boxes and cables from the floor. Fill the missing areas naturally. Keep the furniture, walls, lighting, and camera angle the same.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/6"
+      ],
+      "dedupeKey": "remove the boxes and cables from the floor. fill the missing areas naturally. keep the furniture, walls, lighting, and camera angle the same.",
+      "captureNote": "原文完整可见；通过不变项约束补全区域。"
+    },
+    {
+      "id": "p25-08",
+      "title": "更换包装文字",
+      "category": "文字与包装",
+      "text": "Only replace the label on the bottle with a simple white label that says ‘Original Blend’. Keep the bottle, cap, reflections, and perspective exactly the same.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [
+        "https://x.com/cgtwts/status/2097456916335383025/photo/7"
+      ],
+      "dedupeKey": "only replace the label on the bottle with a simple white label that says ‘original blend’. keep the bottle, cap, reflections, and perspective exactly the same.",
+      "captureNote": "原文完整可见；涉及瓶身文字与产品透视保持。"
+    },
+    {
+      "id": "p25-09",
+      "title": "肖像转乐高",
+      "category": "身份保持",
+      "text": "Turn this person's portrait into a Lego model",
+      "sourceTweetId": "2097442456128078060",
+      "sourceUrl": "https://x.com/steveDOTplus/status/2097442456128078060",
+      "publisher": "Steve • Plus",
+      "handle": "@steveDOTplus",
+      "effectLinks": [
+        "https://x.com/steveDOTplus/status/2097442456128078060/photo/1",
+        "https://x.com/steveDOTplus/status/2097442456128078060/photo/2",
+        "https://x.com/steveDOTplus/status/2097442456128078060/photo/3"
+      ],
+      "dedupeKey": "turn this person's portrait into a lego model",
+      "captureNote": "原帖把它标为 Prompt 1；以 Chrome 可见英文原文保存。"
+    },
+    {
+      "id": "p25-10",
+      "title": "明确材质为乐高",
+      "category": "身份保持",
+      "text": "No, I meant made of Lego.",
+      "sourceTweetId": "2097442456128078060",
+      "sourceUrl": "https://x.com/steveDOTplus/status/2097442456128078060",
+      "publisher": "Steve • Plus",
+      "handle": "@steveDOTplus",
+      "effectLinks": [
+        "https://x.com/steveDOTplus/status/2097442456128078060/photo/2",
+        "https://x.com/steveDOTplus/status/2097442456128078060/photo/3"
+      ],
+      "dedupeKey": "no, i meant made of lego.",
+      "captureNote": "原帖把它标为 Prompt 2；这是多轮编辑中对材质意图的补充。"
+    },
+    {
+      "id": "p25-11",
+      "title": "海滩日出迁移",
+      "category": "场景重构",
+      "text": "Keep the person, clothes and pose unchanged. Move the scene to a quiet beach at sunrise. Make the lighting and shadows match the new environment.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [],
+      "dedupeKey": "keep the person clothes and pose unchanged move the scene to a quiet beach at sunrise make the lighting and shadows match the new environment",
+      "captureNote": "原帖正文通过公开状态全文复核；这是原帖声称的 12 条 prompt 中第 8 条。"
+    },
+    {
+      "id": "p25-12",
+      "title": "只换沙发",
+      "category": "局部编辑",
+      "text": "Keep the room exactly the same. Replace only the sofa with a modern cream-colored sofa. Match the original perspective, lighting and proportions.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [],
+      "dedupeKey": "keep the room exactly the same replace only the sofa with a modern cream colored sofa match the original perspective lighting and proportions",
+      "captureNote": "原帖正文通过公开状态全文复核；这是原帖声称的 12 条 prompt 中第 9 条。"
+    },
+    {
+      "id": "p25-13",
+      "title": "低机位保持一致",
+      "category": "身份保持",
+      "text": "Use this image as the reference for the subject, outfit and location. Create another shot from a slightly lower camera angle while keeping everything else consistent.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [],
+      "dedupeKey": "use this image as the reference for the subject outfit and location create another shot from a slightly lower camera angle while keeping everything else consistent",
+      "captureNote": "原帖正文通过公开状态全文复核；这是原帖声称的 12 条 prompt 中第 10 条。"
+    },
+    {
+      "id": "p25-14",
+      "title": "草图转演示图",
+      "category": "构图与版式",
+      "text": "Turn this rough sketch into a clean presentation graphic. Keep every label, connection and piece of information exactly where it belongs. Improve only the layout and visual design.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [],
+      "dedupeKey": "turn this rough sketch into a clean presentation graphic keep every label connection and piece of information exactly where it belongs improve only the layout and visual design",
+      "captureNote": "原帖正文通过公开状态全文复核；这是原帖声称的 12 条 prompt 中第 11 条。"
+    },
+    {
+      "id": "p25-15",
+      "title": "产品白底抠图",
+      "category": "商业素材",
+      "text": "Remove the background and place the product on pure white. Do not change its shape, color, texture or proportions.",
+      "sourceTweetId": "2097456916335383025",
+      "sourceUrl": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": "CG",
+      "handle": "@cgtwts",
+      "effectLinks": [],
+      "dedupeKey": "remove the background and place the product on pure white do not change its shape color texture or proportions",
+      "captureNote": "原帖正文通过公开状态全文复核；这是原帖声称的 12 条 prompt 中第 12 条。"
+    },
+    {
+      "id": "p25-16",
+      "title": "生活方式人像",
+      "category": "身份保持",
+      "text": "Photorealistic 4:5 morning lifestyle photograph of the same young adult woman, preserving her recognizable facial features and overall appearance. She has long, naturally wavy auburn-red hair, realistic individual hair strands, natural skin texture, subtle pores, tiny imperfections, realistic eyes with natural catchlights, and a genuine relaxed smile while looking directly into the camera. She is wearing modest, comfortable cream-colored home loungewear with a soft cardigan and neutral lounge pants, making fresh coffee in a sleek modern kitchen.\n\nPhotography: professional cinematic smartphone photography, raw unretouched realism, natural morning sunlight, realistic skin tones, physically accurate shadows, subtle lens imperfections, authentic exposure, fine facial detail, natural depth of field, no beauty-filter effect, no plastic skin, no CGI appearance, no overly smooth face, no artificial eyes. Full head completely inside the frame with comfortable space above her hair, natural proportions, sharp facial focus.\n\nEnvironment: large luxury-modern kitchen with warm wood cabinetry, marble countertops, stainless-steel appliances, espresso machine, coffee beans, ceramic mug, croissant, fresh berries, flowers, indoor plants, tasteful minimalist décor, pendant lighting, large windows with a bright morning city view. Natural candid atmosphere, elegant architectural composition, realistic household details, premium editorial lifestyle photography, cinematic but believable.",
+      "sourceTweetId": "2097479641053463004",
+      "sourceUrl": "https://x.com/Ankit_patel211/status/2097479641053463004",
+      "publisher": "ANKIT PATEL 🇮🇳 | AI",
+      "handle": "@Ankit_patel211",
+      "effectLinks": [
+        "https://x.com/Ankit_patel211/status/2097479641053463004/photo/1"
+      ],
+      "dedupeKey": "photorealistic 4 5 morning lifestyle photograph of the same young adult woman preserving her recognizable facial features and overall appearance she has long naturally wavy auburn red hair realistic individual hair strands natural skin texture subtle pores tiny imperfections realistic eyes with natural catchlights and a genuine relaxed smile while looking directly into the camera",
+      "captureNote": "原帖正文完整可见；保留原始分段与英文措辞，适合直接复制测试。"
+    },
+    {
+      "id": "p25-17",
+      "title": "三类参考图合成",
+      "category": "身份保持",
+      "text": "Merge references. Image 1 = identity, image 2 = wardrobe, image 3 = environment. Use each image only for its assigned role, combine into one coherent scene.",
+      "sourceTweetId": "2097463618681884820",
+      "sourceUrl": "https://x.com/arceyul/status/2097463618681884820",
+      "publisher": "arc.",
+      "handle": "@arceyul",
+      "effectLinks": [],
+      "dedupeKey": "merge references image 1 identity image 2 wardrobe image 3 environment use each image only for its assigned role combine into one coherent scene",
+      "captureNote": "原帖正文完整可见；拆成可复用 prompt 条目，原帖本身未附对应效果图。"
+    },
+    {
+      "id": "p25-18",
+      "title": "锁定批准稿",
+      "category": "局部编辑",
+      "text": "Lock the master. This image is the approved master. Treat every visible attribute as locked unless I explicitly name it.",
+      "sourceTweetId": "2097463618681884820",
+      "sourceUrl": "https://x.com/arceyul/status/2097463618681884820",
+      "publisher": "arc.",
+      "handle": "@arceyul",
+      "effectLinks": [],
+      "dedupeKey": "lock the master this image is the approved master treat every visible attribute as locked unless i explicitly name it",
+      "captureNote": "原帖正文完整可见；拆成可复用 prompt 条目，原帖本身未附对应效果图。"
+    },
+    {
+      "id": "p25-19",
+      "title": "外科式局部编辑",
+      "category": "局部编辑",
+      "text": "Surgical edit. Change ONLY [REGION]. Match the existing anatomy, materials, lighting and perspective. Touch nothing else.",
+      "sourceTweetId": "2097463618681884820",
+      "sourceUrl": "https://x.com/arceyul/status/2097463618681884820",
+      "publisher": "arc.",
+      "handle": "@arceyul",
+      "effectLinks": [],
+      "dedupeKey": "surgical edit change only region match the existing anatomy materials lighting and perspective touch nothing else",
+      "captureNote": "原帖正文完整可见；拆成可复用 prompt 条目，原帖本身未附对应效果图。"
+    },
+    {
+      "id": "p25-20",
+      "title": "产品到整套广告",
+      "category": "商业素材",
+      "text": "Product → campaign. Image 1 is the immutable reference. Preserve geometry, color and branding exactly. Change only environment, lighting and camera.",
+      "sourceTweetId": "2097463618681884820",
+      "sourceUrl": "https://x.com/arceyul/status/2097463618681884820",
+      "publisher": "arc.",
+      "handle": "@arceyul",
+      "effectLinks": [],
+      "dedupeKey": "product campaign image 1 is the immutable reference preserve geometry color and branding exactly change only environment lighting and camera",
+      "captureNote": "原帖正文完整可见；拆成可复用 prompt 条目，原帖本身未附对应效果图。"
+    },
+    {
+      "id": "p25-21",
+      "title": "改比例不裁主体",
+      "category": "构图与版式",
+      "text": "Reformat, don’t crop. Recompose for [RATIO]. Extend and rearrange the scene intelligently while preserving the subject and visual hierarchy.",
+      "sourceTweetId": "2097463618681884820",
+      "sourceUrl": "https://x.com/arceyul/status/2097463618681884820",
+      "publisher": "arc.",
+      "handle": "@arceyul",
+      "effectLinks": [],
+      "dedupeKey": "reformat don't crop recompose for ratio extend and rearrange the scene intelligently while preserving the subject and visual hierarchy",
+      "captureNote": "原帖正文完整可见；拆成可复用 prompt 条目，原帖本身未附对应效果图。"
+    },
+    {
+      "id": "p25-22",
+      "title": "只换服装",
+      "category": "身份保持",
+      "text": "Wardrobe swap. Preserve identity, proportions, pose, camera, lighting and background. Replace only [GARMENT] using image 2 as reference.",
+      "sourceTweetId": "2097463618681884820",
+      "sourceUrl": "https://x.com/arceyul/status/2097463618681884820",
+      "publisher": "arc.",
+      "handle": "@arceyul",
+      "effectLinks": [],
+      "dedupeKey": "wardrobe swap preserve identity proportions pose camera lighting and background replace only garment using image 2 as reference",
+      "captureNote": "原帖正文完整可见；拆成可复用 prompt 条目，原帖本身未附对应效果图。"
+    },
+    {
+      "id": "p25-23",
+      "title": "电商产品清理",
+      "category": "商业素材",
+      "text": "E-commerce cleanup. Preserve the product exactly. Isolate on [BACKGROUND]. Repair edges only, no color or proportion changes.",
+      "sourceTweetId": "2097463618681884820",
+      "sourceUrl": "https://x.com/arceyul/status/2097463618681884820",
+      "publisher": "arc.",
+      "handle": "@arceyul",
+      "effectLinks": [],
+      "dedupeKey": "e commerce cleanup preserve the product exactly isolate on background repair edges only no color or proportion changes",
+      "captureNote": "原帖正文完整可见；拆成可复用 prompt 条目，原帖本身未附对应效果图。"
+    }
+  ],
+  "records": [
+    {
+      "id": "2097399255975813387",
+      "url": "https://x.com/OpenAIDevs/status/2097399255975813387",
+      "publisher": {
+        "displayName": "OpenAI Developers",
+        "handle": "@OpenAIDevs",
+        "profileUrl": "https://x.com/OpenAIDevs",
+        "role": "官方发布"
+      },
+      "capturedAge": "4h",
+      "postText": "Meet GPT-Image-2.5 Flare and Sunburst. Introducing new image models in the API, with sharper detail, stronger style adherence, and more control over edits.",
+      "evidenceLevel": "official",
+      "media": [
+        {
+          "type": "video",
+          "label": "原帖视频 · 约 1:01",
+          "url": "https://x.com/OpenAIDevs/status/2097399255975813387"
+        }
+      ],
+      "tags": [
+        "Flare",
+        "Sunburst",
+        "API",
+        "官方"
+      ]
+    },
+    {
+      "id": "2097394956457623964",
+      "url": "https://x.com/OpenAI/status/2097394956457623964",
+      "publisher": {
+        "displayName": "OpenAI",
+        "handle": "@OpenAI",
+        "profileUrl": "https://x.com/OpenAI",
+        "role": "官方发布"
+      },
+      "capturedAge": "4h",
+      "postText": "ChatGPT Images 2.5—faster, sharper, smarter, with better tools for creating whatever you can dream of. Faster image generation; improved fidelity; consistent details across multiple edits; comment-based edits.",
+      "evidenceLevel": "official",
+      "media": [
+        {
+          "type": "video",
+          "label": "原帖视频 · 约 0:57",
+          "url": "https://x.com/OpenAI/status/2097394956457623964"
+        }
+      ],
+      "tags": [
+        "更快",
+        "更锐",
+        "多轮一致性",
+        "官方"
+      ]
+    },
+    {
+      "id": "2097394962782384318",
+      "url": "https://x.com/OpenAI/status/2097394962782384318",
+      "publisher": {
+        "displayName": "OpenAI",
+        "handle": "@OpenAI",
+        "profileUrl": "https://x.com/OpenAI",
+        "role": "官方发布"
+      },
+      "capturedAge": "4h",
+      "postText": "ChatGPT Images 2.5 launched for all ChatGPT, ChatGPT Work, and Codex users. API has GPT-Image-2.5 Flare and Sunburst.",
+      "evidenceLevel": "official",
+      "media": [],
+      "tags": [
+        "可用性",
+        "API",
+        "官方"
+      ]
+    },
+    {
+      "id": "2097461901265658340",
+      "url": "https://x.com/higgsfield/status/2097461901265658340",
+      "publisher": {
+        "displayName": "Higgsfield AI",
+        "handle": "@higgsfield",
+        "profileUrl": "https://x.com/higgsfield",
+        "role": "产品平台"
+      },
+      "capturedAge": "2h",
+      "postText": "GPT Image 2.5 delivers remarkable consistency in stop-motion animation. Now available on Higgsfield!",
+      "evidenceLevel": "promotion",
+      "media": [
+        {
+          "type": "video",
+          "label": "原帖视频 · 约 0:06",
+          "url": "https://x.com/higgsfield/status/2097461901265658340"
+        }
+      ],
+      "tags": [
+        "一致性",
+        "定格动画",
+        "平台集成"
+      ]
+    },
+    {
+      "id": "2097461713863881083",
+      "url": "https://x.com/GlennHasABeard/status/2097461713863881083",
+      "publisher": {
+        "displayName": "Glenn Williams",
+        "handle": "@GlennHasABeard",
+        "profileUrl": "https://x.com/GlennHasABeard",
+        "role": "实测发布者"
+      },
+      "capturedAge": "2m",
+      "postText": "GPT Image 2.5 / My Caturday font using my cats as reference. 2.5 already seems much better with references. Sunburst is left, Flare is right.",
+      "evidenceLevel": "comparison",
+      "media": [
+        {
+          "type": "image",
+          "label": "原帖图像 1 · Sunburst",
+          "url": "https://x.com/GlennHasABeard/status/2097461713863881083/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 2 · Flare",
+          "url": "https://x.com/GlennHasABeard/status/2097461713863881083/photo/2"
+        }
+      ],
+      "tags": [
+        "参考图",
+        "Sunburst vs Flare",
+        "主体保持"
+      ]
+    },
+    {
+      "id": "2097461685220966490",
+      "url": "https://x.com/NigelWatsonTFTC/status/2097461685220966490",
+      "publisher": {
+        "displayName": "Nigel Watson",
+        "handle": "@NigelWatsonTFTC",
+        "profileUrl": "https://x.com/NigelWatsonTFTC",
+        "role": "实测发布者"
+      },
+      "capturedAge": "2m",
+      "postText": "OpenAI Just released GPT IMAGE 2.5... It’s so good and fast and seems to solve that black texture that gpt2 kept pushing... It's also very precise with the clock... it was 11:56 indeed!",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "原帖图像 1",
+          "url": "https://x.com/NigelWatsonTFTC/status/2097461685220966490/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 2",
+          "url": "https://x.com/NigelWatsonTFTC/status/2097461685220966490/photo/2"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 3",
+          "url": "https://x.com/NigelWatsonTFTC/status/2097461685220966490/photo/3"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 4",
+          "url": "https://x.com/NigelWatsonTFTC/status/2097461685220966490/photo/4"
+        }
+      ],
+      "tags": [
+        "速度",
+        "钟表文字",
+        "纹理"
+      ]
+    },
+    {
+      "id": "2097461076866560320",
+      "url": "https://x.com/Synthetic_Copy/status/2097461076866560320",
+      "publisher": {
+        "displayName": "Synthetic_soul",
+        "handle": "@Synthetic_Copy",
+        "profileUrl": "https://x.com/Synthetic_Copy",
+        "role": "实测发布者"
+      },
+      "capturedAge": "9m",
+      "postText": "gpt image 2.5 is pretty good for editing. it preserves the style and the details well, and guiding it with a sketch is fun. prompt was only ‘change the composition to this’",
+      "evidenceLevel": "hands-on",
+      "promptIds": [
+        "p25-01"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "label": "原帖图像 1",
+          "url": "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 2",
+          "url": "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/2"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 3",
+          "url": "https://x.com/Synthetic_Copy/status/2097461076866560320/photo/3"
+        }
+      ],
+      "tags": [
+        "局部编辑",
+        "Sketch",
+        "风格保持"
+      ]
+    },
+    {
+      "id": "2097456916335383025",
+      "url": "https://x.com/cgtwts/status/2097456916335383025",
+      "publisher": {
+        "displayName": "CG",
+        "handle": "@cgtwts",
+        "profileUrl": "https://x.com/cgtwts",
+        "role": "prompt 发布者"
+      },
+      "capturedAge": "24m",
+      "postText": "the coolest thing about GPT-Image 2.5 isn’t just that it makes better images. it’s that you can tell it what to change without messing up everything else. here are 12 prompts i’d actually use:",
+      "evidenceLevel": "explicit-prompt",
+      "promptIds": [
+        "p25-02",
+        "p25-03",
+        "p25-04",
+        "p25-05",
+        "p25-06",
+        "p25-07",
+        "p25-08"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "label": "原帖图像 1",
+          "url": "https://x.com/cgtwts/status/2097456916335383025/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 2",
+          "url": "https://x.com/cgtwts/status/2097456916335383025/photo/2"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 3",
+          "url": "https://x.com/cgtwts/status/2097456916335383025/photo/3"
+        }
+      ],
+      "tags": [
+        "7 条完整 prompt",
+        "局部编辑",
+        "商业素材"
+      ],
+      "captureNote": "原帖声称共有 12 条；本次 Chrome 页面抓取到并完整展开前 7 条，未对其余 5 条进行猜测。"
+    },
+    {
+      "id": "2097461302163816747",
+      "url": "https://x.com/FABYMETAL4/status/2097461302163816747",
+      "publisher": {
+        "displayName": "FabyΔ",
+        "handle": "@FABYMETAL4",
+        "profileUrl": "https://x.com/FABYMETAL4",
+        "role": "实测发布者"
+      },
+      "capturedAge": "4m",
+      "postText": "GPT Image 2.5 character replacement test",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "原帖图像 1",
+          "url": "https://x.com/FABYMETAL4/status/2097461302163816747/photo/1"
+        }
+      ],
+      "tags": [
+        "角色替换",
+        "参考图"
+      ]
+    },
+    {
+      "id": "2097462055196414034",
+      "url": "https://x.com/LightSkkh/status/2097462055196414034",
+      "publisher": {
+        "displayName": "Light Sekkuchi",
+        "handle": "@LightSkkh",
+        "profileUrl": "https://x.com/LightSkkh",
+        "role": "实测发布者"
+      },
+      "capturedAge": "52s",
+      "postText": "Asked GPT Image 2.5 for a rental ad and a burger ad, using only a short brief; two outputs were attached.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "租赁广告 · 原帖图像 1",
+          "url": "https://x.com/LightSkkh/status/2097462055196414034/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "汉堡广告 · 原帖图像 2",
+          "url": "https://x.com/LightSkkh/status/2097462055196414034/photo/2"
+        }
+      ],
+      "tags": [
+        "广告",
+        "商业素材",
+        "短 brief"
+      ]
+    },
+    {
+      "id": "2097462175186980949",
+      "url": "https://x.com/HexxRL/status/2097462175186980949",
+      "publisher": {
+        "displayName": "Hexx ./",
+        "handle": "@HexxRL",
+        "profileUrl": "https://x.com/HexxRL",
+        "role": "实测发布者"
+      },
+      "capturedAge": "23s",
+      "postText": "OWN THE STEP by GPT-6 Astra, GPT-Image 2.5 and @vidmuse_ai Freeform. tested out the new GPT-Image 2.5 for reference designs. Full prompt in thread.",
+      "evidenceLevel": "hands-on",
+      "promptStatus": "not-disclosed",
+      "media": [
+        {
+          "type": "video",
+          "label": "原帖视频 · 约 0:15",
+          "url": "https://x.com/HexxRL/status/2097462175186980949"
+        }
+      ],
+      "tags": [
+        "参考设计",
+        "视频工作流"
+      ],
+      "captureNote": "正文提示完整 prompt 在 thread 中；本次抓取页未展开 thread，故不补写。"
+    },
+    {
+      "id": "2097456549988016310",
+      "url": "https://x.com/shriabhinav09/status/2097456549988016310",
+      "publisher": {
+        "displayName": "Abhinav Shrivastava",
+        "handle": "@shriabhinav09",
+        "profileUrl": "https://x.com/shriabhinav09",
+        "role": "实测发布者"
+      },
+      "capturedAge": "25m",
+      "postText": "GPT Image 2.5 is crazy guys",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "原帖图像 1",
+          "url": "https://x.com/shriabhinav09/status/2097456549988016310/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 2",
+          "url": "https://x.com/shriabhinav09/status/2097456549988016310/photo/2"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 3",
+          "url": "https://x.com/shriabhinav09/status/2097456549988016310/photo/3"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 4",
+          "url": "https://x.com/shriabhinav09/status/2097456549988016310/photo/4"
+        }
+      ],
+      "tags": [
+        "实测",
+        "效果图"
+      ]
+    },
+    {
+      "id": "2097456425190711694",
+      "url": "https://x.com/IHayato/status/2097456425190711694",
+      "publisher": {
+        "displayName": "🍺 イケハヤ",
+        "handle": "@IHayato",
+        "profileUrl": "https://x.com/IHayato",
+        "role": "实测发布者"
+      },
+      "capturedAge": "26m",
+      "postText": "GPT Image 2.5 is insanely good. Even with low quality, it spits out material that's totally usable! This is gonna slash costs big time...",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "原帖图像 1",
+          "url": "https://x.com/IHayato/status/2097456425190711694/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 2",
+          "url": "https://x.com/IHayato/status/2097456425190711694/photo/2"
+        }
+      ],
+      "tags": [
+        "可用性",
+        "成本",
+        "实测"
+      ]
+    },
+    {
+      "id": "2097456390814208386",
+      "url": "https://x.com/earlyfield8612/status/2097456390814208386",
+      "publisher": {
+        "displayName": "Yas",
+        "handle": "@earlyfield8612",
+        "profileUrl": "https://x.com/earlyfield8612",
+        "role": "实测发布者"
+      },
+      "capturedAge": "26m",
+      "postText": "I tried using gpt-image-2.5 to generate an LP, even with no special prompt settings, it produced a fairly good result.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "Landing page · 原帖图像 1",
+          "url": "https://x.com/earlyfield8612/status/2097456390814208386/photo/1"
+        }
+      ],
+      "tags": [
+        "LP",
+        "版式",
+        "短 prompt"
+      ]
+    },
+    {
+      "id": "2097442456128078060",
+      "url": "https://x.com/steveDOTplus/status/2097442456128078060",
+      "publisher": {
+        "displayName": "Steve • Plus",
+        "handle": "@steveDOTplus",
+        "profileUrl": "https://x.com/steveDOTplus",
+        "role": "prompt 实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "GPT-Image-2.5 test, subject Jakub Pachocki; Prompt 2: No, I meant made of Lego. Prompt 1: Turn this person's portrait into a Lego model",
+      "evidenceLevel": "explicit-prompt",
+      "promptIds": [
+        "p25-09",
+        "p25-10"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "label": "原帖图像 1",
+          "url": "https://x.com/steveDOTplus/status/2097442456128078060/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 2",
+          "url": "https://x.com/steveDOTplus/status/2097442456128078060/photo/2"
+        },
+        {
+          "type": "image",
+          "label": "原帖图像 3",
+          "url": "https://x.com/steveDOTplus/status/2097442456128078060/photo/3"
+        }
+      ],
+      "tags": [
+        "多轮编辑",
+        "材质",
+        "肖像"
+      ]
+    },
+    {
+      "id": "2097442532980634096",
+      "url": "https://x.com/TimJayas/status/2097442532980634096",
+      "publisher": {
+        "displayName": "Tim Jayas",
+        "handle": "@TimJayas",
+        "profileUrl": "https://x.com/TimJayas",
+        "role": "对比实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "GPT-Image 2.5 vs GPT-Image 2 on complex forest prompt. same prompt to both; 2.5 clearly improved richer textures/sharper details, almost 2x faster against Image 2.",
+      "evidenceLevel": "comparison",
+      "promptStatus": "not-disclosed",
+      "media": [
+        {
+          "type": "image",
+          "label": "对比原帖图像 1",
+          "url": "https://x.com/TimJayas/status/2097442532980634096/photo/1"
+        }
+      ],
+      "tags": [
+        "直接对比",
+        "纹理",
+        "速度"
+      ],
+      "captureNote": "同帖同时比较 GPT-Image-2 与 2.5；完整森林 prompt 未在抓取页面展开。"
+    },
+    {
+      "id": "2097442017085366600",
+      "url": "https://x.com/yaohongan2025/status/2097442017085366600",
+      "publisher": {
+        "displayName": "虹安AI进化论",
+        "handle": "@yaohongan2025",
+        "profileUrl": "https://x.com/yaohongan2025",
+        "role": "对比观点发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "Compared with Images 2.0 / GPT Image 2: image quality is steadier, details sharper, light and texture more natural, references preserve the subject better, and targeted edits are stronger.",
+      "evidenceLevel": "comparison",
+      "media": [],
+      "tags": [
+        "直接对比",
+        "主体保持",
+        "局部编辑"
+      ]
+    },
+    {
+      "id": "2097443412597207391",
+      "url": "https://x.com/rishabhxAi/status/2097443412597207391",
+      "publisher": {
+        "displayName": "rishabh",
+        "handle": "@rishabhxAi",
+        "profileUrl": "https://x.com/rishabhxAi",
+        "role": "对比实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "same brutal prompt across 4 models: Mumbai watch guy stress test (hands + Hindi text + 3 clocks + mirror + 7 gears). Nano Banana Pro strictest instruction follower; GPT Image 2.5 cleaner hands + louder crack than Image...",
+      "evidenceLevel": "comparison",
+      "promptStatus": "partial",
+      "media": [
+        {
+          "type": "image",
+          "label": "对比原帖图像 1",
+          "url": "https://x.com/rishabhxAi/status/2097443412597207391/photo/1"
+        }
+      ],
+      "tags": [
+        "复杂指令",
+        "手部",
+        "多文字",
+        "对比"
+      ],
+      "captureNote": "正文在 Chrome 中以 Show more 截断；保留可见结论，不把未展开部分当作完整 prompt。"
+    },
+    {
+      "id": "2097458513702515165",
+      "url": "https://x.com/JohnnyWang8802/status/2097458513702515165",
+      "publisher": {
+        "displayName": "Johnny Wang",
+        "handle": "@JohnnyWang8802",
+        "profileUrl": "https://x.com/JohnnyWang8802",
+        "role": "prompt 发布者"
+      },
+      "capturedAge": "17m",
+      "postText": "GPT Image 2.5 Prompt: A film still, 2.39:1. A flooded plain at civil twilight, water 20 cm deep and mirror-still to the horizon, a farmhouse and three poplars standing in it. Ordinary, terrestrial, quiet. The reflection does not match: in the water lies not this sky but a …",
+      "evidenceLevel": "explicit-prompt",
+      "promptStatus": "partial",
+      "media": [
+        {
+          "type": "image",
+          "label": "原帖图像 1",
+          "url": "https://x.com/JohnnyWang8802/status/2097458513702515165/photo/1"
+        }
+      ],
+      "tags": [
+        "电影感",
+        "复杂场景",
+        "prompt 截断"
+      ],
+      "captureNote": "提示词在 X 搜索页出现 Show more，抓取内容只到可见省略号；不进入可复制 prompt 库。"
+    },
+    {
+      "id": "2097461106545721842",
+      "url": "https://x.com/AITensibility/status/2097461106545721842",
+      "publisher": {
+        "displayName": "AI Tensibility",
+        "handle": "@AITensibility",
+        "profileUrl": "https://x.com/AITensibility",
+        "role": "资讯转述者"
+      },
+      "capturedAge": "7m",
+      "postText": "OpenAI launched ChatGPT Images 2.5, image creation up to 50% faster, more accurate corrections, new Sketch and model API.",
+      "evidenceLevel": "quoted",
+      "media": [],
+      "tags": [
+        "官方信息转述",
+        "速度",
+        "Sketch"
+      ],
+      "quotedSource": "https://x.com/arena/status/2097400515546255754",
+      "captureNote": "‘up to 50% faster’在此处作为转述信息展示；速度依据以 OpenAI 官方页面为准。"
+    },
+    {
+      "id": "2097400515546255754",
+      "url": "https://x.com/arena/status/2097400515546255754",
+      "publisher": {
+        "displayName": "Arena.ai",
+        "handle": "@arena",
+        "profileUrl": "https://x.com/arena",
+        "role": "评测平台转述"
+      },
+      "capturedAge": "4h",
+      "postText": "GPT-Image-2.5-Sunburst is #1 and Flare is #2 across the Text-to-Image Arena, Image Edit Arena, and Multi-Image Edit Arena. Both are described as significant improvements over GPT-Image-2 (medium).",
+      "evidenceLevel": "quoted",
+      "media": [
+        {
+          "type": "image",
+          "label": "Arena 原帖图像 1",
+          "url": "https://x.com/arena/status/2097400515546255754/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "Arena 原帖图像 2",
+          "url": "https://x.com/arena/status/2097400515546255754/photo/2"
+        },
+        {
+          "type": "image",
+          "label": "Arena 原帖图像 3",
+          "url": "https://x.com/arena/status/2097400515546255754/photo/3"
+        }
+      ],
+      "tags": [
+        "Arena",
+        "排名",
+        "对比"
+      ],
+      "captureNote": "按 X 页面作为转引评测结论保留；未将其转写为本批独立基准分数。"
+    },
+    {
+      "id": "2097461408934047779",
+      "url": "https://x.com/zero_mofudog/status/2097461408934047779",
+      "publisher": {
+        "displayName": "ユートロン",
+        "handle": "@zero_mofudog",
+        "profileUrl": "https://x.com/zero_mofudog",
+        "role": "实测评论者"
+      },
+      "capturedAge": "3m",
+      "postText": "Were all these generated one by one with GPT Image 2.5? Almost perfect consistency. You can make stop-motion animations!",
+      "evidenceLevel": "hands-on",
+      "media": [],
+      "tags": [
+        "一致性",
+        "定格动画"
+      ],
+      "quotedSource": "https://x.com/charlierguo"
+    },
+    {
+      "id": "2097461447634886822",
+      "url": "https://x.com/AIMIRAI46487/status/2097461447634886822",
+      "publisher": {
+        "displayName": "AI速報",
+        "handle": "@AIMIRAI46487",
+        "profileUrl": "https://x.com/AIMIRAI46487",
+        "role": "资讯转述者"
+      },
+      "capturedAge": "3m",
+      "postText": "ChatGPT Images 2.5 appears via API as GPT-Image-2.5 Flare / Sunburst; the post recommends Sunburst for editing precision and Flare for faster generation.",
+      "evidenceLevel": "quoted",
+      "media": [
+        {
+          "type": "video",
+          "label": "原帖视频 · 约 1:01",
+          "url": "https://x.com/AIMIRAI46487/status/2097461447634886822"
+        }
+      ],
+      "tags": [
+        "Flare",
+        "Sunburst",
+        "编辑"
+      ],
+      "captureNote": "模型选择是该发布者的解读，官方定位仍以 OpenAI 公告为准。"
+    },
+    {
+      "id": "2097461291619356890",
+      "url": "https://x.com/el_el_san/status/2097461291619356890",
+      "publisher": {
+        "displayName": "える",
+        "handle": "@el_el_san",
+        "profileUrl": "https://x.com/el_el_san",
+        "role": "实测发布者"
+      },
+      "capturedAge": "6m",
+      "postText": "Maybe GPT Image 2.5…!",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "原帖图像 1",
+          "url": "https://x.com/el_el_san/status/2097461291619356890/photo/1"
+        }
+      ],
+      "tags": [
+        "实测",
+        "效果图"
+      ]
+    },
+    {
+      "id": "2097457995089093062",
+      "url": "https://x.com/airyware/status/2097457995089093062",
+      "publisher": {
+        "displayName": "Airyware",
+        "handle": "@airyware",
+        "profileUrl": "https://x.com/airyware",
+        "role": "实测发布者"
+      },
+      "capturedAge": "19m",
+      "postText": "GPT-Image-2.5 Sunburst can also create cute QR code art",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "QR code art · 原帖图像 1",
+          "url": "https://x.com/airyware/status/2097457995089093062/photo/1"
+        }
+      ],
+      "tags": [
+        "文字与图形",
+        "Sunburst",
+        "二维码"
+      ]
+    },
+    {
+      "id": "2097457244602548459",
+      "url": "https://x.com/carcluc/status/2097457244602548459",
+      "publisher": {
+        "displayName": "そま",
+        "handle": "@carcluc",
+        "profileUrl": "https://x.com/carcluc",
+        "role": "实测评论者"
+      },
+      "capturedAge": "22m",
+      "postText": "GPT-image-2.5 is great, fast, and good for mascots.",
+      "evidenceLevel": "hands-on",
+      "media": [],
+      "tags": [
+        "速度",
+        "吉祥物",
+        "实测"
+      ]
+    },
+    {
+      "id": "2097460486610522225",
+      "url": "https://x.com/iamleannmuller/status/2097460486610522225",
+      "publisher": {
+        "displayName": "Leann Muller",
+        "handle": "@iamleannmuller",
+        "profileUrl": "https://x.com/iamleannmuller",
+        "role": "经验总结发布者"
+      },
+      "capturedAge": "9m",
+      "postText": "99% of people use GPT Image 2.5 wrong… Flare—faster; Sunburst—more detailed; big one: edit specific parts with a prompt without losing …",
+      "evidenceLevel": "hands-on",
+      "promptStatus": "partial",
+      "media": [],
+      "tags": [
+        "模型选择",
+        "局部编辑"
+      ],
+      "captureNote": "X 页面正文截断；只保留可见的模型选择与编辑观点。"
+    },
+    {
+      "id": "2097460221526593597",
+      "url": "https://x.com/gkxspace/status/2097460221526593597",
+      "publisher": {
+        "displayName": "余温",
+        "handle": "@gkxspace",
+        "profileUrl": "https://x.com/gkxspace",
+        "role": "实测评论者"
+      },
+      "capturedAge": "10m",
+      "postText": "Images 2.5 finally supports commercial workflows and multi-asset consistency, according to this user's take on the launch.",
+      "evidenceLevel": "hands-on",
+      "media": [],
+      "tags": [
+        "商业工作流",
+        "多资产一致性"
+      ],
+      "captureNote": "正文在 X 页面显示 Show more；本记录是可见部分的摘要性摘录。"
+    },
+    {
+      "id": "2097445127484477896",
+      "url": "https://x.com/reelyart/status/2097445127484477896",
+      "publisher": {
+        "displayName": "Reely Art",
+        "handle": "@reelyart",
+        "profileUrl": "https://x.com/reelyart",
+        "role": "教程发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "Explore GPT Image 2.5 in more detail. Sunburst vs Flare, real outputs, prompt examples, use cases, and a practical prompt guide.",
+      "evidenceLevel": "promotion",
+      "media": [
+        {
+          "type": "image",
+          "label": "教程图像 1",
+          "url": "https://x.com/reelyart/status/2097445127484477896/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "教程图像 2",
+          "url": "https://x.com/reelyart/status/2097445127484477896/photo/2"
+        },
+        {
+          "type": "image",
+          "label": "教程图像 3",
+          "url": "https://x.com/reelyart/status/2097445127484477896/photo/3"
+        }
+      ],
+      "tags": [
+        "Flare vs Sunburst",
+        "prompt guide",
+        "教程"
+      ],
+      "linkedSource": "https://reely.art/models"
+    },
+    {
+      "id": "2097443589408096339",
+      "url": "https://x.com/stretchcloud/status/2097443589408096339",
+      "publisher": {
+        "displayName": "Prasenjit Sarkar",
+        "handle": "@stretchcloud",
+        "profileUrl": "https://x.com/stretchcloud",
+        "role": "开源整理者"
+      },
+      "capturedAge": "1h",
+      "postText": "Prompt as Spec — 2,383 GPT-Image-2.5 prompts. A linked GitHub repository for an expanded prompt archive.",
+      "evidenceLevel": "promotion",
+      "media": [],
+      "tags": [
+        "GitHub",
+        "prompt archive",
+        "扩展阅读"
+      ],
+      "linkedSource": "https://github.com/stretchcloud/awesome-gpt-image-prompt-2.5",
+      "captureNote": "本页只保存推文与外链，不复制该仓库的完整 prompt 集。"
+    },
+    {
+      "id": "2097481120681967770",
+      "url": "https://x.com/Gen_Evg/status/2097481120681967770",
+      "publisher": {
+        "displayName": "Bogdan",
+        "handle": "@Gen_Evg",
+        "profileUrl": "https://x.com/Gen_Evg",
+        "role": "实测发布者"
+      },
+      "capturedAge": "7m",
+      "postText": "Gandalf eating onion rings GPT‑Image‑2.5 Sunburst",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "Gandalf onion rings · 原帖图像 1",
+          "url": "https://x.com/Gen_Evg/status/2097481120681967770/photo/1"
+        }
+      ],
+      "tags": [
+        "Sunburst",
+        "奇想场景",
+        "效果图"
+      ]
+    },
+    {
+      "id": "2097481001744134492",
+      "url": "https://x.com/Gen_Evg/status/2097481001744134492",
+      "publisher": {
+        "displayName": "Bogdan",
+        "handle": "@Gen_Evg",
+        "profileUrl": "https://x.com/Gen_Evg",
+        "role": "实测发布者"
+      },
+      "capturedAge": "8m",
+      "postText": "GPT‑Image‑2.5 Sunburst",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "Sunburst · 原帖图像 1",
+          "url": "https://x.com/Gen_Evg/status/2097481001744134492/photo/1"
+        }
+      ],
+      "tags": [
+        "Sunburst",
+        "效果图"
+      ]
+    },
+    {
+      "id": "2097480722994884658",
+      "url": "https://x.com/corkill_jason/status/2097480722994884658",
+      "publisher": {
+        "displayName": "Jason Corkill",
+        "handle": "@corkill_jason",
+        "profileUrl": "https://x.com/corkill_jason",
+        "role": "评测观察者"
+      },
+      "capturedAge": "10m",
+      "postText": "gpt-image-2.5 flare's nr1 spot lasted for like 30min. Sunburst beats flare by a larger margin than the previous SOTA image-2.0 did the runner up. Crazy work! https://Benchmark.ai/image for details",
+      "evidenceLevel": "comparison",
+      "media": [
+        {
+          "type": "image",
+          "label": "Benchmark 观察 · 原帖图像 1",
+          "url": "https://x.com/corkill_jason/status/2097480722994884658/photo/1"
+        }
+      ],
+      "tags": [
+        "Flare vs Sunburst",
+        "Benchmark",
+        "排名观察"
+      ]
+    },
+    {
+      "id": "2097480602966446545",
+      "url": "https://x.com/icreatelife/status/2097480602966446545",
+      "publisher": {
+        "displayName": "Kris Kashtanova",
+        "handle": "@icreatelife",
+        "profileUrl": "https://x.com/icreatelife",
+        "role": "创作者 / 实测发布者"
+      },
+      "capturedAge": "11m",
+      "postText": "Make a mind map of your life with GPT Image 2.5 in Firefly Boards. This way you can introduce yourself and tell your story. Prompt is in the thread below.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "人生思维导图 · 原帖图像 1",
+          "url": "https://x.com/icreatelife/status/2097480602966446545/photo/1"
+        }
+      ],
+      "tags": [
+        "Firefly Boards",
+        "思维导图",
+        "结构化画面"
+      ],
+      "promptStatus": "not-disclosed",
+      "captureNote": "正文明确说 prompt 在 thread；本次不把未展开回复当作完整 prompt。"
+    },
+    {
+      "id": "2097480468291592575",
+      "url": "https://x.com/LightSciencXXII/status/2097480468291592575",
+      "publisher": {
+        "displayName": "Light Science 🇦🇷",
+        "handle": "@LightSciencXXII",
+        "profileUrl": "https://x.com/LightSciencXXII",
+        "role": "资讯转述者"
+      },
+      "capturedAge": "11m",
+      "postText": "Researchers have released GPT Image 2.5 Sunburst and Flare. Sunburst focuses on visual fidelity; Flare is over 50% quicker than its predecessor while maintaining equal quality. Both support transparent backgrounds.",
+      "evidenceLevel": "quoted",
+      "media": [
+        {
+          "type": "video",
+          "label": "模型能力解读 · 原帖视频",
+          "url": "https://x.com/LightSciencXXII/status/2097480468291592575"
+        }
+      ],
+      "tags": [
+        "透明背景",
+        "速度",
+        "Sunburst / Flare"
+      ],
+      "captureNote": "属于信息转述，速度与模型定位仍以 OpenAI 官方资料为准。"
+    },
+    {
+      "id": "2097480256831832404",
+      "url": "https://x.com/DataChaz/status/2097480256831832404",
+      "publisher": {
+        "displayName": "Charly Wargnier ♨️",
+        "handle": "@DataChaz",
+        "profileUrl": "https://x.com/DataChaz",
+        "role": "产品工作流发布者"
+      },
+      "capturedAge": "12m",
+      "postText": "GPT-Image 2.5 is now LIVE on Higgsfield with sharper product detailing and way better text. The author lists studio product shots, readable labels, logo consistency, ad angles and packaging mockups as practical uses.",
+      "evidenceLevel": "promotion",
+      "media": [
+        {
+          "type": "video",
+          "label": "Higgsfield 产品广告演示 · 原帖视频",
+          "url": "https://x.com/DataChaz/status/2097480256831832404"
+        }
+      ],
+      "tags": [
+        "产品摄影",
+        "包装",
+        "品牌文字",
+        "广告"
+      ]
+    },
+    {
+      "id": "2097480115219546587",
+      "url": "https://x.com/amotdesign/status/2097480115219546587",
+      "publisher": {
+        "displayName": "Sakai / Webデザイナー AmotDesign",
+        "handle": "@amotdesign",
+        "profileUrl": "https://x.com/amotdesign",
+        "role": "设计师实测发布者"
+      },
+      "capturedAge": "12m",
+      "postText": "The author’s biggest surprise is that GPT-Image 2.5 can generate a transparent PNG in one shot; repeated comment edits can still slightly degrade the image.",
+      "evidenceLevel": "hands-on",
+      "media": [],
+      "tags": [
+        "透明 PNG",
+        "多轮编辑",
+        "限制观察"
+      ],
+      "promptStatus": "not-disclosed"
+    },
+    {
+      "id": "2097480076438979010",
+      "url": "https://x.com/prismfeather_ch/status/2097480076438979010",
+      "publisher": {
+        "displayName": "夏色蜜柑@Prism Feather",
+        "handle": "@prismfeather_ch",
+        "profileUrl": "https://x.com/prismfeather_ch",
+        "role": "插画实测发布者"
+      },
+      "capturedAge": "13m",
+      "postText": "GPT Image 2.5 may be a little faster; the generation percentage indicator is visible during the run.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "插画实测 · 原帖图像 1",
+          "url": "https://x.com/prismfeather_ch/status/2097480076438979010/photo/1"
+        }
+      ],
+      "tags": [
+        "生成速度",
+        "插画",
+        "过程反馈"
+      ]
+    },
+    {
+      "id": "2097480055543017746",
+      "url": "https://x.com/ankoku_othello/status/2097480055543017746",
+      "publisher": {
+        "displayName": "Anko | 東京百鬼パレード",
+        "handle": "@ankoku_othello",
+        "profileUrl": "https://x.com/ankoku_othello",
+        "role": "对比观点发布者"
+      },
+      "capturedAge": "13m",
+      "postText": "The author frames the core change as moving from one-shot image generation to easier continued edits and expansions while preserving the same character or material; the post also notes XHigh / Max, transparent backgrounds and Flare / Sunburst.",
+      "evidenceLevel": "comparison",
+      "media": [
+        {
+          "type": "image",
+          "label": "东京百鬼角色工作流 · 原帖图像 1",
+          "url": "https://x.com/ankoku_othello/status/2097480055543017746/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "东京百鬼角色工作流 · 原帖图像 2",
+          "url": "https://x.com/ankoku_othello/status/2097480055543017746/photo/2"
+        }
+      ],
+      "tags": [
+        "角色一致性",
+        "局部编辑",
+        "工作流"
+      ]
+    },
+    {
+      "id": "2097479691368337900",
+      "url": "https://x.com/ctgptlb/status/2097479691368337900",
+      "publisher": {
+        "displayName": "AGIラボ",
+        "handle": "@ctgptlb",
+        "profileUrl": "https://x.com/ctgptlb",
+        "role": "对比实测发布者"
+      },
+      "capturedAge": "13m",
+      "postText": "Using one robot image, the author compared GPT Image 2 and GPT Image 2.5 by applying the same instruction, pick up a star → raise it → put it back, through 9 consecutive edits. The 30-second comparison reports faces, texture and background staying well preserved.",
+      "evidenceLevel": "comparison",
+      "media": [
+        {
+          "type": "video",
+          "label": "GPT Image 2 vs 2.5 · 9 次编辑对比视频",
+          "url": "https://x.com/ctgptlb/status/2097479691368337900"
+        }
+      ],
+      "tags": [
+        "9 次编辑",
+        "直接对比",
+        "一致性"
+      ],
+      "quotedSource": "https://x.com/ctgptlb/status/2097465428797014267"
+    },
+    {
+      "id": "2097479641053463004",
+      "url": "https://x.com/Ankit_patel211/status/2097479641053463004",
+      "publisher": {
+        "displayName": "ANKIT PATEL 🇮🇳 | AI",
+        "handle": "@Ankit_patel211",
+        "profileUrl": "https://x.com/Ankit_patel211",
+        "role": "prompt 实测发布者"
+      },
+      "capturedAge": "13m",
+      "postText": "GPT Image 2.5 lifestyle portrait test. The full prompt specifies recognizable identity, hair strands, pores, eyes, a coffee-making pose, a modern kitchen and raw smartphone realism.",
+      "evidenceLevel": "explicit-prompt",
+      "media": [
+        {
+          "type": "image",
+          "label": "生活方式人像 · 原帖图像 1",
+          "url": "https://x.com/Ankit_patel211/status/2097479641053463004/photo/1"
+        }
+      ],
+      "tags": [
+        "完整 prompt",
+        "人像",
+        "自然质感"
+      ],
+      "promptIds": [
+        "p25-16"
+      ]
+    },
+    {
+      "id": "2097478242097566096",
+      "url": "https://x.com/bluemagikSGO/status/2097478242097566096",
+      "publisher": {
+        "displayName": "SteveSteveSteve",
+        "handle": "@bluemagikSGO",
+        "profileUrl": "https://x.com/bluemagikSGO",
+        "role": "对比实测发布者"
+      },
+      "capturedAge": "19m",
+      "postText": "First: GPT Image 2. Second: GPT Image 2.5. A compact side-by-side comparison with both outputs attached.",
+      "evidenceLevel": "comparison",
+      "media": [
+        {
+          "type": "image",
+          "label": "GPT Image 2 · 原帖图像 1",
+          "url": "https://x.com/bluemagikSGO/status/2097478242097566096/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "GPT Image 2.5 · 原帖图像 2",
+          "url": "https://x.com/bluemagikSGO/status/2097478242097566096/photo/2"
+        }
+      ],
+      "tags": [
+        "直接对比",
+        "并排效果"
+      ]
+    },
+    {
+      "id": "2097478128025374790",
+      "url": "https://x.com/zyvaoz/status/2097478128025374790",
+      "publisher": {
+        "displayName": "Bedi",
+        "handle": "@zyvaoz",
+        "profileUrl": "https://x.com/zyvaoz",
+        "role": "实测发布者"
+      },
+      "capturedAge": "20m",
+      "postText": "GPT Image 2.5 just raised the bar.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "效果图 · 原帖图像 1",
+          "url": "https://x.com/zyvaoz/status/2097478128025374790/photo/1"
+        }
+      ],
+      "tags": [
+        "效果图",
+        "综合观感"
+      ]
+    },
+    {
+      "id": "2097477854527394013",
+      "url": "https://x.com/srvhat09/status/2097477854527394013",
+      "publisher": {
+        "displayName": "Reiki Hattori",
+        "handle": "@srvhat09",
+        "profileUrl": "https://x.com/srvhat09",
+        "role": "功能观察者"
+      },
+      "capturedAge": "20m",
+      "postText": "The author notes that the Sketch function is present on the web, but not yet visible in Android Chrome or the ChatGPT app.",
+      "evidenceLevel": "hands-on",
+      "media": [],
+      "tags": [
+        "Sketch",
+        "功能观察"
+      ],
+      "promptStatus": "not-disclosed"
+    },
+    {
+      "id": "2097477655352300009",
+      "url": "https://x.com/JohnGregQuantum/status/2097477655352300009",
+      "publisher": {
+        "displayName": "John Greg",
+        "handle": "@JohnGregQuantum",
+        "profileUrl": "https://x.com/JohnGregQuantum",
+        "role": "对比实测发布者"
+      },
+      "capturedAge": "21m",
+      "postText": "A personal test compares GPT Image 2.5 with the earlier GPT 5.5 image output; the author calls the result a razor-thin test.",
+      "evidenceLevel": "comparison",
+      "media": [
+        {
+          "type": "image",
+          "label": "GPT Image 2.5 · 原帖图像 1",
+          "url": "https://x.com/JohnGregQuantum/status/2097477655352300009/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "GPT 5.5 image · 原帖图像 2",
+          "url": "https://x.com/JohnGregQuantum/status/2097477655352300009/photo/2"
+        }
+      ],
+      "tags": [
+        "跨模型对比",
+        "个人测试"
+      ]
+    },
+    {
+      "id": "2097475331649138872",
+      "url": "https://x.com/WaitSpin/status/2097475331649138872",
+      "publisher": {
+        "displayName": "WaitSpin",
+        "handle": "@WaitSpin",
+        "profileUrl": "https://x.com/WaitSpin",
+        "role": "API 观察者"
+      },
+      "capturedAge": "31m",
+      "postText": "The post distinguishes Flare for rapid iteration and Sunburst for detailed creative control, and recommends a small representative batch before switching production endpoints.",
+      "evidenceLevel": "quoted",
+      "media": [],
+      "tags": [
+        "Flare",
+        "Sunburst",
+        "API 选型"
+      ],
+      "promptStatus": "not-disclosed"
+    },
+    {
+      "id": "2097475307187892543",
+      "url": "https://x.com/AdobeFirefly/status/2097475307187892543",
+      "publisher": {
+        "displayName": "Adobe Firefly",
+        "handle": "@AdobeFirefly",
+        "profileUrl": "https://x.com/AdobeFirefly",
+        "role": "平台官方发布"
+      },
+      "capturedAge": "31m",
+      "postText": "OpenAI GPT 2.5 has landed in Firefly. Adobe highlights smarter, sharper and swifter generations, iterations and text rendering, with Flare for speed and Sunburst for maintaining results through edits.",
+      "evidenceLevel": "promotion",
+      "media": [
+        {
+          "type": "image",
+          "label": "Firefly 能力展示 · 原帖图像 1",
+          "url": "https://x.com/AdobeFirefly/status/2097475307187892543/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "Firefly 能力展示 · 原帖图像 2",
+          "url": "https://x.com/AdobeFirefly/status/2097475307187892543/photo/2"
+        },
+        {
+          "type": "image",
+          "label": "Firefly 能力展示 · 原帖图像 3",
+          "url": "https://x.com/AdobeFirefly/status/2097475307187892543/photo/3"
+        },
+        {
+          "type": "image",
+          "label": "Firefly 能力展示 · 原帖图像 4",
+          "url": "https://x.com/AdobeFirefly/status/2097475307187892543/photo/4"
+        }
+      ],
+      "tags": [
+        "平台集成",
+        "文字渲染",
+        "多轮迭代"
+      ]
+    },
+    {
+      "id": "2097472989650411765",
+      "url": "https://x.com/quietforgelab/status/2097472989650411765",
+      "publisher": {
+        "displayName": "Quiet Forge Lab",
+        "handle": "@quietforgelab",
+        "profileUrl": "https://x.com/quietforgelab",
+        "role": "实测发布者"
+      },
+      "capturedAge": "40m",
+      "postText": "The author wants the ability to fix one thing without breaking another and shares a GPT Image 2.5 result made through Codex.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "Codex 生成结果 · 原帖图像 1",
+          "url": "https://x.com/quietforgelab/status/2097472989650411765/photo/1"
+        }
+      ],
+      "tags": [
+        "局部编辑",
+        "Codex",
+        "细节保持"
+      ]
+    },
+    {
+      "id": "2097472935737131138",
+      "url": "https://x.com/Maoku/status/2097472935737131138",
+      "publisher": {
+        "displayName": "Maoku",
+        "handle": "@Maoku",
+        "profileUrl": "https://x.com/Maoku",
+        "role": "功能实测发布者"
+      },
+      "capturedAge": "40m",
+      "postText": "A Sketch to Image example asks whether this is the intended GPT-Image-2.5 workflow.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "Sketch to Image · 原帖图像 1",
+          "url": "https://x.com/Maoku/status/2097472935737131138/photo/1"
+        }
+      ],
+      "tags": [
+        "Sketch to Image",
+        "草图"
+      ]
+    },
+    {
+      "id": "2097470557889691678",
+      "url": "https://x.com/MofudouSystem/status/2097470557889691678",
+      "publisher": {
+        "displayName": "Mofudou System",
+        "handle": "@MofudouSystem",
+        "profileUrl": "https://x.com/MofudouSystem",
+        "role": "实测发布者"
+      },
+      "capturedAge": "50m",
+      "postText": "The author sees lower noise and less body-shape collapse in a GPT-Image-2.5 Flare / Sunburst test, while noting one tail variation.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "动物角色实测 · 原帖图像 1",
+          "url": "https://x.com/MofudouSystem/status/2097470557889691678/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "动物角色实测 · 原帖图像 2",
+          "url": "https://x.com/MofudouSystem/status/2097470557889691678/photo/2"
+        }
+      ],
+      "tags": [
+        "角色一致性",
+        "噪声",
+        "Flare / Sunburst"
+      ]
+    },
+    {
+      "id": "2097467906179449235",
+      "url": "https://x.com/gimu_ai/status/2097467906179449235",
+      "publisher": {
+        "displayName": "gimu",
+        "handle": "@gimu_ai",
+        "profileUrl": "https://x.com/gimu_ai",
+        "role": "创作者实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "A manga was created as a GPT-Image-2.5 test.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "漫画测试 · 原帖图像 1",
+          "url": "https://x.com/gimu_ai/status/2097467906179449235/photo/1"
+        }
+      ],
+      "tags": [
+        "漫画",
+        "多格叙事"
+      ]
+    },
+    {
+      "id": "2097467832443539748",
+      "url": "https://x.com/YUNTJP/status/2097467832443539748",
+      "publisher": {
+        "displayName": "YUNT｜ギタリスト×AI映像検証",
+        "handle": "@YUNTJP",
+        "profileUrl": "https://x.com/YUNTJP",
+        "role": "多参考图实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "Using a guitar image, a character three-view reference sheet and a name, the author reports GPT Image 2.5 inferred the guitar detail “Suhr Modern” and produced a genre/skill-aware result.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "吉他 + 角色三视图实测 · 原帖图像 1",
+          "url": "https://x.com/YUNTJP/status/2097467832443539748/photo/1"
+        }
+      ],
+      "tags": [
+        "多参考图",
+        "物体识别",
+        "角色设定"
+      ],
+      "promptStatus": "not-disclosed"
+    },
+    {
+      "id": "2097465529867153671",
+      "url": "https://x.com/keitowebai/status/2097465529867153671",
+      "publisher": {
+        "displayName": "KEITO💻AIディレクター",
+        "handle": "@keitowebai",
+        "profileUrl": "https://x.com/keitowebai",
+        "role": "实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "The author highlights character consistency, readable text and stronger original-image reference behavior in GPT Image 2.5.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "video",
+          "label": "人物一致性实测 · 原帖视频",
+          "url": "https://x.com/keitowebai/status/2097465529867153671"
+        }
+      ],
+      "tags": [
+        "人物一致性",
+        "文字保持",
+        "参考图"
+      ]
+    },
+    {
+      "id": "2097465378070999528",
+      "url": "https://x.com/nanyuan0412/status/2097465378070999528",
+      "publisher": {
+        "displayName": "南鸢 nuyoah",
+        "handle": "@nanyuan0412",
+        "profileUrl": "https://x.com/nanyuan0412",
+        "role": "人像实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "The author warns that weak prompts still do not produce realistic texture; the test is kept as a useful reminder that the model does not remove the need for precise prompting.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "人像质感测试 · 原帖图像 1",
+          "url": "https://x.com/nanyuan0412/status/2097465378070999528/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "人像质感测试 · 原帖图像 2",
+          "url": "https://x.com/nanyuan0412/status/2097465378070999528/photo/2"
+        }
+      ],
+      "tags": [
+        "人像",
+        "提示词边界",
+        "真实质感"
+      ],
+      "promptStatus": "not-disclosed",
+      "quotedSource": "https://x.com/nanyuan0412/status/2097463420874551436"
+    },
+    {
+      "id": "2097465326133002488",
+      "url": "https://x.com/higgsfield_ai/status/2097465326133002488",
+      "publisher": {
+        "displayName": "Higgsfield AI 🧩",
+        "handle": "@higgsfield_ai",
+        "profileUrl": "https://x.com/higgsfield_ai",
+        "role": "平台官方发布"
+      },
+      "capturedAge": "1h",
+      "postText": "Higgsfield asked GPT-6 Astra to animate GPT Image 2.5 visuals using Excel cells.",
+      "evidenceLevel": "promotion",
+      "media": [
+        {
+          "type": "video",
+          "label": "GPT-Image-2.5 + Excel 工作流 · 原帖视频",
+          "url": "https://x.com/higgsfield_ai/status/2097465326133002488"
+        }
+      ],
+      "tags": [
+        "Excel",
+        "自动化工作流",
+        "视频"
+      ]
+    },
+    {
+      "id": "2097465187184082953",
+      "url": "https://x.com/notoro_ai/status/2097465187184082953",
+      "publisher": {
+        "displayName": "のとろ",
+        "handle": "@notoro_ai",
+        "profileUrl": "https://x.com/notoro_ai",
+        "role": "创作者实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "The author shows how GPT-Image 2.5 can expand a doodle into an image and calls the workflow fun.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "落涂鸦扩图 · 原帖图像 1",
+          "url": "https://x.com/notoro_ai/status/2097465187184082953/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "落涂鸦扩图 · 原帖图像 2",
+          "url": "https://x.com/notoro_ai/status/2097465187184082953/photo/2"
+        },
+        {
+          "type": "image",
+          "label": "落涂鸦扩图 · 原帖图像 3",
+          "url": "https://x.com/notoro_ai/status/2097465187184082953/photo/3"
+        },
+        {
+          "type": "image",
+          "label": "落涂鸦扩图 · 原帖图像 4",
+          "url": "https://x.com/notoro_ai/status/2097465187184082953/photo/4"
+        }
+      ],
+      "tags": [
+        "涂鸦",
+        "图像扩展",
+        "Sketch"
+      ],
+      "promptStatus": "not-disclosed"
+    },
+    {
+      "id": "2097464111994900569",
+      "url": "https://x.com/knowixbuilds/status/2097464111994900569",
+      "publisher": {
+        "displayName": "Knowix",
+        "handle": "@knowixbuilds",
+        "profileUrl": "https://x.com/knowixbuilds",
+        "role": "实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "GPT Image 2.5 gave GPT-6 Astra a face.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "GPT-6 Astra 人像 · 原帖图像 1",
+          "url": "https://x.com/knowixbuilds/status/2097464111994900569/photo/1"
+        }
+      ],
+      "tags": [
+        "角色设定",
+        "人像"
+      ]
+    },
+    {
+      "id": "2097463738718646734",
+      "url": "https://x.com/Stijand/status/2097463738718646734",
+      "publisher": {
+        "displayName": "vvv",
+        "handle": "@Stijand",
+        "profileUrl": "https://x.com/Stijand",
+        "role": "实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "GPT Image 2.5.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "效果图 · 原帖图像 1",
+          "url": "https://x.com/Stijand/status/2097463738718646734/photo/1"
+        }
+      ],
+      "tags": [
+        "效果图"
+      ]
+    },
+    {
+      "id": "2097463454332592375",
+      "url": "https://x.com/eijo_AIart/status/2097463454332592375",
+      "publisher": {
+        "displayName": "eijo(SAT577)",
+        "handle": "@eijo_AIart",
+        "profileUrl": "https://x.com/eijo_AIart",
+        "role": "混合工作流实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "midjourney x GPT-Image 2.5.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "Midjourney × GPT-Image-2.5 · 原帖图像 1",
+          "url": "https://x.com/eijo_AIart/status/2097463454332592375/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "Midjourney × GPT-Image-2.5 · 原帖图像 2",
+          "url": "https://x.com/eijo_AIart/status/2097463454332592375/photo/2"
+        },
+        {
+          "type": "image",
+          "label": "Midjourney × GPT-Image-2.5 · 原帖图像 3",
+          "url": "https://x.com/eijo_AIart/status/2097463454332592375/photo/3"
+        }
+      ],
+      "tags": [
+        "跨工具",
+        "风格迁移",
+        "效果图"
+      ]
+    },
+    {
+      "id": "2097460058762379757",
+      "url": "https://x.com/K_polar_AI/status/2097460058762379757",
+      "publisher": {
+        "displayName": "ロー｜魅せるAI美女",
+        "handle": "@K_polar_AI",
+        "profileUrl": "https://x.com/K_polar_AI",
+        "role": "人像实测发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "The author says GPT Image 2.5 looks closer to a real human, with hair and skin texture holding up when enlarged and less obvious AI-ness in the background.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "video",
+          "label": "自然人像质感 · 原帖视频",
+          "url": "https://x.com/K_polar_AI/status/2097460058762379757"
+        }
+      ],
+      "tags": [
+        "人像",
+        "发丝",
+        "皮肤质感"
+      ]
+    },
+    {
+      "id": "2097453957555835344",
+      "url": "https://x.com/kei31/status/2097453957555835344",
+      "publisher": {
+        "displayName": "けいすけ🌈『ぽちペタ』音声入力ソフト開発",
+        "handle": "@kei31",
+        "profileUrl": "https://x.com/kei31",
+        "role": "短 prompt 实测发布者"
+      },
+      "capturedAge": "2h",
+      "postText": "The author says a single short phrase produced the attached result and is still testing GPT Image 2.5.",
+      "evidenceLevel": "hands-on",
+      "media": [
+        {
+          "type": "image",
+          "label": "短 prompt 实测 · 原帖图像 1",
+          "url": "https://x.com/kei31/status/2097453957555835344/photo/1"
+        },
+        {
+          "type": "image",
+          "label": "短 prompt 实测 · 原帖图像 2",
+          "url": "https://x.com/kei31/status/2097453957555835344/photo/2"
+        }
+      ],
+      "tags": [
+        "短 prompt",
+        "效率",
+        "效果图"
+      ],
+      "promptStatus": "not-disclosed",
+      "captureNote": "原帖没有公开那一句 prompt 的具体文字，因此只收效果证据。"
+    },
+    {
+      "id": "2097453934323572938",
+      "url": "https://x.com/taziku_co/status/2097453934323572938",
+      "publisher": {
+        "displayName": "田中義弘 | taziku CEO / AI × Creative",
+        "handle": "@taziku_co",
+        "profileUrl": "https://x.com/taziku_co",
+        "role": "工作流实测发布者"
+      },
+      "capturedAge": "2h",
+      "postText": "A consistency experiment keeps shape and coordinates nearly unchanged while generating another cut; the author says GPT Image 2.5 makes continuous editing and stop-motion easier to integrate into production.",
+      "evidenceLevel": "comparison",
+      "media": [
+        {
+          "type": "video",
+          "label": "形状与坐标保持 · 原帖视频",
+          "url": "https://x.com/taziku_co/status/2097453934323572938"
+        }
+      ],
+      "tags": [
+        "连续编辑",
+        "定格动画",
+        "制作流程"
+      ]
+    },
+    {
+      "id": "2097463618681884820",
+      "url": "https://x.com/arceyul/status/2097463618681884820",
+      "publisher": {
+        "displayName": "arc.",
+        "handle": "@arceyul",
+        "profileUrl": "https://x.com/arceyul",
+        "role": "prompt 发布者"
+      },
+      "capturedAge": "1h",
+      "postText": "A full seven-part prompt framework for reference merging, locking a master, surgical edits, product campaigns, reformatting, wardrobe swaps and e-commerce cleanup.",
+      "evidenceLevel": "explicit-prompt",
+      "media": [],
+      "tags": [
+        "prompt 框架",
+        "参考图",
+        "商业工作流"
+      ],
+      "promptStatus": "explicit",
+      "promptIds": [
+        "p25-17",
+        "p25-18",
+        "p25-19",
+        "p25-20",
+        "p25-21",
+        "p25-22",
+        "p25-23"
+      ],
+      "captureNote": "正文完整可见；本帖没有附效果图，故与可视效果证据分开呈现。"
+    }
+  ],
+  "assets": {
+    "schemaVersion": 1,
+    "retrievedAt": "2026-09-09T00:43:12.445Z",
+    "provider": "X CDN media URLs resolved from public status metadata",
+    "stats": {
+      "tweets": 63,
+      "tweetsWithMedia": 52,
+      "directMediaCount": 83
+    },
+    "tweets": {
+      "2097399255975813387": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097399201789591552/vid/avc1/1920x1080/fps8W8iqP1ZpRS8-.mp4?tag=16",
+          "thumbnailUrl": "https://pbs.twimg.com/media/HRuDgwUaIAAuVsC.jpg",
+          "width": 3418,
+          "height": 1900,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097461685220966490": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuuETCaIAA6lTK.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1672,
+          "height": 941,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuuGKHW4AAfjyF.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1672,
+          "height": 941,
+          "durationMs": null,
+          "index": 1
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuuOjXWoAEpHmG.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1672,
+          "height": 941,
+          "durationMs": null,
+          "index": 2
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuuRvYaUAAB5ug.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1672,
+          "height": 941,
+          "durationMs": null,
+          "index": 3
+        }
+      ],
+      "2097394962782384318": [],
+      "2097394956457623964": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097390126577893376/vid/avc1/1920x1080/8IlFZqV8g8G39D8V.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097390126577893376/img/mmRUE0c57MKr8qDk.jpg",
+          "width": 1920,
+          "height": 1080,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097461713863881083": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRutytwacAACQBe.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 2160,
+          "height": 3840,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuuDClX0AAjmPy.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 2160,
+          "height": 3840,
+          "durationMs": null,
+          "index": 1
+        }
+      ],
+      "2097461901265658340": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097461867186925568/vid/avc1/1440x1080/JNN5GOdwedFUILnp.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097461867186925568/img/OC9-lKDuCiYWD39d.jpg",
+          "width": 1440,
+          "height": 1080,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097461076866560320": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRutuxeaAAAyU47.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1707,
+          "height": 2048,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRutuxda4AAL7Yf.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 690,
+          "height": 593,
+          "durationMs": null,
+          "index": 1
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRutuxdaQAAumX3.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1145,
+          "height": 1374,
+          "durationMs": null,
+          "index": 2
+        }
+      ],
+      "2097456916335383025": [],
+      "2097462055196414034": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuuno2bEAA2i7r.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1055,
+          "height": 1491,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuunoSXoAAAbjh.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1055,
+          "height": 1491,
+          "durationMs": null,
+          "index": 1
+        }
+      ],
+      "2097461302163816747": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRut794aMAAql1s.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1024,
+          "height": 1536,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097456425190711694": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRun6zoasAAfGei.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1920,
+          "height": 1080,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRun603akAAUcH5.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1920,
+          "height": 1080,
+          "durationMs": null,
+          "index": 1
+        }
+      ],
+      "2097442456128078060": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRucFOobIAAyqnd.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1024,
+          "height": 1024,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRucUKragAAixWR.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1254,
+          "height": 1254,
+          "durationMs": null,
+          "index": 1
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRucc_iXEAASDw9.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1254,
+          "height": 1254,
+          "durationMs": null,
+          "index": 2
+        }
+      ],
+      "2097462175186980949": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097460400845455360/vid/avc1/2560x1440/TeR9evr3In6x6Q74.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097460400845455360/img/xQR6Ap9TWkwjFpxo.jpg",
+          "width": 2560,
+          "height": 1440,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097456549988016310": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuplnsbkAAuB04.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1086,
+          "height": 1448,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRupmKxboAAGTPg.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1086,
+          "height": 1448,
+          "durationMs": null,
+          "index": 1
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRupmrjboAAQLNy.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1086,
+          "height": 1448,
+          "durationMs": null,
+          "index": 2
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRupnMXb0AAA9rz.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1086,
+          "height": 1448,
+          "durationMs": null,
+          "index": 3
+        }
+      ],
+      "2097442532980634096": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuY9qQaIAA8FwF.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1216,
+          "height": 813,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097456390814208386": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRupd1OaoAAKzzt.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 809,
+          "height": 1942,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097443412597207391": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRudosLXkAAgy8I.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1836,
+          "height": 2018,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097442017085366600": [],
+      "2097400515546255754": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRt2lOMawAATzzN.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 4088,
+          "height": 4088,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRt2lyxacAAdgOR.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 4088,
+          "height": 4088,
+          "durationMs": null,
+          "index": 1
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRt2mTba0AA0-y2.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 4088,
+          "height": 4088,
+          "durationMs": null,
+          "index": 2
+        }
+      ],
+      "2097461408934047779": [],
+      "2097461291619356890": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRut6VebEAAzacd.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1672,
+          "height": 941,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097461447634886822": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097399201789591552/vid/avc1/1920x1080/fps8W8iqP1ZpRS8-.mp4?tag=16",
+          "thumbnailUrl": "https://pbs.twimg.com/media/HRuDgwUaIAAuVsC.jpg",
+          "width": 3418,
+          "height": 1900,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097461106545721842": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097461005261701120/vid/avc1/1920x1080/DZrRSLttfa7U4Vlh.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097461005261701120/img/xsW-jzuHSY79d2DR.jpg",
+          "width": 1920,
+          "height": 1080,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097458513702515165": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRurUapagAA1tRQ.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1939,
+          "height": 811,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097457244602548459": [],
+      "2097457995089093062": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuq4dqa4AAYEjT.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1024,
+          "height": 1024,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097445127484477896": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuVYRfWYAIx5HY.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1200,
+          "height": 1600,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuVZepW8AA0fys.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1600,
+          "height": 900,
+          "durationMs": null,
+          "index": 1
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuVbqhWwAAKKP5.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1600,
+          "height": 900,
+          "durationMs": null,
+          "index": 2
+        }
+      ],
+      "2097460486610522225": [],
+      "2097443589408096339": [],
+      "2097481120681967770": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu_9ZKaEAAj2HH.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1672,
+          "height": 941,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097460221526593597": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097404575687081984/vid/avc1/1920x1414/gYnIRVbW9b53b2WW.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097404575687081984/img/JrZr8uEePuWu39dj.jpg",
+          "width": 1920,
+          "height": 1414,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097480602966446545": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu_fMCWwAE_Tfc.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1086,
+          "height": 1448,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097480722994884658": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu_WDjawAAebC1.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 680,
+          "height": 680,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097480468291592575": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097480430089842688/vid/avc1/854x480/XaYOkpLGZg1qN1Al.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097480430089842688/img/Y_ZcInbJJrcZX66S.jpg",
+          "width": 854,
+          "height": 480,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097480256831832404": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097419660971147264/vid/avc1/1920x1080/vbd-xrq_CGyPLlZ4.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097419660971147264/img/uMRhE4wnkIop-xZ-.jpg",
+          "width": 1920,
+          "height": 1080,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097480115219546587": [],
+      "2097480076438979010": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu-vxpakAAfkuh.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1024,
+          "height": 1536,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097480055543017746": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu-_iybQAA8fWo.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1122,
+          "height": 1402,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu-_iya8AAQLWz.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1122,
+          "height": 1402,
+          "durationMs": null,
+          "index": 1
+        }
+      ],
+      "2097481001744134492": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu_2cxXoAAeO_M.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1672,
+          "height": 941,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097479691368337900": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097478204055556096/vid/avc1/1920x1080/3JgwlVGpwMrSfKHr.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097478204055556096/img/k3LUsecrIzgwwSFG.jpg",
+          "width": 1920,
+          "height": 1080,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097479641053463004": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu-i5VaAAAHGX_.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1122,
+          "height": 1402,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097478242097566096": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu8pj8bUAAwk0q.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1290,
+          "height": 1237,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu8sHcXoAAVY-K.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1024,
+          "height": 1024,
+          "durationMs": null,
+          "index": 1
+        }
+      ],
+      "2097478128025374790": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu9Ov3bgAAJ9qM.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 3840,
+          "height": 2160,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097477854527394013": [],
+      "2097475331649138872": [],
+      "2097477655352300009": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu8z0mbkAAGwmY.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1672,
+          "height": 941,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu8z0KXoAAmYco.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1536,
+          "height": 864,
+          "durationMs": null,
+          "index": 1
+        }
+      ],
+      "2097475307187892543": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu6qaWXsAAMUw3.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 930,
+          "height": 1154,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu6qsuWsAAVDcM.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 930,
+          "height": 1154,
+          "durationMs": null,
+          "index": 1
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu6q-3WEAErtil.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 930,
+          "height": 1154,
+          "durationMs": null,
+          "index": 2
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu6rNdXUAInPl3.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 930,
+          "height": 1154,
+          "durationMs": null,
+          "index": 3
+        }
+      ],
+      "2097472989650411765": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu4kECa8AAsZcu.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1200,
+          "height": 1200,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097472935737131138": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu4hKEacAEhk4t.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1345,
+          "height": 2048,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097470557889691678": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu1iGla4AAXxDU.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1254,
+          "height": 1254,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRu1HB5aEAAf9Gp.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1254,
+          "height": 1254,
+          "durationMs": null,
+          "index": 1
+        }
+      ],
+      "2097467906179449235": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuzxt_bEAAWdL4.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1205,
+          "height": 1306,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097467832443539748": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuyr05agAAlLLM.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 3840,
+          "height": 2160,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097465529867153671": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097465328892801024/vid/avc1/886x1920/gFGOOAAg6rXAzFH_.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097465328892801024/img/-slQNUBLSQ8IvQ2q.jpg",
+          "width": 886,
+          "height": 1920,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097465378070999528": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuxfR9bMAAf8Op.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1086,
+          "height": 1448,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuxfR_aQAA3k4H.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1086,
+          "height": 1448,
+          "durationMs": null,
+          "index": 1
+        }
+      ],
+      "2097465326133002488": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097465154627936256/vid/avc1/2160x2160/xZhcWVaCZ1_CKBZq.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097465154627936256/img/2DdctzmLCDPhf_cf.jpg",
+          "width": 2160,
+          "height": 2160,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097465187184082953": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuwhPBakAA0cmH.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1536,
+          "height": 1024,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuw2f8aEAAVlFN.png?name=orig",
+          "thumbnailUrl": "",
+          "width": 835,
+          "height": 843,
+          "durationMs": null,
+          "index": 1
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuw2hKaYAAnI8l.png?name=orig",
+          "thumbnailUrl": "",
+          "width": 817,
+          "height": 827,
+          "durationMs": null,
+          "index": 2
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuw2gXbgAA60PS.png?name=orig",
+          "thumbnailUrl": "",
+          "width": 872,
+          "height": 745,
+          "durationMs": null,
+          "index": 3
+        }
+      ],
+      "2097464111994900569": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuhZXKbEAAoJeW.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 1145,
+          "height": 1374,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097463738718646734": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuwJu4bQAA79m0.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 941,
+          "height": 1672,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097460058762379757": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097459385299800066/vid/avc1/828x1792/Z1gU2uY1lbgjzXDs.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097459385299800066/img/NfglB5ZxxQHq8qs9.jpg",
+          "width": 828,
+          "height": 1792,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097453957555835344": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRunPw2aQAAoGl3.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 768,
+          "height": 1024,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRunQIXbkAAEEXV.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 2996,
+          "height": 1868,
+          "durationMs": null,
+          "index": 1
+        }
+      ],
+      "2097463454332592375": [
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuvr6ObUAAclRz.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 896,
+          "height": 1520,
+          "durationMs": null,
+          "index": 0
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuvr6PboAACr59.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 896,
+          "height": 1520,
+          "durationMs": null,
+          "index": 1
+        },
+        {
+          "type": "image",
+          "assetUrl": "https://pbs.twimg.com/media/HRuvr6PbwAAhAPJ.jpg?name=orig",
+          "thumbnailUrl": "",
+          "width": 896,
+          "height": 1520,
+          "durationMs": null,
+          "index": 2
+        }
+      ],
+      "2097453934323572938": [
+        {
+          "type": "video",
+          "assetUrl": "https://video.twimg.com/amplify_video/2097398948126445568/vid/avc1/1024x1024/SaAEKXCzFi9rBwvp.mp4?tag=29",
+          "thumbnailUrl": "https://pbs.twimg.com/amplify_video_thumb/2097398948126445568/img/p5_zWBwWwelDk2Pm.jpg",
+          "width": 1024,
+          "height": 1024,
+          "durationMs": null,
+          "index": 0
+        }
+      ],
+      "2097463618681884820": []
+    }
+  }
+}
